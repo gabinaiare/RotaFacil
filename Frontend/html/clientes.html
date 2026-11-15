@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -7,26 +7,30 @@
     <title>Passageiros • Rota Fácil</title>
     <link rel="icon" href="../assets/favicon-rota-facil.png">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/desktop.css">
 </head>
 
-<body>
+<body class="pagina-clientes">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
     <div class="aplicativo">
+
         <aside id="menu" class="menu-lateral">
             <div class="topo-menu">
                 <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
                 <a class="botao-fechar" href="#" aria-label="Fechar menu">×</a>
             </div>
+
             <nav>
-                <a class="item-menu" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span>Início</a>
-                <a class="item-menu" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span>Minhas viagens</a>
-                <a class="item-menu" href="veiculos.html"><span class="icone" style="--icone:url(../assets/bus.png)" aria-hidden="true"></span>Meus veículos</a>
-                <a class="item-menu" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span>Passagens</a>
-                <a class="item-menu" href="encomendas.html"><span class="icone" style="--icone:url(../assets/encomendas.png)" aria-hidden="true"></span>Encomendas</a>
-                <a class="item-menu ativo" aria-current="page" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span>Passageiros</a>
-                <a class="item-menu" href="perfil.html"><span class="icone" style="--icone:url(../assets/do-utilizador.png)" aria-hidden="true"></span>Meu perfil</a>
-                <a class="item-menu" href="estatisticas.html"><span class="icone" style="--icone:url(../assets/grafico-de-negocios.png)" aria-hidden="true"></span>Estatísticas</a>
-                <a class="item-menu" href="relatorios.html"><span class="icone" style="--icone:url(../assets/relatorio-de-negocios-2.png)" aria-hidden="true"></span>Relatórios</a>
-                <a class="item-menu" href="backup.html"><span class="icone" style="--icone:url(../assets/armazenamento-de-banco-de-dados.png)" aria-hidden="true"></span>Cópia de segurança</a>
+                <a class="item-menu" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span>Início</a>
+                <a class="item-menu" href="viagens.html"><span class="icone icone-viajar-por" aria-hidden="true"></span>Minhas viagens</a>
+                <a class="item-menu" href="veiculos.html"><span class="icone icone-bus" aria-hidden="true"></span>Meus veículos</a>
+                <a class="item-menu" href="passagens.html"><span class="icone icone-bilhete" aria-hidden="true"></span>Passagens</a>
+                <a class="item-menu" href="encomendas.html"><span class="icone icone-encomendas" aria-hidden="true"></span>Encomendas</a>
+                <a class="item-menu ativo" aria-current="page" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span>Passageiros</a>
+                <a class="item-menu" href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
+                <a class="item-menu" href="estatisticas.html"><span class="icone icone-grafico-de-negocios" aria-hidden="true"></span>Estatísticas</a>
+                <a class="item-menu" href="relatorios.html"><span class="icone icone-relatorio-de-negocios-2" aria-hidden="true"></span>Relatórios</a>
+                <a class="item-menu" href="backup.html"><span class="icone icone-armazenamento-de-banco-de-dados" aria-hidden="true"></span>Cópia de segurança</a>
             </nav>
 
             <footer>
@@ -40,7 +44,6 @@
                 <a class="sair-conta" href="login.html">Sair da conta</a>
             </footer>
         </aside>
-
         <a class="fundo-sobreposicao" href="#" aria-label="Fechar menu"></a>
 
         <header class="barra-superior">
@@ -49,21 +52,390 @@
                 <small>Meu espaço</small>
                 <strong>Passageiros</strong>
             </div>
-            <a class="avatar" href="perfil.html">MQ</a>
+
+            <details class="conta-cabecalho">
+                <summary class="avatar" aria-label="Abrir opções da conta de Miguel Queiroz">MQ</summary>
+
+                <nav class="menu-conta" aria-label="Opções da conta">
+                    <div class="identificacao-conta">
+                        <strong>Miguel Queiroz</strong>
+                        <small>Motorista independente</small>
+                    </div>
+                    <a href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
+                    <a class="sair-menu-conta" href="login.html"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 4H5v16h5M9 12h12m-4-4 4 4-4 4"></path></svg> Sair da conta</a>
+                </nav>
+            </details>
         </header>
 
-        <a href="#" class="mascara" aria-label="Fechar menu"></a>
+        <main id="conteudo">
+            <span class="alvo-filtro" id="clientes-todos" aria-hidden="true"></span>
+            <span class="alvo-filtro" id="clientes-com-fiado" aria-hidden="true"></span>
+            <span class="alvo-filtro" id="clientes-em-dia" aria-hidden="true"></span>
+            <div class="titulo-pagina">
+                <div>
+                    <h1>Passageiros</h1>
+                    <p class="introducao">Seus clientes, históricos e pagamentos em um só lugar.</p>
+                </div>
+                <a class="botao " href="#novo-cliente">+ Novo passageiro</a>
+            </div>
 
-        <main>
+            <section class="resumo-verde">
+                <div>
+                    <small>Passageiros nesta amostra</small>
+                    <strong>2</strong>
+                </div>
+                <div>
+                    <small>Com fiado</small>
+                    <strong>2</strong>
+                </div>
+            </section>
+
+            <label class="sr-only" for="busca-passageiro">Buscar passageiro</label>
+            <input class="busca-passageiro" id="busca-passageiro" type="search" placeholder="Buscar nome, CPF ou WhatsApp">
+            
+            <nav class="abas-visuais filtros-clientes" aria-label="Filtros de passageiros">
+                <a class="filtro-todos" href="#clientes-todos">Todos <span>2</span></a>
+                <a class="filtro-fiado" href="#clientes-com-fiado">Com fiado <span>2</span></a>
+                <a class="filtro-em-dia" href="#clientes-em-dia">Em dia <span>0</span></a>
+            </nav>
+            <p class="vazio-clientes">Nenhum passageiro em dia nesta lista.</p>
+
+            <div class="grade-cartoes">
+                <article class="cartao bloco passageiro-card" data-situacao="fiado">
+                    <header class="linha">
+                        <div class="pessoa">
+                            <span class="avatar">AS</span>
+                            <div>
+                                <h2>Antônio Silva</h2>
+                                <small>WhatsApp não informado</small>
+                            </div>
+                        </div>
+
+                        <span class="selo pendente">Com fiado</span>
+                    </header>
+
+                    <section class="saldo-passageiro">
+                        <small>Passagens</small>
+                        <strong>1</strong>
+                        <div class="duas-colunas">
+                            <div>
+                                <small>Recebido</small>
+                                <strong class="verde">R$ 0,00</strong>
+                            </div>
+
+                            <div>
+                                <small>Fiado</small>
+                                <strong class="amarelo">R$ 25,00</strong>
+                            </div>
+                        </div>
+                    </section>
+
+                    <p class="ultima-viagem">0 encomenda(s) • Última viagem registrada: 13/11/2026</p>
+                    <div class="acoes-passageiro">
+                        <a class="botao " href="#historico-cliente">Histórico e conta</a>
+                        <a href="#editar-cliente">Editar</a>
+                        <a class="botao secundario" href="#receber-fiado">Receber fiado</a>
+                    </div>
+                </article>
+
+                <article class="cartao bloco passageiro-card" data-situacao="fiado">
+                    <header class="linha">
+                        <div class="pessoa">
+                            <span class="avatar">CS</span>
+                            <div>
+                                <h2>Camila Souza</h2>
+                                <small>WhatsApp não informado</small>
+                            </div>
+                        </div>
+
+                        <span class="selo pendente">Com fiado</span>
+                    </header>
+
+                    <section class="saldo-passageiro">
+                        <small>Passagens</small>
+                        <strong>1</strong>
+                        <div class="duas-colunas">
+                            <div>
+                                <small>Recebido</small>
+                                <strong class="verde">R$ 0,00</strong>
+                            </div>
+
+                            <div>
+                                <small>Fiado</small>
+                                <strong class="amarelo">R$ 25,00</strong>
+                            </div>
+                        </div>
+                    </section>
+
+                    <p class="ultima-viagem">0 encomenda(s) • Última viagem registrada: 13/11/2026</p>
+                    <div class="acoes-passageiro">
+                        <a class="botao " href="#historico-cliente">Histórico e conta</a>
+                        <a href="#editar-cliente">Editar</a>
+                        <a class="botao secundario" href="#receber-fiado">Receber fiado</a>
+                    </div>
+                </article>
+            </div>
         </main>
 
         <nav class="menu-inferior" aria-label="Navegação principal">
-            <a class="" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span><span>Início</span></a>
-            <a class="" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span><span>Viagens</span></a>
-            <a class="" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span><span>Passagens</span></a>
-            <a class="selecionado" aria-current="page" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span><span>Passageiros</span></a>
-            <a class="" href="#menu"><span class="icone" style="--icone:url(../assets/mais.png)" aria-hidden="true"></span><span>Mais</span></a>
+            <a class="" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span><span>Início</span></a>
+            <a class="" href="viagens.html"><span class="icone icone-viajar-por" aria-hidden="true"></span><span>Viagens</span></a>
+            <a class="" href="passagens.html"><span class="icone icone-bilhete" aria-hidden="true"></span><span>Passagens</span></a>
+            <a class="selecionado" aria-current="page" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span><span>Passageiros</span></a>
+            <a class="" href="#menu"><span class="icone icone-mais" aria-hidden="true"></span><span>Mais</span></a>
         </nav>
+
+        <section class="janela" id="novo-cliente" aria-label="Painel: novo cliente">
+            <a class="fundo-janela" href="clientes.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="novo-cliente-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="novo-cliente-titulo">Cadastrar passageiro</h2>
+                    </div>
+                    <a class="fechar-painel" href="clientes.html" aria-label="Fechar cadastrar passageiro">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label>
+                            Nome completo
+                            <input type="text" placeholder="Nome do passageiro" name="nome-completo">
+                        </label>
+
+                        <label>
+                            WhatsApp com DDD
+                            <input type="tel" placeholder="(84) 99999-9999" name="whatsapp-com-ddd">
+                        </label>
+
+                        <label>
+                            E-mail (opcional)
+                            <input type="email" placeholder="" name="e-mail-opcional">
+                        </label>
+
+                        <label>
+                            Endereço (opcional)
+                            <input type="text" placeholder="Rua, número e bairro" name="endereco-opcional">
+                        </label>
+                    </div>
+
+                    <div class="acoes">
+                        <a class="botao secundario" href="clientes.html">Voltar</a>
+                        <button class="botao" type="button" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="janela" id="editar-cliente" aria-label="Painel: editar cliente">
+            <a class="fundo-janela" href="clientes.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="editar-cliente-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="editar-cliente-titulo">Editar passageiro</h2>
+                    </div>
+                    <a class="fechar-painel" href="clientes.html" aria-label="Fechar">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label>
+                            Nome completo
+                            <input type="text" value="" placeholder="Nome do passageiro" name="nome-completo">
+                        </label>
+
+                        <label>
+                            CPF
+                            <small>opcional</small>
+                            <input type="text" value="" placeholder="000.000.000-00" name="cpf">
+                        </label>
+
+                        <label>
+                            Telefone / WhatsApp
+                            <input type="tel" value="" placeholder="(84) 99999-9999" name="telefone-whatsapp">
+                        </label>
+
+                        <label>
+                            E-mail
+                            <small>opcional</small>
+                            <input type="email" value="" placeholder="" name="e-mail">
+                        </label>
+
+                        <label>
+                            Endereço
+                            <small>opcional</small>
+                            <input type="text" value="" placeholder="" name="endereco">
+                        </label>
+                        <p class="nota">As passagens, encomendas e pagamentos formam o histórico deste passageiro.</p>
+                    </div>
+
+                    <div class="acoes">
+                        <a class="botao secundario" href="clientes.html">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: os dados ainda não são salvos." aria-disabled="true">Salvar passageiro</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="janela" id="historico-cliente" aria-label="Painel: historico cliente">
+            <a class="fundo-janela" href="clientes.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="historico-cliente-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="historico-cliente-titulo">Histórico e conta</h2>
+                    </div>
+
+                    <a class="fechar-painel" href="clientes.html" aria-label="Fechar">×</a>
+                </header>
+
+                <div class="pessoa">
+                    <span class="avatar">AS</span>
+                    <div>
+                        <h2>Antônio Silva</h2>
+                        <small>WhatsApp não informado</small>
+                    </div>
+                </div>
+
+                <dl class="dados-cliente">
+                    <div>
+                        <dt>CPF</dt>
+                        <dd>Não informado</dd>
+                    </div>
+                </dl>
+
+                <section class="resumo-conta">
+                    <small>Total registrado</small>
+                    <h3>R$ 25,00</h3>
+                    <div class="duas-colunas">
+                        <div>
+                            <small>Recebido</small>
+                            <h3 class="verde">R$ 0,00</h3>
+                        </div>
+
+                        <div>
+                            <small>Fiado</small>
+                            <h3 class="amarelo">R$ 25,00</h3>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="acoes-passageiro">
+                    <a class="botao " href="#receber-fiado">Receber fiado</a>
+                    <a href="#editar-cliente">Editar cliente</a>
+                </div>
+
+                <div class="abas-visuais">
+                    <button class="ativa" type="button" disabled>Tudo</button>
+                    <button type="button" disabled>Passagens</button>
+                    <button type="button" disabled>Encomendas</button>
+                    <button type="button" disabled>Fiado</button>
+                </div>
+
+                <article class="cartao bloco">
+                    <div class="linha">
+                        <span class="selo neutro">Passagem #116</span>
+                        <span class="selo pendente">Fiado</span>
+                    </div>
+
+                    <h2 class="espaco">São Miguel → Pau dos Ferros</h2>
+                    <p class="texto-secundario">13/11/2026 • 06:30<br>Mercedes-Benz Sprinter • Assento 16</p>
+
+                    <section class="saldo-passageiro">
+                        <small>Valor</small>
+                        <h3>R$ 25,00</h3>
+                        <div class="duas-colunas">
+                            <div>
+                                <small>Recebido</small>
+                                <h3 class="verde">R$ 0,00</h3>
+                            </div>
+
+                            <div>
+                                <small>Fiado</small>
+                                <h3 class="amarelo">R$ 25,00</h3>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="acoes-passageiro">
+                        <a href="passagens.html#editar-passagem">Editar passagem</a>
+                        <a class="botao " href="#receber-fiado">Registrar recebimento</a>
+                    </div>
+                </article>
+                <p class="nota">Histórico de exemplo. Os filtros e os registros serão conectados ao banco na próxima etapa.</p>
+            </section>
+        </section>
+
+        <section class="janela" id="receber-fiado" aria-label="Painel: receber fiado">
+            <a class="fundo-janela" href="clientes.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="receber-fiado-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="receber-fiado-titulo">Registrar pagamento</h2>
+                    </div>
+                    <a class="fechar-painel" href="#historico-cliente" aria-label="Fechar">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <div class="resumo-conta largura-total">
+                            <p>Antônio Silva · Conta do cliente</p>
+                            <strong>R$ 25,00</strong>
+                            <small>Saldo a receber</small>
+                        </div>
+                        <label class="largura-total">
+                            Forma de pagamento
+                            <select name="forma-de-pagamento">
+                                <option value="pix">Pix</option>
+                                <option value="dinheiro">Dinheiro</option>
+                                <option value="cartao">Cartão</option>
+                                <option value="transferencia">Transferência</option>
+                            </select>
+                        </label>
+                        <label class="largura-total">
+                            Valor a pagar agora (R$)
+                            <input type="number" value="25" name="valor-recebido-r" min="0.01" max="25" step="0.01" required>
+                            <small>Para receber parcialmente, informe apenas o valor pago agora.</small>
+                        </label>
+                        <div class="campos-dinheiro-cliente largura-total">
+                            <label>
+                                Valor entregue em dinheiro (R$)
+                                <input type="number" name="valor-entregue-dinheiro" min="0" step="0.01" placeholder="Ex.: 50,00">
+                            </label>
+                            <label>
+                                Troco a devolver (R$)
+                                <input type="number" name="troco-devolver" min="0" step="0.01" placeholder="0,00">
+                            </label>
+                        </div>
+                        <label>
+                            Data do recebimento
+                            <input type="date" value="2026-11-13" name="data-do-recebimento">
+                        </label>
+                        <label>
+                            Observação
+                            <small>opcional</small>
+                            <input type="text" name="observacao">
+                        </label>
+                        <p class="nota largura-total">Registre somente o valor recebido. Este registro não realiza cobranças por Pix, cartão ou transferência.</p>
+                    </div>
+
+                    <div class="acoes">
+                        <a class="botao secundario" href="#historico-cliente">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: os dados ainda não são salvos." aria-disabled="true">Confirmar pagamento</button>
+                    </div>
+                </form>
+            </section>
+        </section>
     </div>
 </body>
 </html>

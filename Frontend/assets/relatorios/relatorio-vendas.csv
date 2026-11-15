@@ -1,0 +1,15 @@
+﻿Código;Passageiro / remetente;Rota;Serviço;Valor;Situação
+101;Mariana Costa;São Miguel · Pau dos Ferros;Passagem;R$ 25,00;Fiado
+102;João Almeida;São Miguel · Pau dos Ferros;Passagem;R$ 25,00;Pago
+103;Antônio Silva;São Miguel · Pau dos Ferros;Passagem;R$ 25,00;Fiado
+104;Camila Souza;São Miguel · Pau dos Ferros;Passagem;R$ 25,00;Fiado
+105;Fernanda Lima;São Miguel · Pau dos Ferros;Passagem;R$ 25,00;Pago
+106;Pedro Santos;São Miguel · Pau dos Ferros;Passagem;R$ 25,00;Pago parcialmente
+107;Ana Paula;São Miguel · Pau dos Ferros;Passagem;R$ 25,00;Pago
+108;Carlos Eduardo;São Miguel · Pau dos Ferros;Passagem;R$ 25,00;Fiado
+109;Luiza Alves;São Miguel · Pau dos Ferros;Passagem;R$ 25,00;Pago
+110;José Silva;São Miguel · Pau dos Ferros;Passagem;R$ 25,00;Pago
+111;Antônio Silva;São Miguel · Pau dos Ferros;Passagem;R$ 25,00;Fiado
+202;João Almeida;São Miguel · Mossoró;Passagem;R$ 75,00;Pago
+201;Mariana Costa;São Miguel · Mossoró;Passagem;R$ 75,00;Fiado
+ENC-010011;Mariana Costa;São Miguel · Mossoró;Encomenda;R$ 20,00;Fiado

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -7,26 +7,30 @@
     <title>Minhas viagens • Rota Fácil</title>
     <link rel="icon" href="../assets/favicon-rota-facil.png">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/desktop.css">
 </head>
 
-<body>
+<body class="pagina-viagens">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
     <div class="aplicativo">
+
         <aside id="menu" class="menu-lateral">
             <div class="topo-menu">
                 <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
                 <a class="botao-fechar" href="#" aria-label="Fechar menu">×</a>
             </div>
+
             <nav>
-                <a class="item-menu" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span>Início</a>
-                <a class="item-menu ativo" aria-current="page" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span>Minhas viagens</a>
-                <a class="item-menu" href="veiculos.html"><span class="icone" style="--icone:url(../assets/bus.png)" aria-hidden="true"></span>Meus veículos</a>
-                <a class="item-menu" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span>Passagens</a>
-                <a class="item-menu" href="encomendas.html"><span class="icone" style="--icone:url(../assets/encomendas.png)" aria-hidden="true"></span>Encomendas</a>
-                <a class="item-menu" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span>Passageiros</a>
-                <a class="item-menu" href="perfil.html"><span class="icone" style="--icone:url(../assets/do-utilizador.png)" aria-hidden="true"></span>Meu perfil</a>
-                <a class="item-menu" href="estatisticas.html"><span class="icone" style="--icone:url(../assets/grafico-de-negocios.png)" aria-hidden="true"></span>Estatísticas</a>
-                <a class="item-menu" href="relatorios.html"><span class="icone" style="--icone:url(../assets/relatorio-de-negocios-2.png)" aria-hidden="true"></span>Relatórios</a>
-                <a class="item-menu" href="backup.html"><span class="icone" style="--icone:url(../assets/armazenamento-de-banco-de-dados.png)" aria-hidden="true"></span>Cópia de segurança</a>
+                <a class="item-menu" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span>Início</a>
+                <a class="item-menu ativo" aria-current="page" href="viagens.html"><span class="icone icone-viajar-por" aria-hidden="true"></span>Minhas viagens</a>
+                <a class="item-menu" href="veiculos.html"><span class="icone icone-bus" aria-hidden="true"></span>Meus veículos</a>
+                <a class="item-menu" href="passagens.html"><span class="icone icone-bilhete" aria-hidden="true"></span>Passagens</a>
+                <a class="item-menu" href="encomendas.html"><span class="icone icone-encomendas" aria-hidden="true"></span>Encomendas</a>
+                <a class="item-menu" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span>Passageiros</a>
+                <a class="item-menu" href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
+                <a class="item-menu" href="estatisticas.html"><span class="icone icone-grafico-de-negocios" aria-hidden="true"></span>Estatísticas</a>
+                <a class="item-menu" href="relatorios.html"><span class="icone icone-relatorio-de-negocios-2" aria-hidden="true"></span>Relatórios</a>
+                <a class="item-menu" href="backup.html"><span class="icone icone-armazenamento-de-banco-de-dados" aria-hidden="true"></span>Cópia de segurança</a>
             </nav>
 
             <footer>
@@ -40,7 +44,6 @@
                 <a class="sair-conta" href="login.html">Sair da conta</a>
             </footer>
         </aside>
-
         <a class="fundo-sobreposicao" href="#" aria-label="Fechar menu"></a>
 
         <header class="barra-superior">
@@ -49,21 +52,513 @@
                 <small>Meu espaço</small>
                 <strong>Minhas viagens</strong>
             </div>
-            <a class="avatar" href="perfil.html">MQ</a>
+
+            <details class="conta-cabecalho">
+                <summary class="avatar" aria-label="Abrir opções da conta de Miguel Queiroz">MQ</summary>
+
+                <nav class="menu-conta" aria-label="Opções da conta">
+                    <div class="identificacao-conta">
+                        <strong>Miguel Queiroz</strong>
+                        <small>Motorista independente</small>
+                    </div>
+                    <a href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
+                    <a class="sair-menu-conta" href="login.html"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 4H5v16h5M9 12h12m-4-4 4 4-4 4"></path></svg> Sair da conta</a>
+                </nav>
+            </details>
         </header>
 
-        <a href="#" class="mascara" aria-label="Fechar menu"></a>
+        <main id="conteudo">
+            <div class="titulo-pagina">
+                <div>
+                    <h1>Minhas viagens</h1>
+                    <p class="introducao">Consulte destinos, datas, situação e disponibilidade.</p>
+                </div>
+                <a class="botao " href="#nova-viagem">+ Nova viagem</a>
+            </div>
 
-        <main>
-        </main>
+            <section class="cartao bloco filtros">
+
+                <form>
+                    <div class="grade-formulario">
+                        <label>
+                            Origem ou destino
+                            <input type="text" placeholder="Buscar cidade">
+                        </label>
+                        <label>
+                            Data
+                            <input type="date" value="">
+                        </label>
+                        <label>
+                            Situação
+                            <select>
+                                <option>Todas</option>
+                                <option>Programada</option>
+                                <option>Concluída</option>
+                                <option>Cancelada</option>
+                            </select>
+                        </label>
+                    </div>
+                    <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Buscar</button>
+                </form>
+            </section>
+            <div class="grade-cartoes">
+                <div class="registro-viagem">
+
+                    <article class="cartao bloco viagem-card">
+                        <div class="linha">
+                            <span class="selo">6 vagas disponíveis</span>
+                            <small>13 de nov. · 06:30</small>
+                        </div>
+                        <div class="trajeto">
+                            <div>
+                                <h3>São Miguel</h3>
+                                <small>Saída às 06:30</small>
+                            </div>
+                            <span class="icone icone-viajar-por" aria-hidden="true"></span>
+                            <div>
+                                <h3>Pau dos Ferros</h3>
+                                <small>Chegada às 07:40</small>
+                            </div>
+                        </div>
+                        <div class="linha">
+                            <small class="tipo-veiculo"><img class="icone-transporte" src="../assets/bus.png" alt="" aria-hidden="true">Van · 16 assentos</small>
+                            <strong class="preco">R$ 25,00<small>/ pessoa</small></strong>
+                        </div>
+                        <div class="ocupacao">
+                            <progress max="16" value="10" aria-label="10 de 16 ocupados"></progress>
+                            <small>10/16 ocupados</small>
+                        </div>
+                        <div class="linha final-card">
+                            <span class="selo neutro">Assentos numerados</span>
+                            <a href="#detalhe-viagem">Ver viagem</a>
+                        </div>
+                    </article>
+                    <div class="acoes-registro">
+                        <span class="selo neutro">Programada</span>
+                        <a href="#editar-viagem">Editar</a>
+                        <a class="perigo" href="#cancelar-viagem">Cancelar viagem</a>
+                        <a href="passagens.html#solicitar-confirmacao">Confirmar pelo WhatsApp</a>
+                    </div>
+                </div>
+                <div class="registro-viagem">
+
+                    <article class="cartao bloco viagem-card">
+                        <div class="linha">
+                            <span class="selo">4 vagas disponíveis</span>
+                            <small>13 de nov. · 05:00</small>
+                        </div>
+                        <div class="trajeto">
+                            <div>
+                                <h3>São Miguel</h3>
+                                <small>Saída às 05:00</small>
+                            </div>
+                            <span class="icone icone-viajar-por" aria-hidden="true"></span>
+                            <div>
+                                <h3>Mossoró</h3>
+                                <small>Chegada às 08:30</small>
+                            </div>
+                        </div>
+                        <div class="linha">
+                            <small class="tipo-veiculo"><img class="icone-transporte" src="../assets/bus.png" alt="" aria-hidden="true">Van · 6 assentos</small>
+                            <strong class="preco">R$ 75,00<small>/ pessoa</small></strong>
+                        </div>
+                        <div class="ocupacao">
+                            <progress max="6" value="2" aria-label="2 de 6 ocupados"></progress>
+                            <small>2/6 ocupados</small>
+                        </div>
+                        <div class="linha final-card">
+                            <span class="selo neutro">Assentos livres</span>
+                            <a href="#detalhe-viagem-livre">Ver viagem</a>
+                        </div>
+                    </article>
+                    <div class="acoes-registro">
+                        <span class="selo neutro">Programada</span>
+                        <a href="#editar-viagem">Editar</a>
+                        <a class="perigo" href="#cancelar-viagem">Cancelar viagem</a>
+                        <a href="passagens.html#solicitar-confirmacao">Confirmar pelo WhatsApp</a>
+                    </div>
+                </div>
+                <div class="registro-viagem">
+
+                    <article class="cartao bloco viagem-card">
+                        <div class="linha">
+                            <span class="selo">15 vagas disponíveis</span>
+                            <small>13 de nov. · 06:30</small>
+                        </div>
+                        <div class="trajeto">
+                            <div>
+                                <h3>São Miguel</h3>
+                                <small>Saída às 06:30</small>
+                            </div>
+                            <span class="icone icone-viajar-por" aria-hidden="true"></span>
+                            <div>
+                                <h3>Pau dos Ferros</h3>
+                                <small>Chegada às 07:40</small>
+                            </div>
+                        </div>
+                        <div class="linha">
+                            <small class="tipo-veiculo"><img class="icone-transporte" src="../assets/bus.png" alt="" aria-hidden="true">Van · 16 assentos</small>
+                            <strong class="preco">R$ 25,00<small>/ pessoa</small></strong>
+                        </div>
+                        <div class="ocupacao">
+                            <progress max="16" value="1" aria-label="1 de 16 ocupados"></progress>
+                            <small>1/16 ocupados</small>
+                        </div>
+                        <div class="linha final-card">
+                            <span class="selo neutro">Assentos numerados</span>
+                            <a href="#detalhe-viagem">Ver viagem</a>
+                        </div>
+                    </article>
+                    <div class="acoes-registro">
+                        <span class="selo neutro">Concluída</span>
+                        <a href="#editar-viagem">Editar</a>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="rodape-pagina">Rota Fácil • Cada motorista, seu próprio caminho.</footer>
+</main>
 
         <nav class="menu-inferior" aria-label="Navegação principal">
-            <a class="" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span><span>Início</span></a>
-            <a class="selecionado" aria-current="page" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span><span>Viagens</span></a>
-            <a class="" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span><span>Passagens</span></a>
-            <a class="" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span><span>Passageiros</span></a>
-            <a class="" href="#menu"><span class="icone" style="--icone:url(../assets/mais.png)" aria-hidden="true"></span><span>Mais</span></a>
+            <a class="" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span><span>Início</span></a>
+            <a class="selecionado" aria-current="page" href="viagens.html"><span class="icone icone-viajar-por" aria-hidden="true"></span><span>Viagens</span></a>
+            <a class="" href="passagens.html"><span class="icone icone-bilhete" aria-hidden="true"></span><span>Passagens</span></a>
+            <a class="" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span><span>Passageiros</span></a>
+            <a class="" href="#menu"><span class="icone icone-mais" aria-hidden="true"></span><span>Mais</span></a>
         </nav>
+
+        <section class="janela" id="nova-viagem" aria-label="Painel: nova viagem">
+            <a class="fundo-janela" href="viagens.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="nova-viagem-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="nova-viagem-titulo">Nova viagem</h2>
+                    </div>
+                    <a class="fechar-painel" href="viagens.html" aria-label="Fechar nova viagem">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label>
+                            Origem
+                            <input type="text" placeholder="São Miguel" name="origem">
+                        </label>
+                        <label>
+                            Destino
+                            <input type="text" placeholder="Pau dos Ferros" name="destino">
+                        </label>
+                        <label>
+                            Data de saída
+                            <input type="date" placeholder="" name="data-de-saida">
+                        </label>
+                        <label>
+                            Horário de saída
+                            <input type="time" placeholder="" name="horario-de-saida">
+                        </label>
+                        <label>
+                            Data de chegada
+                            <input type="date" placeholder="" name="data-de-chegada">
+                        </label>
+                        <label>
+                            Horário de chegada
+                            <input type="time" placeholder="" name="horario-de-chegada">
+                        </label>
+                        <label>
+                            Veículo
+                            <select name="veiculo">
+                                <option>Selecione o veículo</option>
+                                <option>Mercedes-Benz Sprinter · 16 assentos</option>
+                                <option>Van de viagens · 6 assentos</option>
+                            </select>
+                        </label>
+                        <label>
+                            Valor por passageiro (R$)
+                            <input type="number" placeholder="25,00" name="valor-por-passageiro-r">
+                        </label>
+                    </div>
+                    <div class="acoes">
+                        <a class="botao secundario" href="viagens.html">Voltar</a>
+                        <button class="botao" type="button" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar</button>
+                    </div>
+                </form>
+</section>
+        </section>
+
+        <section class="janela" id="editar-viagem" aria-label="Painel: editar viagem">
+            <a class="fundo-janela" href="viagens.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="editar-viagem-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="editar-viagem-titulo">Editar viagem</h2>
+                    </div>
+                    <a class="fechar-painel" href="viagens.html" aria-label="Fechar editar viagem">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label>
+                            Origem
+                            <input type="text" placeholder="São Miguel" name="origem">
+                        </label>
+                        <label>
+                            Destino
+                            <input type="text" placeholder="Pau dos Ferros" name="destino">
+                        </label>
+                        <label>
+                            Data de saída
+                            <input type="date" placeholder="" name="data-de-saida">
+                        </label>
+                        <label>
+                            Horário de saída
+                            <input type="time" placeholder="" name="horario-de-saida">
+                        </label>
+                        <label>
+                            Data de chegada
+                            <input type="date" placeholder="" name="data-de-chegada">
+                        </label>
+                        <label>
+                            Horário de chegada
+                            <input type="time" placeholder="" name="horario-de-chegada">
+                        </label>
+                        <label>
+                            Veículo
+                            <select name="veiculo">
+                                <option>Selecione o veículo</option>
+                                <option>Mercedes-Benz Sprinter · 16 assentos</option>
+                                <option>Van de viagens · 6 assentos</option>
+                            </select>
+                        </label>
+                        <label>
+                            Valor por passageiro (R$)
+                            <input type="number" placeholder="25,00" name="valor-por-passageiro-r">
+                        </label>
+                    </div>
+                    <div class="acoes">
+                        <a class="botao secundario" href="viagens.html">Voltar</a>
+                        <button class="botao" type="button" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar</button>
+                    </div>
+                </form>
+</section>
+        </section>
+
+        <section class="janela" id="detalhe-viagem-livre" aria-label="Detalhes da viagem com assentos livres">
+            <a class="fundo-janela" href="viagens.html" aria-label="Fechar painel"></a>
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="detalhe-viagem-livre-titulo" tabindex="-1">
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="detalhe-viagem-livre-titulo">Detalhes da viagem</h2>
+                    </div>
+                    <a class="fechar-painel" href="viagens.html" aria-label="Fechar detalhes da viagem">×</a>
+                </header>
+                <h2>São Miguel → Mossoró</h2>
+                <p class="texto-secundario">13/11/2026 • 05:00 → 08:30</p>
+                <dl class="resumo-detalhes">
+                    <div>
+                        <dt>Veículo</dt>
+                        <dd>Van de viagens · QGD-5A67</dd>
+                    </div>
+                    <div>
+                        <dt>Passagem</dt>
+                        <dd>R$ 75,00</dd>
+                    </div>
+                    <div>
+                        <dt>Disponíveis</dt>
+                        <dd>4 de 6 lugares</dd>
+                    </div>
+                    <div>
+                        <dt>Numeração</dt>
+                        <dd>Assentos livres</dd>
+                    </div>
+                </dl>
+                <div class="ocupacao">
+                    <progress max="6" value="2" aria-label="2 de 6 lugares ocupados"></progress>
+                    <small>2/6 ocupados</small>
+                </div>
+                <p class="nota">Esta viagem não tem assentos numerados. A passagem garante um lugar, respeitando a capacidade de 6 passageiros.</p>
+                <div class="acoes">
+                    <a class="botao secundario" href="viagens.html">Voltar</a>
+                    <a class="botao" href="passagens.html#vender-passagem-livre">Vender passagem</a>
+                </div>
+            </section>
+        </section>
+
+        <section class="janela" id="detalhe-viagem" aria-label="Painel: detalhe viagem">
+            <a class="fundo-janela" href="viagens.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="detalhe-viagem-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="detalhe-viagem-titulo">Detalhes da viagem</h2>
+                    </div>
+                    <a class="fechar-painel" href="viagens.html" aria-label="Fechar detalhes da viagem">×</a>
+                </header>
+                <h2>São Miguel → Pau dos Ferros</h2>
+                <p class="texto-secundario">13/11/2026 • 06:30 → 07:40</p>
+                <dl class="resumo-detalhes">
+                    <div>
+                        <dt>Veículo</dt>
+                        <dd>Mercedes-Benz Sprinter</dd>
+                    </div>
+                    <div>
+                        <dt>Passagem</dt>
+                        <dd>R$ 25,00</dd>
+                    </div>
+                    <div>
+                        <dt>Disponíveis</dt>
+                        <dd>6 de 16 lugares</dd>
+                    </div>
+                    <div>
+                        <dt>Numeração</dt>
+                        <dd>Assentos numerados</dd>
+                    </div>
+                </dl>
+
+                <fieldset class="campo-assentos">
+                    <legend class="sr-only">Mapa de assentos</legend>
+                    <p class="frente">FRENTE DO VEÍCULO</p>
+                    <div class="assentos">
+                        <span class="assento visual ocupado">01</span>
+                        <span class="assento visual ocupado">02</span>
+                        <span class="assento visual livre">03</span>
+                        <span class="assento visual ocupado">04</span>
+                        <span class="assento visual ocupado">05</span>
+                        <span class="assento visual livre">06</span>
+                        <span class="assento visual ocupado">07</span>
+                        <span class="assento visual ocupado">08</span>
+                        <span class="assento visual ocupado">09</span>
+                        <span class="assento visual livre">10</span>
+                        <span class="assento visual livre">11</span>
+                        <span class="assento visual ocupado">12</span>
+                        <span class="assento visual ocupado">13</span>
+                        <span class="assento visual livre">14</span>
+                        <span class="assento visual livre">15</span>
+                        <span class="assento visual ocupado">16</span>
+                    </div>
+                </fieldset>
+                <div class="legenda">
+                    <span><i class="livre"></i> Livre</span>
+                    <span><i class="ocupado"></i> Ocupado</span>
+                </div>
+                <div class="linha">
+                    <h2>Passageiros • 10</h2>
+                    <a href="passagens.html#solicitar-confirmacao">Confirmar pelo WhatsApp</a>
+                </div>
+                <div class="lista-passageiros">
+
+                    <article class="cartao bloco">
+                        <h3>Mariana Costa</h3>
+                        <p class="texto-secundario">Assento 1 • Fiado</p>
+                        <a href="passagens.html#editar-passagem">Editar passagem</a>
+                        <a class="link-comprovante" href="comprovante.html#V-001">Ver comprovante</a><a class="link-comprovante" href="../assets/comprovantes/passagem-V-001.pdf" download>Baixar PDF</a>
+                    </article>
+
+                    <article class="cartao bloco">
+                        <h3>João Almeida</h3>
+                        <p class="texto-secundario">Assento 2 • Pago</p>
+                        <a href="passagens.html#editar-passagem">Editar passagem</a>
+                        <a class="link-comprovante" href="comprovante.html#V-002">Ver comprovante</a><a class="link-comprovante" href="../assets/comprovantes/passagem-V-002.pdf" download>Baixar PDF</a>
+                    </article>
+
+                    <article class="cartao bloco">
+                        <h3>Fernanda Lima</h3>
+                        <p class="texto-secundario">Assento 4 • Pago parcialmente</p>
+                        <a href="passagens.html#editar-passagem">Editar passagem</a>
+                        <a class="link-comprovante" href="comprovante.html#V-003">Ver comprovante</a><a class="link-comprovante" href="../assets/comprovantes/passagem-V-003.pdf" download>Baixar PDF</a>
+                    </article>
+
+                    <article class="cartao bloco">
+                        <h3>Pedro Santos</h3>
+                        <p class="texto-secundario">Assento 5 • Fiado</p>
+                        <a href="passagens.html#editar-passagem">Editar passagem</a>
+                        <a class="link-comprovante" href="comprovante.html#V-004">Ver comprovante</a><a class="link-comprovante" href="../assets/comprovantes/passagem-V-004.pdf" download>Baixar PDF</a>
+                    </article>
+
+                    <article class="cartao bloco">
+                        <h3>Ana Paula</h3>
+                        <p class="texto-secundario">Assento 7 • Pago</p>
+                        <a href="passagens.html#editar-passagem">Editar passagem</a>
+                        <a class="link-comprovante" href="comprovante.html#V-005">Ver comprovante</a><a class="link-comprovante" href="../assets/comprovantes/passagem-V-005.pdf" download>Baixar PDF</a>
+                    </article>
+
+                    <article class="cartao bloco">
+                        <h3>Carlos Eduardo</h3>
+                        <p class="texto-secundario">Assento 8 • Pago</p>
+                        <a href="passagens.html#editar-passagem">Editar passagem</a>
+                        <a class="link-comprovante" href="comprovante.html#V-006">Ver comprovante</a><a class="link-comprovante" href="../assets/comprovantes/passagem-V-006.pdf" download>Baixar PDF</a>
+                    </article>
+
+                    <article class="cartao bloco">
+                        <h3>Luiza Alves</h3>
+                        <p class="texto-secundario">Assento 9 • Pago</p>
+                        <a href="passagens.html#editar-passagem">Editar passagem</a>
+                        <a class="link-comprovante" href="comprovante.html#V-007">Ver comprovante</a><a class="link-comprovante" href="../assets/comprovantes/passagem-V-007.pdf" download>Baixar PDF</a>
+                    </article>
+
+                    <article class="cartao bloco">
+                        <h3>José Silva</h3>
+                        <p class="texto-secundario">Assento 12 • Pago</p>
+                        <a href="passagens.html#editar-passagem">Editar passagem</a>
+                        <a class="link-comprovante" href="comprovante.html#V-008">Ver comprovante</a><a class="link-comprovante" href="../assets/comprovantes/passagem-V-008.pdf" download>Baixar PDF</a>
+                    </article>
+
+                    <article class="cartao bloco">
+                        <h3>Rita Souza</h3>
+                        <p class="texto-secundario">Assento 13 • Pago</p>
+                        <a href="passagens.html#editar-passagem">Editar passagem</a>
+                        <a class="link-comprovante" href="comprovante.html#V-009">Ver comprovante</a><a class="link-comprovante" href="../assets/comprovantes/passagem-V-009.pdf" download>Baixar PDF</a>
+                    </article>
+
+                    <article class="cartao bloco">
+                        <h3>Paulo Lima</h3>
+                        <p class="texto-secundario">Assento 16 • Fiado</p>
+                        <a href="passagens.html#editar-passagem">Editar passagem</a>
+                        <a class="link-comprovante" href="comprovante.html#V-010">Ver comprovante</a><a class="link-comprovante" href="../assets/comprovantes/passagem-V-010.pdf" download>Baixar PDF</a>
+                    </article>
+                </div>
+                <div class="acoes">
+                    <a class="botao secundario" href="#editar-viagem">Editar viagem</a>
+                    <a class="botao " href="passagens.html#vender-passagem">Vender passagem</a>
+                </div>
+</section>
+        </section>
+
+        <section class="janela" id="cancelar-viagem" aria-label="Painel: cancelar viagem">
+            <a class="fundo-janela" href="viagens.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="cancelar-viagem-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="cancelar-viagem-titulo">Cancelar viagem</h2>
+                    </div>
+                    <a class="fechar-painel" href="viagens.html" aria-label="Fechar cancelar viagem">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <p class="nota largura-total">São Miguel → Pau dos Ferros • 13/11/2026 • 06:30<br>O cancelamento afeta as passagens desta viagem. Confira os passageiros e os pagamentos antes de confirmar.</p>
+                        <label>
+                            Motivo do cancelamento
+                            <input type="text" value="" name="motivo-do-cancelamento">
+                        </label>
+                    </div>
+                    <div class="acoes">
+                        <a class="botao secundario" href="viagens.html">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Confirmar cancelamento</button>
+                    </div>
+                </form>
+</section>
+        </section>
     </div>
 </body>
 </html>

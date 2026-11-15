@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -7,26 +7,30 @@
     <title>Meus veículos • Rota Fácil</title>
     <link rel="icon" href="../assets/favicon-rota-facil.png">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/desktop.css">
 </head>
 
-<body>
+<body class="pagina-veiculos">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
     <div class="aplicativo">
+
         <aside id="menu" class="menu-lateral">
             <div class="topo-menu">
                 <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
                 <a class="botao-fechar" href="#" aria-label="Fechar menu">×</a>
             </div>
+
             <nav>
-                <a class="item-menu" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span>Início</a>
-                <a class="item-menu" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span>Minhas viagens</a>
-                <a class="item-menu ativo" aria-current="page" href="veiculos.html"><span class="icone" style="--icone:url(../assets/bus.png)" aria-hidden="true"></span>Meus veículos</a>
-                <a class="item-menu" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span>Passagens</a>
-                <a class="item-menu" href="encomendas.html"><span class="icone" style="--icone:url(../assets/encomendas.png)" aria-hidden="true"></span>Encomendas</a>
-                <a class="item-menu" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span>Passageiros</a>
-                <a class="item-menu" href="perfil.html"><span class="icone" style="--icone:url(../assets/do-utilizador.png)" aria-hidden="true"></span>Meu perfil</a>
-                <a class="item-menu" href="estatisticas.html"><span class="icone" style="--icone:url(../assets/grafico-de-negocios.png)" aria-hidden="true"></span>Estatísticas</a>
-                <a class="item-menu" href="relatorios.html"><span class="icone" style="--icone:url(../assets/relatorio-de-negocios-2.png)" aria-hidden="true"></span>Relatórios</a>
-                <a class="item-menu" href="backup.html"><span class="icone" style="--icone:url(../assets/armazenamento-de-banco-de-dados.png)" aria-hidden="true"></span>Cópia de segurança</a>
+                <a class="item-menu" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span>Início</a>
+                <a class="item-menu" href="viagens.html"><span class="icone icone-viajar-por" aria-hidden="true"></span>Minhas viagens</a>
+                <a class="item-menu ativo" aria-current="page" href="veiculos.html"><span class="icone icone-bus" aria-hidden="true"></span>Meus veículos</a>
+                <a class="item-menu" href="passagens.html"><span class="icone icone-bilhete" aria-hidden="true"></span>Passagens</a>
+                <a class="item-menu" href="encomendas.html"><span class="icone icone-encomendas" aria-hidden="true"></span>Encomendas</a>
+                <a class="item-menu" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span>Passageiros</a>
+                <a class="item-menu" href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
+                <a class="item-menu" href="estatisticas.html"><span class="icone icone-grafico-de-negocios" aria-hidden="true"></span>Estatísticas</a>
+                <a class="item-menu" href="relatorios.html"><span class="icone icone-relatorio-de-negocios-2" aria-hidden="true"></span>Relatórios</a>
+                <a class="item-menu" href="backup.html"><span class="icone icone-armazenamento-de-banco-de-dados" aria-hidden="true"></span>Cópia de segurança</a>
             </nav>
 
             <footer>
@@ -40,7 +44,6 @@
                 <a class="sair-conta" href="login.html">Sair da conta</a>
             </footer>
         </aside>
-
         <a class="fundo-sobreposicao" href="#" aria-label="Fechar menu"></a>
 
         <header class="barra-superior">
@@ -49,21 +52,206 @@
                 <small>Meu espaço</small>
                 <strong>Meus veículos</strong>
             </div>
-            <a class="avatar" href="perfil.html">MQ</a>
+
+            <details class="conta-cabecalho">
+                <summary class="avatar" aria-label="Abrir opções da conta de Miguel Queiroz">MQ</summary>
+
+                <nav class="menu-conta" aria-label="Opções da conta">
+                    <div class="identificacao-conta">
+                        <strong>Miguel Queiroz</strong>
+                        <small>Motorista independente</small>
+                    </div>
+                    <a href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
+                    <a class="sair-menu-conta" href="login.html"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 4H5v16h5M9 12h12m-4-4 4 4-4 4"></path></svg> Sair da conta</a>
+                </nav>
+            </details>
         </header>
 
-        <a href="#" class="mascara" aria-label="Fechar menu"></a>
+        <main id="conteudo">
+            <div class="titulo-pagina">
+                <div>
+                    <h1>Meus veículos</h1>
+                    <p class="introducao">Configure o transporte, a capacidade e a numeração dos assentos.</p>
+                </div>
+                <a class="botao " href="#novo-veiculo">+ Novo veículo</a>
+            </div>
+            <div class="lista-veiculos">
 
-        <main>
-        </main>
+                <article class="veiculo cartao">
+                <span class="selo disponibilidade">● Disponível</span>
+                <div class="veiculo-cabecalho">
+                    <span class="icone-veiculo"><span class="icone icone-bus" aria-hidden="true"></span></span>
+                    <div class="veiculo-dados">
+                        <small>VAN</small>
+                        <h3>Mercedes-Benz Sprinter</h3>
+                        <p>RGA-2B34</p>
+                    </div>
+                </div>
+
+                <div class="etiquetas">
+                    <span class="etiqueta"><span class="icone icone-cadeira-de-carro" aria-hidden="true"></span>16 assentos</span>
+                    <span class="etiqueta"><span class="icone icone-bilhete" aria-hidden="true"></span>Numerados</span>
+                </div>
+                <a class="editar" href="#editar-veiculo">Editar veículo</a>
+            </article>
+
+                <article class="veiculo cartao">
+                <span class="selo disponibilidade">● Disponível</span>
+                <div class="veiculo-cabecalho">
+                    <span class="icone-veiculo"><span class="icone icone-bus" aria-hidden="true"></span></span>
+                    <div class="veiculo-dados">
+                        <small>VAN</small>
+                        <h3>Van de viagens</h3>
+                        <p>QGD-5A67</p>
+                    </div>
+                </div>
+
+                <div class="etiquetas">
+                    <span class="etiqueta"><span class="icone icone-cadeira-de-carro" aria-hidden="true"></span>6 assentos</span>
+                    <span class="etiqueta"><span class="icone icone-bilhete" aria-hidden="true"></span>Livres</span>
+                </div>
+                <a class="editar" href="#editar-veiculo">Editar veículo</a>
+            </article>
+            </div>
+
+            <footer class="rodape-pagina">Rota Fácil • Cada motorista, seu próprio caminho.</footer>
+</main>
 
         <nav class="menu-inferior" aria-label="Navegação principal">
-            <a class="" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span><span>Início</span></a>
-            <a class="" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span><span>Viagens</span></a>
-            <a class="" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span><span>Passagens</span></a>
-            <a class="" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span><span>Passageiros</span></a>
-            <a class="selecionado" href="#menu"><span class="icone" style="--icone:url(../assets/mais.png)" aria-hidden="true"></span><span>Mais</span></a>
+            <a class="" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span><span>Início</span></a>
+            <a class="" href="viagens.html"><span class="icone icone-viajar-por" aria-hidden="true"></span><span>Viagens</span></a>
+            <a class="" href="passagens.html"><span class="icone icone-bilhete" aria-hidden="true"></span><span>Passagens</span></a>
+            <a class="" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span><span>Passageiros</span></a>
+            <a class="selecionado" href="#menu"><span class="icone icone-mais" aria-hidden="true"></span><span>Mais</span></a>
         </nav>
+
+        <section class="janela" id="novo-veiculo" aria-label="Painel: novo veiculo">
+            <a class="fundo-janela" href="veiculos.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="novo-veiculo-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="novo-veiculo-titulo">Cadastrar veículo</h2>
+                    </div>
+                    <a class="fechar-painel" href="veiculos.html" aria-label="Fechar cadastrar veículo">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label>
+                            Modelo
+                            <input type="text" value="" name="modelo">
+                        </label>
+                        <label>
+                            Tipo
+                            <select name="tipo">
+                                <option value="van">Van</option>
+                                <option value="onibus">Ônibus</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </label>
+                        <label class="tipo-transporte-outro">
+                            Especifique o tipo de transporte
+                            <input type="text" name="tipo-transporte-outro" placeholder="Ex.: micro-ônibus ou carro">
+                        </label>
+                        <label>
+                            Placa
+                            <input type="text" value="ABC1D23" name="placa">
+                        </label>
+                        <label>
+                            Capacidade de passageiros
+                            <input type="number" value="16" name="capacidade-de-passageiros">
+                        </label>
+                        <label>
+                            Situação
+                            <select name="situacao">
+                                <option>Disponível</option>
+                                <option>Em manutenção</option>
+                                <option>Indisponível</option>
+                            </select>
+                        </label>
+                        <label>
+                            Assentos
+                            <select name="assentos">
+                                <option>Numerados</option>
+                                <option>Livres</option>
+                            </select>
+                        </label>
+                        <p class="nota largura-total">A placa identifica o veículo. Somente veículos disponíveis podem receber novas viagens.</p>
+                    </div>
+                    <div class="acoes">
+                        <a class="botao secundario" href="veiculos.html">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar veículo</button>
+                    </div>
+                </form>
+</section>
+        </section>
+
+        <section class="janela" id="editar-veiculo" aria-label="Painel: editar veiculo">
+            <a class="fundo-janela" href="veiculos.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="editar-veiculo-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="editar-veiculo-titulo">Editar veículo</h2>
+                    </div>
+                    <a class="fechar-painel" href="veiculos.html" aria-label="Fechar editar veículo">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label>
+                            Modelo
+                            <input type="text" value="Mercedes-Benz Sprinter" name="modelo">
+                        </label>
+                        <label>
+                            Tipo
+                            <select name="tipo">
+                                <option value="van">Van</option>
+                                <option value="onibus">Ônibus</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </label>
+                        <label class="tipo-transporte-outro">
+                            Especifique o tipo de transporte
+                            <input type="text" name="tipo-transporte-outro" placeholder="Ex.: micro-ônibus ou carro">
+                        </label>
+                        <label>
+                            Placa
+                            <input type="text" value="ABC1D23" name="placa">
+                        </label>
+                        <label>
+                            Capacidade de passageiros
+                            <input type="number" value="16" name="capacidade-de-passageiros">
+                        </label>
+                        <label>
+                            Situação
+                            <select name="situacao">
+                                <option>Disponível</option>
+                                <option>Em manutenção</option>
+                                <option>Indisponível</option>
+                            </select>
+                        </label>
+                        <label>
+                            Assentos
+                            <select name="assentos">
+                                <option>Numerados</option>
+                                <option>Livres</option>
+                            </select>
+                        </label>
+                        <p class="nota largura-total">A placa identifica o veículo. Somente veículos disponíveis podem receber novas viagens.</p>
+                    </div>
+                    <div class="acoes">
+                        <a class="botao secundario" href="veiculos.html">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar veículo</button>
+                    </div>
+                </form>
+</section>
+        </section>
     </div>
 </body>
 </html>

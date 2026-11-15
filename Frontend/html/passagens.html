@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -7,26 +7,31 @@
     <title>Passagens • Rota Fácil</title>
     <link rel="icon" href="../assets/favicon-rota-facil.png">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/passagens.css">
+    <link rel="stylesheet" href="../css/desktop.css">
 </head>
 
-<body>
+<body class="pagina-passagens pagina-passagens">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
     <div class="aplicativo">
+
         <aside id="menu" class="menu-lateral">
             <div class="topo-menu">
                 <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
                 <a class="botao-fechar" href="#" aria-label="Fechar menu">×</a>
             </div>
+
             <nav>
-                <a class="item-menu" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span>Início</a>
-                <a class="item-menu" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span>Minhas viagens</a>
-                <a class="item-menu" href="veiculos.html"><span class="icone" style="--icone:url(../assets/bus.png)" aria-hidden="true"></span>Meus veículos</a>
-                <a class="item-menu ativo" aria-current="page" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span>Passagens</a>
-                <a class="item-menu" href="encomendas.html"><span class="icone" style="--icone:url(../assets/encomendas.png)" aria-hidden="true"></span>Encomendas</a>
-                <a class="item-menu" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span>Passageiros</a>
-                <a class="item-menu" href="perfil.html"><span class="icone" style="--icone:url(../assets/do-utilizador.png)" aria-hidden="true"></span>Meu perfil</a>
-                <a class="item-menu" href="estatisticas.html"><span class="icone" style="--icone:url(../assets/grafico-de-negocios.png)" aria-hidden="true"></span>Estatísticas</a>
-                <a class="item-menu" href="relatorios.html"><span class="icone" style="--icone:url(../assets/relatorio-de-negocios-2.png)" aria-hidden="true"></span>Relatórios</a>
-                <a class="item-menu" href="backup.html"><span class="icone" style="--icone:url(../assets/armazenamento-de-banco-de-dados.png)" aria-hidden="true"></span>Cópia de segurança</a>
+                <a class="item-menu" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span>Início</a>
+                <a class="item-menu" href="viagens.html"><span class="icone icone-viajar-por" aria-hidden="true"></span>Minhas viagens</a>
+                <a class="item-menu" href="veiculos.html"><span class="icone icone-bus" aria-hidden="true"></span>Meus veículos</a>
+                <a class="item-menu ativo" aria-current="page" href="passagens.html"><span class="icone icone-bilhete" aria-hidden="true"></span>Passagens</a>
+                <a class="item-menu" href="encomendas.html"><span class="icone icone-encomendas" aria-hidden="true"></span>Encomendas</a>
+                <a class="item-menu" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span>Passageiros</a>
+                <a class="item-menu" href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
+                <a class="item-menu" href="estatisticas.html"><span class="icone icone-grafico-de-negocios" aria-hidden="true"></span>Estatísticas</a>
+                <a class="item-menu" href="relatorios.html"><span class="icone icone-relatorio-de-negocios-2" aria-hidden="true"></span>Relatórios</a>
+                <a class="item-menu" href="backup.html"><span class="icone icone-armazenamento-de-banco-de-dados" aria-hidden="true"></span>Cópia de segurança</a>
             </nav>
 
             <footer>
@@ -40,7 +45,6 @@
                 <a class="sair-conta" href="login.html">Sair da conta</a>
             </footer>
         </aside>
-
         <a class="fundo-sobreposicao" href="#" aria-label="Fechar menu"></a>
 
         <header class="barra-superior">
@@ -49,21 +53,1179 @@
                 <small>Meu espaço</small>
                 <strong>Passagens</strong>
             </div>
-            <a class="avatar" href="perfil.html">MQ</a>
+
+            <details class="conta-cabecalho">
+                <summary class="avatar" aria-label="Abrir opções da conta de Miguel Queiroz">MQ</summary>
+
+                <nav class="menu-conta" aria-label="Opções da conta">
+                    <div class="identificacao-conta">
+                        <strong>Miguel Queiroz</strong>
+                        <small>Motorista independente</small>
+                    </div>
+                    <a href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
+                    <a class="sair-menu-conta" href="login.html"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 4H5v16h5M9 12h12m-4-4 4 4-4 4"></path></svg> Sair da conta</a>
+                </nav>
+            </details>
         </header>
 
-        <a href="#" class="mascara" aria-label="Fechar menu"></a>
+        <main id="conteudo">
+            <div class="titulo-pagina">
+                <div>
+                    <h1>Quem vai com você?</h1>
+                    <p class="introducao">Solicite a confirmação e organize as passagens da sua viagem.</p>
+                    <a class="link-lista-espera" href="#lista-espera">Ver lista de espera</a>
+                </div>
+                <a class="botao" href="#vender-passagem">+ Vender passagem</a>
+            </div>
 
-        <main>
+            <label class="escolha-viagem">
+                Viagem
+                <select name="viagem-confirmacao">
+                    <option>São Miguel → Pau dos Ferros · 13/11/2026 · 06:30</option>
+                    <option>São Miguel → Mossoró · 13/11/2026 · 05:00</option>
+                </select>
+            </label>
+
+            <section class="cartao resumo-confirmacao">
+                <span class="codigo-viagem">VIAGEM RF-001</span>
+                <div class="trajeto">
+                    <h2>São Miguel</h2>
+                    <span class="icone icone-viajar-por" aria-hidden="true"></span>
+                    <h2>Pau dos Ferros</h2>
+                </div>
+                <div class="informacoes-confirmacao">
+                    <span>13 nov. 2026</span>
+                    <span>Saída às 06:30</span>
+                    <span class="tipo-veiculo"><img class="icone-transporte" src="../assets/bus.png" alt="">Sprinter · 16 assentos</span>
+                </div>
+                <div class="rodape-confirmacao">
+                    <span class="estado-presenca confirmado">Viagem programada</span>
+                    <small>10 de 16 assentos ocupados · 6 livres</small>
+                </div>
+            </section>
+
+            <section class="contadores-confirmacao" aria-label="Resumo das confirmações">
+                <article class="cartao contador-confirmacao"><strong>10</strong><small>Passagens ativas</small></article>
+                <article class="cartao contador-confirmacao confirmado"><strong>3</strong><small>Confirmados</small></article>
+                <article class="cartao contador-confirmacao aguardando"><strong>7</strong><small>Aguardando resposta</small></article>
+                <article class="cartao contador-confirmacao cancelado"><strong>1</strong><small>Cancelado</small></article>
+            </section>
+
+            <section class="cartao solicitar-confirmacao">
+                <h2>Confirme antes de partir</h2>
+                <p>Prepare uma mensagem para cada passageiro e acompanhe quem confirmou presença.</p>
+                <a class="botao" href="#solicitar-confirmacao">Solicitar confirmação pelo WhatsApp</a>
+                <p class="orientacao-confirmacao">Sem resposta? A passagem continua ativa e o assento permanece reservado.</p>
+            </section>
+
+            <section class="cartao lista-confirmacoes">
+                <header>
+                    <h2>Lista de passageiros</h2>
+                    <p>Registre aqui as respostas recebidas no WhatsApp.</p>
+                    <label class="sr-only" for="buscar-presenca">Buscar passageiro ou assento</label>
+                    <input id="buscar-presenca" type="search" placeholder="Buscar passageiro ou assento">
+                    <div class="abas-presenca" aria-label="Situação dos passageiros">
+                        <button class="ativa" type="button" disabled>Todos</button>
+                        <button type="button" disabled>Aguardando</button>
+                        <button type="button" disabled>Confirmados</button>
+                        <button type="button" disabled>Cancelados</button>
+                    </div>
+                </header>
+                <article class="registro-presenca">
+                    <span class="avatar">AP</span>
+                    <div class="dados-presenca">
+                        <div class="topo-presenca">
+                            <h3>Ana Paula Oliveira</h3>
+                            <span class="estado-presenca confirmado">Confirmado</span>
+                        </div>
+                        <p>Assento 01 · Pago</p>
+                        <div class="botoes-presenca"><a class="acao-presenca" href="comprovante.html#P-001">Ver comprovante</a><a class="acao-presenca" href="#editar-passagem">Editar</a><button class="acao-presenca " type="button" disabled>Desfazer confirmação</button><a class="acao-presenca negativa" href="#cancelar-passagem">Cancelar passagem</a></div>
+        
+                    </div>
+                </article>
+
+                <article class="registro-presenca">
+                    <span class="avatar">CE</span>
+                    <div class="dados-presenca">
+                        <div class="topo-presenca">
+                            <h3>Carlos Eduardo Lima</h3>
+                            <span class="estado-presenca aguardando">Aguardando</span>
+                        </div>
+                        <p>Assento 02 · Pago</p>
+                        <div class="botoes-presenca"><a class="acao-presenca" href="comprovante.html#P-002">Ver comprovante</a><a class="acao-presenca" href="#editar-passagem">Editar</a><button class="acao-presenca positiva" type="button" disabled>✓ Confirmar</button><a class="acao-presenca negativa" href="#cancelar-passagem">Cancelar passagem</a></div>
+        
+                    </div>
+                </article>
+
+                <article class="registro-presenca">
+                    <span class="avatar">MF</span>
+                    <div class="dados-presenca">
+                        <div class="topo-presenca">
+                            <h3>Mariana Fernandes</h3>
+                            <span class="estado-presenca aguardando">Aguardando</span>
+                        </div>
+                        <p>Assento 03 · A receber</p>
+                        <div class="botoes-presenca"><a class="acao-presenca" href="comprovante.html#P-003">Ver comprovante</a><a class="acao-presenca" href="#editar-passagem">Editar</a><a class="acao-presenca receber-passagem" href="#pagamento">Receber</a><button class="acao-presenca positiva" type="button" disabled>✓ Confirmar</button><a class="acao-presenca negativa" href="#cancelar-passagem">Cancelar passagem</a></div>
+        
+                    </div>
+                </article>
+
+                <article class="registro-presenca">
+                    <span class="avatar">JR</span>
+                    <div class="dados-presenca">
+                        <div class="topo-presenca">
+                            <h3>José Ricardo Alves</h3>
+                            <span class="estado-presenca confirmado">Confirmado</span>
+                        </div>
+                        <p>Assento 04 · Pago</p>
+                        <div class="botoes-presenca"><a class="acao-presenca" href="comprovante.html#P-004">Ver comprovante</a><a class="acao-presenca" href="#editar-passagem">Editar</a><button class="acao-presenca " type="button" disabled>Desfazer confirmação</button><a class="acao-presenca negativa" href="#cancelar-passagem">Cancelar passagem</a></div>
+        
+                    </div>
+                </article>
+
+                <article class="registro-presenca">
+                    <span class="avatar">BC</span>
+                    <div class="dados-presenca">
+                        <div class="topo-presenca">
+                            <h3>Beatriz Costa</h3>
+                            <span class="estado-presenca aguardando">Aguardando</span>
+                        </div>
+                        <p>Assento 05 · A receber</p>
+                        <div class="botoes-presenca"><a class="acao-presenca" href="comprovante.html#P-005">Ver comprovante</a><a class="acao-presenca" href="#editar-passagem">Editar</a><a class="acao-presenca receber-passagem" href="#pagamento-P-005">Receber</a><button class="acao-presenca positiva" type="button" disabled>✓ Confirmar</button><a class="acao-presenca negativa" href="#cancelar-passagem">Cancelar passagem</a></div>
+        
+                    </div>
+                </article>
+
+                <article class="registro-presenca">
+                    <span class="avatar">LG</span>
+                    <div class="dados-presenca">
+                        <div class="topo-presenca">
+                            <h3>Lucas Gabriel Santos</h3>
+                            <span class="estado-presenca aguardando">Aguardando</span>
+                        </div>
+                        <p>Assento 06 · A receber</p>
+                        <div class="botoes-presenca"><a class="acao-presenca" href="comprovante.html#P-006">Ver comprovante</a><a class="acao-presenca" href="#editar-passagem">Editar</a><a class="acao-presenca receber-passagem" href="#pagamento-P-006">Receber</a><button class="acao-presenca positiva" type="button" disabled>✓ Confirmar</button><a class="acao-presenca negativa" href="#cancelar-passagem">Cancelar passagem</a></div>
+                        <small>WhatsApp não informado</small>
+                    </div>
+                </article>
+
+                <article class="registro-presenca">
+                    <span class="avatar">FS</span>
+                    <div class="dados-presenca">
+                        <div class="topo-presenca">
+                            <h3>Fernanda Souza</h3>
+                            <span class="estado-presenca confirmado">Confirmado</span>
+                        </div>
+                        <p>Assento 07 · Pago</p>
+                        <div class="botoes-presenca"><a class="acao-presenca" href="comprovante.html#P-007">Ver comprovante</a><a class="acao-presenca" href="#editar-passagem">Editar</a><button class="acao-presenca " type="button" disabled>Desfazer confirmação</button><a class="acao-presenca negativa" href="#cancelar-passagem">Cancelar passagem</a></div>
+        
+                    </div>
+                </article>
+
+                <article class="registro-presenca">
+                    <span class="avatar">PS</span>
+                    <div class="dados-presenca">
+                        <div class="topo-presenca">
+                            <h3>Pedro Santos</h3>
+                            <span class="estado-presenca aguardando">Aguardando</span>
+                        </div>
+                        <p>Assento 08 · A receber</p>
+                        <div class="botoes-presenca"><a class="acao-presenca" href="comprovante.html#P-008">Ver comprovante</a><a class="acao-presenca" href="#editar-passagem">Editar</a><a class="acao-presenca receber-passagem" href="#pagamento-P-008">Receber</a><button class="acao-presenca positiva" type="button" disabled>✓ Confirmar</button><a class="acao-presenca negativa" href="#cancelar-passagem">Cancelar passagem</a></div>
+        
+                    </div>
+                </article>
+
+                <article class="registro-presenca">
+                    <span class="avatar">LA</span>
+                    <div class="dados-presenca">
+                        <div class="topo-presenca">
+                            <h3>Luiza Alves</h3>
+                            <span class="estado-presenca aguardando">Aguardando</span>
+                        </div>
+                        <p>Assento 09 · Pago</p>
+                        <div class="botoes-presenca"><a class="acao-presenca" href="comprovante.html#P-009">Ver comprovante</a><a class="acao-presenca" href="#editar-passagem">Editar</a><button class="acao-presenca positiva" type="button" disabled>✓ Confirmar</button><a class="acao-presenca negativa" href="#cancelar-passagem">Cancelar passagem</a></div>
+        
+                    </div>
+                </article>
+
+                <article class="registro-presenca">
+                    <span class="avatar">JA</span>
+                    <div class="dados-presenca">
+                        <div class="topo-presenca">
+                            <h3>João Almeida</h3>
+                            <span class="estado-presenca aguardando">Aguardando</span>
+                        </div>
+                        <p>Assento 10 · Pago</p>
+                        <div class="botoes-presenca"><a class="acao-presenca" href="comprovante.html#P-010">Ver comprovante</a><a class="acao-presenca" href="#editar-passagem">Editar</a><button class="acao-presenca positiva" type="button" disabled>✓ Confirmar</button><a class="acao-presenca negativa" href="#cancelar-passagem">Cancelar passagem</a></div>
+        
+                    </div>
+                </article>
+
+                <article class="registro-presenca">
+                    <span class="avatar">RS</span>
+                    <div class="dados-presenca">
+                        <div class="topo-presenca">
+                            <h3>Rita Souza</h3>
+                            <span class="estado-presenca cancelado">Cancelado</span>
+                        </div>
+                        <p>Assento 11 · A receber</p>
+                        <div class="botoes-presenca"><span class="assento-liberado">Assento liberado</span></div>
+        
+                    </div>
+                </article>
+            </section>
+            
+            <section class="cartao lista-espera" id="lista-espera" aria-labelledby="titulo-lista-espera">
+                <header class="cabecalho-espera">
+                    <div>
+                        <h2 id="titulo-lista-espera">Lista de espera <span class="quantidade-espera">3</span></h2>
+                        <p>Pessoas que aguardam uma vaga nesta viagem, por ordem de entrada.</p>
+                    </div>
+                    <a class="botao" href="#cadastrar-espera">+ Adicionar à espera</a>
+                </header>
+
+                <p class="regra-espera">A lista de espera não ocupa assentos. Quando uma vaga for liberada, consulte o interesse do próximo passageiro antes de registrar a passagem.</p>
+
+                <ol class="fila-espera">
+                    <li>
+                        <span class="posicao-espera">1º</span>
+                        <div class="pessoa-espera">
+                            <div class="topo-presenca"><h3>Camila Souza</h3><span class="estado-presenca contato-realizado">Contato realizado</span></div>
+                            <p>Primeira da fila · Aguardando resposta no WhatsApp</p>
+                            <div class="botoes-presenca">
+                                <a class="acao-presenca positiva" href="#consultar-espera">Consultar interesse</a>
+                                <a class="acao-presenca" href="#atualizar-espera">Atualizar situação</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="posicao-espera">2º</span>
+                        <div class="pessoa-espera">
+                            <div class="topo-presenca"><h3>Paulo Henrique</h3><span class="estado-presenca aguardando">Aguardando vaga</span></div>
+                            <p>WhatsApp cadastrado · Próximo após Camila</p>
+                            <div class="botoes-presenca">
+                                <a class="acao-presenca positiva" href="#consultar-espera">Consultar interesse</a>
+                                <a class="acao-presenca" href="#atualizar-espera">Atualizar situação</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="posicao-espera">3º</span>
+                        <div class="pessoa-espera">
+                            <div class="topo-presenca"><h3>Rosa Maria</h3><span class="estado-presenca aguardando">Aguardando vaga</span></div>
+                            <p>WhatsApp cadastrado · Próxima após Paulo</p>
+                            <div class="botoes-presenca">
+                                <a class="acao-presenca positiva" href="#consultar-espera">Consultar interesse</a>
+                                <a class="acao-presenca" href="#atualizar-espera">Atualizar situação</a>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+
+                <footer class="rodape-espera">
+                    <p>Confirmou que ainda quer ir? Registre a passagem em um assento livre.</p>
+                    <a href="#converter-espera">Registrar passagem da lista de espera →</a>
+                </footer>
+            </section>
+
+            <footer class="rodape-pagina">Rota Fácil • Cada motorista, seu próprio caminho.</footer>
         </main>
 
         <nav class="menu-inferior" aria-label="Navegação principal">
-            <a class="" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span><span>Início</span></a>
-            <a class="" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span><span>Viagens</span></a>
-            <a class="selecionado" aria-current="page" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span><span>Passagens</span></a>
-            <a class="" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span><span>Passageiros</span></a>
-            <a class="" href="#menu"><span class="icone" style="--icone:url(../assets/mais.png)" aria-hidden="true"></span><span>Mais</span></a>
+            <a class="" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span><span>Início</span></a>
+            <a class="" href="viagens.html"><span class="icone icone-viajar-por" aria-hidden="true"></span><span>Viagens</span></a>
+            <a class="selecionado" aria-current="page" href="passagens.html"><span class="icone icone-bilhete" aria-hidden="true"></span><span>Passagens</span></a>
+            <a class="" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span><span>Passageiros</span></a>
+            <a class="" href="#menu"><span class="icone icone-mais" aria-hidden="true"></span><span>Mais</span></a>
         </nav>
+
+        <section class="janela" id="vender-passagem" aria-label="Painel: vender passagem">
+            <a class="fundo-janela" href="passagens.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="vender-passagem-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="vender-passagem-titulo">Registrar venda de passagem</h2>
+                    </div>
+                    <a class="fechar-painel" href="passagens.html" aria-label="Fechar registrar venda de passagem">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label class="largura-total">
+                            Cliente
+                            <select name="cliente">
+                                <option>Selecione o cliente</option>
+                                <option>Mariana Costa</option>
+                                <option>João Almeida</option>
+                                <option>Fernanda Lima</option>
+                            </select>
+                        </label>
+                        <a class="link-cadastro largura-total" href="clientes.html#novo-cliente">+ Cadastrar passageiro</a>
+                        <label class="largura-total">
+                            Viagem
+                            <select name="viagem">
+                                <option>São Miguel → Pau dos Ferros • 13/11/2026 • 06:30</option>
+                                <option>São Miguel → Mossoró • 13/11/2026 • 05:00</option>
+                            </select>
+                        </label>
+                        <div class="largura-total">
+
+                            <fieldset class="campo-assentos">
+                                <legend class="sr-only">Mapa de assentos</legend>
+                                <p class="frente">FRENTE DO VEÍCULO</p>
+                                <div class="assentos">
+                                    <label class="assento">
+                                        <input aria-label="Assento 01" type="radio" name="assento" value="1" disabled>
+                                        <span>01</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 02" type="radio" name="assento" value="2" disabled>
+                                        <span>02</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 03" type="radio" name="assento" value="3" checked>
+                                        <span>03</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 04" type="radio" name="assento" value="4" disabled>
+                                        <span>04</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 05" type="radio" name="assento" value="5" disabled>
+                                        <span>05</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 06" type="radio" name="assento" value="6">
+                                        <span>06</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 07" type="radio" name="assento" value="7" disabled>
+                                        <span>07</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 08" type="radio" name="assento" value="8" disabled>
+                                        <span>08</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 09" type="radio" name="assento" value="9" disabled>
+                                        <span>09</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 10" type="radio" name="assento" value="10">
+                                        <span>10</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 11" type="radio" name="assento" value="11">
+                                        <span>11</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 12" type="radio" name="assento" value="12" disabled>
+                                        <span>12</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 13" type="radio" name="assento" value="13" disabled>
+                                        <span>13</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 14" type="radio" name="assento" value="14">
+                                        <span>14</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 15" type="radio" name="assento" value="15">
+                                        <span>15</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 16" type="radio" name="assento" value="16" disabled>
+                                        <span>16</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <div class="legenda">
+                                <span><i class="livre"></i> Livre</span>
+                                <span><i class="ocupado"></i> Ocupado</span>
+                                <span><i class="selecionado"></i> Selecionado</span>
+                            </div>
+                        </div>
+                        <label>
+                            Valor da passagem (R$)
+                            <input type="number" value="25" name="valor-da-passagem-r">
+                        </label>
+                        <label class="forma-pagamento-principal">
+                            Forma de pagamento
+                            <select name="forma-de-pagamento">
+                                <option>Dinheiro</option>
+                                <option>Pix</option>
+                                <option>Cartão</option>
+                                <option>Transferência</option>
+                            </select>
+                        </label>
+                        <label>
+                            Situação do pagamento
+                            <select name="situacao-do-pagamento">
+                                <option>Fiado • ainda não recebido</option>
+                                <option>Pago</option>
+                                <option value="parcial">Pago parcialmente</option>
+                            </select>
+                        </label>
+                        <div class="valor-parcial largura-total">
+                            <div class="campos-valor-parcial">
+                                <label>
+                                    Valor já recebido (R$)
+                                    <input type="number" name="valor-ja-recebido" min="0" step="0.01" placeholder="Ex.: 10,00">
+                                </label>
+                                <label>
+                                    Forma de pagamento da entrada
+                                    <select name="forma-pagamento-parcial">
+                                        <option>Pix</option>
+                                        <option>Dinheiro</option>
+                                        <option>Cartão</option>
+                                        <option>Transferência</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <small>Informe o total já recebido e como foi pago. O restante fica a receber.</small>
+                        </div>
+                    </div>
+                    <div class="acoes">
+                        <a class="botao secundario" href="passagens.html">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Registrar passagem</button>
+                    </div>
+                </form>
+</section>
+        </section>
+
+        <section class="janela" id="vender-passagem-livre" aria-label="Painel: vender passagem">
+            <a class="fundo-janela" href="passagens.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="vender-passagem-livre-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="vender-passagem-livre-titulo">Registrar venda de passagem</h2>
+                    </div>
+                    <a class="fechar-painel" href="passagens.html" aria-label="Fechar registrar venda de passagem">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label class="largura-total">
+                            Cliente
+                            <select name="cliente">
+                                <option>Selecione o cliente</option>
+                                <option>Mariana Costa</option>
+                                <option>João Almeida</option>
+                                <option>Fernanda Lima</option>
+                            </select>
+                        </label>
+                        <a class="link-cadastro largura-total" href="clientes.html#novo-cliente">+ Cadastrar passageiro</a>
+                        <label class="largura-total">
+                            Viagem
+                            <select name="viagem">
+                                <option>São Miguel → Mossoró • 13/11/2026 • 05:00</option>
+                            </select>
+                        </label>
+                        <p class="nota largura-total">Assentos livres: 4 vagas disponíveis de 6 lugares. Não é necessário escolher um número de assento.</p>
+                        <label>
+                            Valor da passagem (R$)
+                            <input type="number" value="75" name="valor-da-passagem-r">
+                        </label>
+                        <label class="forma-pagamento-principal">
+                            Forma de pagamento
+                            <select name="forma-de-pagamento">
+                                <option>Dinheiro</option>
+                                <option>Pix</option>
+                                <option>Cartão</option>
+                                <option>Transferência</option>
+                            </select>
+                        </label>
+                        <label>
+                            Situação do pagamento
+                            <select name="situacao-do-pagamento">
+                                <option>Fiado • ainda não recebido</option>
+                                <option>Pago</option>
+                                <option value="parcial">Pago parcialmente</option>
+                            </select>
+                        </label>
+                        <div class="valor-parcial largura-total">
+                            <div class="campos-valor-parcial">
+                                <label>
+                                    Valor já recebido (R$)
+                                    <input type="number" name="valor-ja-recebido" min="0" step="0.01" placeholder="Ex.: 10,00">
+                                </label>
+                                <label>
+                                    Forma de pagamento da entrada
+                                    <select name="forma-pagamento-parcial">
+                                        <option>Pix</option>
+                                        <option>Dinheiro</option>
+                                        <option>Cartão</option>
+                                        <option>Transferência</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <small>Informe o total já recebido e como foi pago. O restante fica a receber.</small>
+                        </div>
+                    </div>
+                    <div class="acoes">
+                        <a class="botao secundario" href="passagens.html">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Registrar passagem</button>
+                    </div>
+                </form>
+</section>
+        </section>
+
+        <section class="janela" id="editar-passagem" aria-label="Painel: editar passagem">
+            <a class="fundo-janela" href="passagens.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="editar-passagem-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="editar-passagem-titulo">Editar passagem</h2>
+                    </div>
+                    <a class="fechar-painel" href="viagens.html#detalhe-viagem" aria-label="Fechar editar passagem">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label class="largura-total">
+                            Cliente
+                            <select name="cliente">
+                                <option>Ana Paula Oliveira</option>
+                                <option>Carlos Eduardo Lima</option>
+                                <option>Mariana Fernandes</option>
+                                <option>José Ricardo Alves</option>
+                                <option>Beatriz Costa</option>
+                                <option>Lucas Gabriel Santos</option>
+                                <option>Fernanda Souza</option>
+                                <option>Pedro Santos</option>
+                                <option>Luiza Alves</option>
+                                <option>João Almeida</option>
+                            </select>
+                        </label>
+                        <a class="link-cadastro largura-total" href="clientes.html#novo-cliente">+ Cadastrar passageiro</a>
+                        <label class="largura-total">
+                            Viagem
+                            <select name="viagem">
+                                <option>São Miguel → Pau dos Ferros • 13/11/2026 • 06:30</option>
+                                <option>São Miguel → Mossoró • 13/11/2026 • 05:00</option>
+                            </select>
+                        </label>
+                        <div class="largura-total">
+
+                            <fieldset class="campo-assentos">
+                                <legend class="sr-only">Mapa de assentos</legend>
+                                <p class="frente">FRENTE DO VEÍCULO</p>
+                                <div class="assentos">
+                                    <label class="assento">
+                                        <input aria-label="Assento 01" type="radio" name="assento" value="1" disabled>
+                                        <span>01</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 02" type="radio" name="assento" value="2" disabled>
+                                        <span>02</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 03" type="radio" name="assento" value="3" checked>
+                                        <span>03</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 04" type="radio" name="assento" value="4" disabled>
+                                        <span>04</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 05" type="radio" name="assento" value="5" disabled>
+                                        <span>05</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 06" type="radio" name="assento" value="6">
+                                        <span>06</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 07" type="radio" name="assento" value="7" disabled>
+                                        <span>07</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 08" type="radio" name="assento" value="8" disabled>
+                                        <span>08</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 09" type="radio" name="assento" value="9" disabled>
+                                        <span>09</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 10" type="radio" name="assento" value="10">
+                                        <span>10</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 11" type="radio" name="assento" value="11">
+                                        <span>11</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 12" type="radio" name="assento" value="12" disabled>
+                                        <span>12</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 13" type="radio" name="assento" value="13" disabled>
+                                        <span>13</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 14" type="radio" name="assento" value="14">
+                                        <span>14</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 15" type="radio" name="assento" value="15">
+                                        <span>15</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 16" type="radio" name="assento" value="16" disabled>
+                                        <span>16</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <div class="legenda">
+                                <span><i class="livre"></i> Livre</span>
+                                <span><i class="ocupado"></i> Ocupado</span>
+                                <span><i class="selecionado"></i> Selecionado</span>
+                            </div>
+                        </div>
+                        <label>
+                            Valor da passagem (R$)
+                            <input type="number" value="25" name="valor-da-passagem-r">
+                        </label>
+                        <label class="forma-pagamento-principal">
+                            Forma de pagamento
+                            <select name="forma-de-pagamento">
+                                <option>Dinheiro</option>
+                                <option>Pix</option>
+                                <option>Cartão</option>
+                                <option>Transferência</option>
+                            </select>
+                        </label>
+                        <label>
+                            Situação do pagamento
+                            <select name="situacao-do-pagamento">
+                                <option>Fiado • ainda não recebido</option>
+                                <option>Pago</option>
+                                <option value="parcial">Pago parcialmente</option>
+                            </select>
+                        </label>
+                        <div class="valor-parcial largura-total">
+                            <div class="campos-valor-parcial">
+                                <label>
+                                    Valor já recebido (R$)
+                                    <input type="number" name="valor-ja-recebido" min="0" step="0.01" placeholder="Ex.: 10,00">
+                                </label>
+                                <label>
+                                    Forma de pagamento da entrada
+                                    <select name="forma-pagamento-parcial">
+                                        <option>Pix</option>
+                                        <option>Dinheiro</option>
+                                        <option>Cartão</option>
+                                        <option>Transferência</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <small>Informe o total já recebido e como foi pago. O restante fica a receber.</small>
+                        </div>
+                    </div>
+                    <div class="acoes">
+                        <a class="botao secundario" href="passagens.html">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar alterações</button>
+                    </div>
+                </form>
+</section>
+        </section>
+
+        <section class="janela pagamento-passagem" id="pagamento" aria-label="Painel: pagamento">
+            <a class="fundo-janela" href="passagens.html" aria-label="Fechar painel"></a>
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="pagamento-titulo" tabindex="-1">
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="pagamento-titulo">Registrar pagamento</h2>
+                    </div>
+                    <a class="fechar-painel" href="passagens.html" aria-label="Fechar registrar pagamento">×</a>
+                </header>
+                <form class="formulario" method="post">
+                    <section class="resumo-recebimento" aria-label="Saldo da passagem">
+                        <p>Mariana Fernandes · Passagem · Assento 03</p>
+                        <strong>R$ 25,00</strong>
+                        <small>Saldo a receber</small>
+                    </section>
+                    <div class="grade-formulario">
+                        <label class="largura-total">
+                            Forma de pagamento
+                            <select name="forma-recebimento">
+                                <option value="pix">Pix</option>
+                                <option value="dinheiro">Dinheiro</option>
+                                <option value="cartao">Cartão</option>
+                                <option value="transferencia">Transferência</option>
+                            </select>
+                        </label>
+                        <label class="largura-total">
+                            Valor a pagar agora (R$)
+                            <input type="number" name="valor-recebido-r" min="0.01" max="25" step="0.01" value="25" required>
+                        </label>
+                        <div class="campos-dinheiro largura-total">
+                            <label>
+                                Valor entregue em dinheiro (R$)
+                                <input type="number" name="valor-entregue" min="0" step="0.01" placeholder="Ex.: 50,00">
+                            </label>
+                            <label>
+                                Troco a devolver (R$)
+                                <input type="number" name="troco-devolver" min="0" step="0.01" placeholder="0,00">
+                            </label>
+                        </div>
+                    </div>
+                    <p class="nota">Você pode receber apenas parte do saldo: informe o valor pago agora. O restante continua a receber. Este registro não realiza cobranças por Pix, cartão ou transferência.</p>
+                    <div class="acoes">
+                        <a class="botao secundario" href="passagens.html">Cancelar</a>
+                        <button class="botao" type="button" disabled title="O registro do pagamento depende da integração com os dados." aria-disabled="true">Confirmar pagamento</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="janela pagamento-passagem" id="pagamento-P-005" aria-label="Painel: pagamento">
+            <a class="fundo-janela" href="passagens.html" aria-label="Fechar painel"></a>
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="pagamento-P-005-titulo" tabindex="-1">
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="pagamento-P-005-titulo">Registrar pagamento</h2>
+                    </div>
+                    <a class="fechar-painel" href="passagens.html" aria-label="Fechar registrar pagamento">×</a>
+                </header>
+                <form class="formulario" method="post">
+                    <section class="resumo-recebimento" aria-label="Saldo da passagem">
+                        <p>Beatriz Costa · Passagem · Assento 05</p>
+                        <strong>R$ 25,00</strong>
+                        <small>Saldo a receber</small>
+                    </section>
+                    <div class="grade-formulario">
+                        <label class="largura-total">
+                            Forma de pagamento
+                            <select name="forma-recebimento">
+                                <option value="pix">Pix</option>
+                                <option value="dinheiro">Dinheiro</option>
+                                <option value="cartao">Cartão</option>
+                                <option value="transferencia">Transferência</option>
+                            </select>
+                        </label>
+                        <label class="largura-total">
+                            Valor a pagar agora (R$)
+                            <input type="number" name="valor-recebido-r" min="0.01" max="25" step="0.01" value="25" required>
+                        </label>
+                        <div class="campos-dinheiro largura-total">
+                            <label>
+                                Valor entregue em dinheiro (R$)
+                                <input type="number" name="valor-entregue" min="0" step="0.01" placeholder="Ex.: 50,00">
+                            </label>
+                            <label>
+                                Troco a devolver (R$)
+                                <input type="number" name="troco-devolver" min="0" step="0.01" placeholder="0,00">
+                            </label>
+                        </div>
+                    </div>
+                    <p class="nota">Você pode receber apenas parte do saldo: informe o valor pago agora. O restante continua a receber. Este registro não realiza cobranças por Pix, cartão ou transferência.</p>
+                    <div class="acoes">
+                        <a class="botao secundario" href="passagens.html">Cancelar</a>
+                        <button class="botao" type="button" disabled title="O registro do pagamento depende da integração com os dados." aria-disabled="true">Confirmar pagamento</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="janela pagamento-passagem" id="pagamento-P-006" aria-label="Painel: pagamento">
+            <a class="fundo-janela" href="passagens.html" aria-label="Fechar painel"></a>
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="pagamento-P-006-titulo" tabindex="-1">
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="pagamento-P-006-titulo">Registrar pagamento</h2>
+                    </div>
+                    <a class="fechar-painel" href="passagens.html" aria-label="Fechar registrar pagamento">×</a>
+                </header>
+                <form class="formulario" method="post">
+                    <section class="resumo-recebimento" aria-label="Saldo da passagem">
+                        <p>Lucas Gabriel Santos · Passagem · Assento 06</p>
+                        <strong>R$ 25,00</strong>
+                        <small>Saldo a receber</small>
+                    </section>
+                    <div class="grade-formulario">
+                        <label class="largura-total">
+                            Forma de pagamento
+                            <select name="forma-recebimento">
+                                <option value="pix">Pix</option>
+                                <option value="dinheiro">Dinheiro</option>
+                                <option value="cartao">Cartão</option>
+                                <option value="transferencia">Transferência</option>
+                            </select>
+                        </label>
+                        <label class="largura-total">
+                            Valor a pagar agora (R$)
+                            <input type="number" name="valor-recebido-r" min="0.01" max="25" step="0.01" value="25" required>
+                        </label>
+                        <div class="campos-dinheiro largura-total">
+                            <label>
+                                Valor entregue em dinheiro (R$)
+                                <input type="number" name="valor-entregue" min="0" step="0.01" placeholder="Ex.: 50,00">
+                            </label>
+                            <label>
+                                Troco a devolver (R$)
+                                <input type="number" name="troco-devolver" min="0" step="0.01" placeholder="0,00">
+                            </label>
+                        </div>
+                    </div>
+                    <p class="nota">Você pode receber apenas parte do saldo: informe o valor pago agora. O restante continua a receber. Este registro não realiza cobranças por Pix, cartão ou transferência.</p>
+                    <div class="acoes">
+                        <a class="botao secundario" href="passagens.html">Cancelar</a>
+                        <button class="botao" type="button" disabled title="O registro do pagamento depende da integração com os dados." aria-disabled="true">Confirmar pagamento</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="janela pagamento-passagem" id="pagamento-P-008" aria-label="Painel: pagamento">
+            <a class="fundo-janela" href="passagens.html" aria-label="Fechar painel"></a>
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="pagamento-P-008-titulo" tabindex="-1">
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="pagamento-P-008-titulo">Registrar pagamento</h2>
+                    </div>
+                    <a class="fechar-painel" href="passagens.html" aria-label="Fechar registrar pagamento">×</a>
+                </header>
+                <form class="formulario" method="post">
+                    <section class="resumo-recebimento" aria-label="Saldo da passagem">
+                        <p>Pedro Santos · Passagem · Assento 08</p>
+                        <strong>R$ 25,00</strong>
+                        <small>Saldo a receber</small>
+                    </section>
+                    <div class="grade-formulario">
+                        <label class="largura-total">
+                            Forma de pagamento
+                            <select name="forma-recebimento">
+                                <option value="pix">Pix</option>
+                                <option value="dinheiro">Dinheiro</option>
+                                <option value="cartao">Cartão</option>
+                                <option value="transferencia">Transferência</option>
+                            </select>
+                        </label>
+                        <label class="largura-total">
+                            Valor a pagar agora (R$)
+                            <input type="number" name="valor-recebido-r" min="0.01" max="25" step="0.01" value="25" required>
+                        </label>
+                        <div class="campos-dinheiro largura-total">
+                            <label>
+                                Valor entregue em dinheiro (R$)
+                                <input type="number" name="valor-entregue" min="0" step="0.01" placeholder="Ex.: 50,00">
+                            </label>
+                            <label>
+                                Troco a devolver (R$)
+                                <input type="number" name="troco-devolver" min="0" step="0.01" placeholder="0,00">
+                            </label>
+                        </div>
+                    </div>
+                    <p class="nota">Você pode receber apenas parte do saldo: informe o valor pago agora. O restante continua a receber. Este registro não realiza cobranças por Pix, cartão ou transferência.</p>
+                    <div class="acoes">
+                        <a class="botao secundario" href="passagens.html">Cancelar</a>
+                        <button class="botao" type="button" disabled title="O registro do pagamento depende da integração com os dados." aria-disabled="true">Confirmar pagamento</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="janela" id="comprovante" aria-label="Painel: comprovante">
+            <a class="fundo-janela" href="passagens.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="comprovante-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="comprovante-titulo">Comprovante da passagem</h2>
+                    </div>
+                    <a class="fechar-painel" href="passagens.html" aria-label="Fechar comprovante da passagem">×</a>
+                </header>
+
+                <section class="cartao bloco">
+                    <h2>Rota Fácil · P-001</h2>
+                    <p class="introducao">São Miguel → Pau dos Ferros</p>
+                    <dl class="dados">
+                        <div>
+                            <dt>Passageiro</dt>
+                            <dd>Ana Paula</dd>
+                        </div>
+                        <div>
+                            <dt>Saída</dt>
+                            <dd>13 de novembro · 06:30</dd>
+                        </div>
+                        <div>
+                            <dt>Veículo</dt>
+                            <dd>Mercedes-Benz Sprinter</dd>
+                        </div>
+                        <div>
+                            <dt>Assento</dt>
+                            <dd>01</dd>
+                        </div>
+                        <div>
+                            <dt>Valor</dt>
+                            <dd>R$ 25,00</dd>
+                        </div>
+                        <div>
+                            <dt>Pagamento</dt>
+                            <dd>Pix · Pago</dd>
+                        </div>
+                        <div>
+                            <dt>Motorista</dt>
+                            <dd>Miguel Queiroz</dd>
+                        </div>
+                    </dl>
+                </section>
+                <a class="botao" href="comprovante.html#P-001">Abrir para impressão / PDF</a>
+                <a class="botao secundario" href="passagens.html">Voltar às passagens</a>
+</section>
+        </section>
     </div>
+    <section class="janela" id="solicitar-confirmacao" aria-label="Solicitar confirmação pelo WhatsApp">
+        <a class="fundo-janela" href="passagens.html" aria-label="Fechar painel"></a>
+        <section class="painel painel-confirmacao" role="dialog" aria-modal="true" aria-labelledby="titulo-solicitar-confirmacao">
+            <header class="painel-cabecalho">
+                <div>
+                    <span class="marca-painel">ROTA FÁCIL</span>
+                    <h2 id="titulo-solicitar-confirmacao">Solicitar confirmação</h2>
+                    <p>Revise a mensagem e escolha os passageiros.</p>
+                </div>
+                <a class="fechar-painel" href="passagens.html" aria-label="Fechar">×</a>
+            </header>
+            <form class="formulario">
+                <label>Mensagem para o WhatsApp
+                    <textarea name="mensagem-confirmacao" rows="10">Olá, [nome]! 👋
+
+    Estamos confirmando sua presença na viagem:
+    📍 São Miguel → Pau dos Ferros
+    📅 13 de novembro de 2026
+    🕒 Saída às 06:30
+    💺 Assento [assento]
+
+    Está tudo certo para você viajar?
+    Responda SIM para confirmar ou NÃO caso não possa ir.
+
+    Obrigado!
+    Miguel Queiroz — Rota Fácil</textarea>
+                </label>
+                <p class="personalizacao-confirmacao">O nome e o assento serão personalizados para cada passageiro.</p>
+                <fieldset class="destinatarios-confirmacao">
+                    <legend>Destinatários com WhatsApp (9)</legend>
+                    <label class="destinatario-confirmacao">
+                        <input type="checkbox" name="destinatarios" value="1" checked>
+                        <span><strong>Ana Paula Oliveira</strong><small>Assento 01</small></span>
+                    </label>
+
+                    <label class="destinatario-confirmacao">
+                        <input type="checkbox" name="destinatarios" value="2" checked>
+                        <span><strong>Carlos Eduardo Lima</strong><small>Assento 02</small></span>
+                    </label>
+
+                    <label class="destinatario-confirmacao">
+                        <input type="checkbox" name="destinatarios" value="3" checked>
+                        <span><strong>Mariana Fernandes</strong><small>Assento 03</small></span>
+                    </label>
+
+                    <label class="destinatario-confirmacao">
+                        <input type="checkbox" name="destinatarios" value="4" checked>
+                        <span><strong>José Ricardo Alves</strong><small>Assento 04</small></span>
+                    </label>
+
+                    <label class="destinatario-confirmacao">
+                        <input type="checkbox" name="destinatarios" value="5" checked>
+                        <span><strong>Beatriz Costa</strong><small>Assento 05</small></span>
+                    </label>
+
+                    <label class="destinatario-confirmacao">
+                        <input type="checkbox" name="destinatarios" value="6" disabled>
+                        <span><strong>Lucas Gabriel Santos</strong><small>Sem WhatsApp</small></span>
+                    </label>
+
+                    <label class="destinatario-confirmacao">
+                        <input type="checkbox" name="destinatarios" value="7" checked>
+                        <span><strong>Fernanda Souza</strong><small>Assento 07</small></span>
+                    </label>
+
+                    <label class="destinatario-confirmacao">
+                        <input type="checkbox" name="destinatarios" value="8" checked>
+                        <span><strong>Pedro Santos</strong><small>Assento 08</small></span>
+                    </label>
+
+                    <label class="destinatario-confirmacao">
+                        <input type="checkbox" name="destinatarios" value="9" checked>
+                        <span><strong>Luiza Alves</strong><small>Assento 09</small></span>
+                    </label>
+
+                    <label class="destinatario-confirmacao">
+                        <input type="checkbox" name="destinatarios" value="10" checked>
+                        <span><strong>João Almeida</strong><small>Assento 10</small></span>
+                    </label>
+                </fieldset>
+                <div class="acoes">
+                    <a class="botao secundario" href="passagens.html">Voltar</a>
+                    <button class="botao" type="button" disabled>Solicitar confirmação</button>
+                </div>
+            </form>
+        </section>
+    </section>
+
+    <section class="janela" id="cancelar-passagem" aria-label="Cancelar passagem">
+        <a class="fundo-janela" href="passagens.html" aria-label="Fechar painel"></a>
+        <section class="painel" role="dialog" aria-modal="true" aria-labelledby="titulo-cancelar-passagem">
+            <header class="painel-cabecalho">
+                <div><span class="marca-painel">ROTA FÁCIL</span><h2 id="titulo-cancelar-passagem">Cancelar passagem</h2></div>
+                <a class="fechar-painel" href="passagens.html" aria-label="Fechar">×</a>
+            </header>
+            <form class="formulario">
+                <p>Confirme a desistência do passageiro antes de cancelar. O cancelamento libera o assento e mantém o histórico da passagem e dos pagamentos.</p>
+                <label>Passageiro<select name="passageiro-cancelamento"><option>Selecione o passageiro</option><option>Ana Paula Oliveira</option><option>Carlos Eduardo Lima</option><option>Mariana Fernandes</option><option>José Ricardo Alves</option><option>Beatriz Costa</option><option>Lucas Gabriel Santos</option><option>Fernanda Souza</option><option>Pedro Santos</option><option>Luiza Alves</option><option>João Almeida</option></select></label>
+                <label>Motivo do cancelamento<textarea name="motivo-cancelamento" rows="3"></textarea></label>
+                <div class="acoes">
+                    <a class="botao secundario" href="passagens.html">Voltar</a>
+                    <button class="botao" type="button" disabled>Cancelar passagem</button>
+                </div>
+            </form>
+        </section>
+    </section>
+
+    <section class="janela" id="cadastrar-espera" aria-label="Adicionar à lista de espera">
+        <a class="fundo-janela" href="passagens.html#lista-espera" aria-label="Fechar painel"></a>
+        <section class="painel" role="dialog" aria-modal="true" aria-labelledby="cadastrar-espera-titulo">
+            <header class="painel-cabecalho">
+                <div>
+                    <span class="marca-painel">ROTA FÁCIL</span>
+                    <h2 id="cadastrar-espera-titulo">Adicionar à lista de espera</h2>
+                </div>
+                <a class="fechar-painel" href="passagens.html#lista-espera" aria-label="Fechar">×</a>
+            </header>
+            <form class="formulario">
+                <div class="grade-formulario">
+                    <p class="contexto-espera largura-total">São Miguel → Pau dos Ferros · 13/11/2026 · 06:30</p>
+                    <label>
+                        Passageiro cadastrado
+                        <select name="passageiro-espera"><option>Selecionar passageiro ou preencher abaixo</option><option>Camila Souza</option><option>Paulo Henrique</option><option>Rosa Maria</option></select>
+                    </label>
+                    <label>Nome completo<input type="text" name="nome-espera" placeholder="Nome do passageiro" required></label>
+                    <label>WhatsApp com DDD<input type="tel" name="whatsapp-espera" placeholder="(84) 99999-9999" required></label>
+                    <label>Observação <small>opcional</small><textarea name="observacao-espera" rows="3" placeholder="Ex.: local de embarque ou horário para contato"></textarea></label>
+                    <p class="nota largura-total">A ordem será definida pela entrada na lista. Adicionar à espera não vende passagem nem reserva assento.</p>
+                </div>
+                <div class="acoes">
+                    <a class="botao secundario" href="passagens.html#lista-espera">Voltar</a>
+                    <button class="botao" type="button" disabled>Adicionar à espera</button>
+                </div>
+            </form>
+        </section>
+    </section>
+
+    <section class="janela" id="consultar-espera" aria-label="Consultar interesse na vaga">
+        <a class="fundo-janela" href="passagens.html#lista-espera" aria-label="Fechar painel"></a>
+        <section class="painel" role="dialog" aria-modal="true" aria-labelledby="consultar-espera-titulo">
+            <header class="painel-cabecalho">
+                <div>
+                    <span class="marca-painel">ROTA FÁCIL</span>
+                    <h2 id="consultar-espera-titulo">Consultar interesse na vaga</h2>
+                </div>
+                <a class="fechar-painel" href="passagens.html#lista-espera" aria-label="Fechar">×</a>
+            </header>
+            <form class="formulario">
+                <div class="grade-formulario">
+                    <label>Passageiro da lista de espera<select name="contato-espera"><option>Camila Souza · 1ª da fila</option>
+                            <option>Paulo Henrique · 2º da fila</option>
+                            <option>Rosa Maria · 3ª da fila</option></select></label>
+                    <label>Mensagem para o WhatsApp<textarea name="mensagem-espera" rows="12">Olá, [nome]! 👋
+
+Você está na nossa lista de espera e surgiu uma vaga para a viagem:
+📍 São Miguel → Pau dos Ferros
+📅 13 de novembro de 2026
+🕒 Saída às 06:30
+💰 Passagem: R$ 25,00
+
+Você ainda tem interesse em viajar?
+Responda SIM se quiser a vaga ou NÃO se não precisar mais.
+
+Vou confirmar com você o assento e os dados da passagem antes de concluir o registro.
+Obrigado!
+Miguel Queiroz — Rota Fácil</textarea></label>
+                    <p class="nota largura-total">Consulte um passageiro por vez, respeitando a ordem da fila. O motorista registra a resposta recebida no WhatsApp.</p>
+                </div>
+                <div class="acoes">
+                    <a class="botao secundario" href="passagens.html#lista-espera">Voltar</a>
+                    <button class="botao" type="button" disabled>Registrar contato</button>
+                </div>
+            </form>
+        </section>
+    </section>
+
+    <section class="janela" id="atualizar-espera" aria-label="Atualizar lista de espera">
+        <a class="fundo-janela" href="passagens.html#lista-espera" aria-label="Fechar painel"></a>
+        <section class="painel" role="dialog" aria-modal="true" aria-labelledby="atualizar-espera-titulo">
+            <header class="painel-cabecalho">
+                <div>
+                    <span class="marca-painel">ROTA FÁCIL</span>
+                    <h2 id="atualizar-espera-titulo">Atualizar lista de espera</h2>
+                </div>
+                <a class="fechar-painel" href="passagens.html#lista-espera" aria-label="Fechar">×</a>
+            </header>
+            <form class="formulario">
+                <div class="grade-formulario">
+                    <label>Passageiro<select name="resposta-passageiro-espera"><option>Camila Souza · 1ª da fila</option>
+                            <option>Paulo Henrique · 2º da fila</option>
+                            <option>Rosa Maria · 3ª da fila</option></select></label>
+                    <label>Situação<select name="situacao-espera"><option>Aguardando vaga</option><option>Contato realizado</option><option>Interesse confirmado</option><option>Sem resposta</option><option>Desistiu</option></select></label>
+                    <label>Aguardar resposta até <small>opcional</small><input type="datetime-local" name="prazo-espera"></label>
+                    <label>Observação<textarea name="resposta-espera" rows="3"></textarea></label>
+                    <p class="nota largura-total">Se a pessoa desistir ou não responder, registre a situação e consulte o próximo da fila. O histórico deve ser mantido. Interesse confirmado ainda não ocupa assento.</p>
+                </div>
+                <div class="acoes">
+                    <a class="botao secundario" href="passagens.html#lista-espera">Voltar</a>
+                    <button class="botao" type="button" disabled>Salvar situação</button>
+                </div>
+            </form>
+        </section>
+    </section>
+
+    <section class="janela" id="converter-espera" aria-label="Registrar passagem da espera">
+        <a class="fundo-janela" href="passagens.html#lista-espera" aria-label="Fechar painel"></a>
+        <section class="painel" role="dialog" aria-modal="true" aria-labelledby="converter-espera-titulo">
+            <header class="painel-cabecalho">
+                <div>
+                    <span class="marca-painel">ROTA FÁCIL</span>
+                    <h2 id="converter-espera-titulo">Registrar passagem da espera</h2>
+                </div>
+                <a class="fechar-painel" href="passagens.html#lista-espera" aria-label="Fechar">×</a>
+            </header>
+            <form class="formulario">
+                <div class="grade-formulario">
+                    <label>Passageiro da lista de espera<select name="passageiro-conversao"><option>Camila Souza · 1ª da fila</option>
+                            <option>Paulo Henrique · 2º da fila</option>
+                            <option>Rosa Maria · 3ª da fila</option></select></label>
+                    <p class="contexto-espera largura-total">São Miguel → Pau dos Ferros · 13/11/2026 · 06:30</p>
+                    <label class="opcao largura-total"><input type="checkbox" name="interesse-confirmado" required> O passageiro confirmou que ainda quer viajar.</label>
+                    <label>Assento disponível<select name="assento-espera" required><option value="">Selecione um assento livre</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option></select></label>
+                    <label>Valor da passagem (R$)<input type="number" min="0" step="0.01" name="valor-espera" value="25"></label>
+                    <label>Forma de pagamento<select name="forma-pagamento-espera"><option>Pix</option><option>Dinheiro</option><option>Cartão</option><option>Transferência</option></select></label>
+                    <label>Situação do pagamento<select name="pagamento-espera"><option>A receber</option><option>Pago</option><option>Pago parcialmente</option></select></label>
+                    <p class="nota largura-total">Ao registrar, o sistema deverá conferir se o assento continua livre, criar a passagem, atualizar a ocupação e marcar a entrada da lista como atendida. Se não houver vaga, o passageiro continua na espera.</p>
+                </div>
+                <div class="acoes">
+                    <a class="botao secundario" href="passagens.html#lista-espera">Voltar</a>
+                    <button class="botao" type="button" disabled>Registrar passagem</button>
+                </div>
+            </form>
+        </section>
+    </section>
 </body>
 </html>

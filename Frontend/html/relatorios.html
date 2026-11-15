@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -7,26 +7,31 @@
     <title>Relatórios • Rota Fácil</title>
     <link rel="icon" href="../assets/favicon-rota-facil.png">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/desktop.css">
+    <link rel="stylesheet" href="../css/impressao.css">
 </head>
 
-<body>
+<body class="pagina-relatorios">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
     <div class="aplicativo">
+
         <aside id="menu" class="menu-lateral">
             <div class="topo-menu">
                 <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
                 <a class="botao-fechar" href="#" aria-label="Fechar menu">×</a>
             </div>
+
             <nav>
-                <a class="item-menu" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span>Início</a>
-                <a class="item-menu" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span>Minhas viagens</a>
-                <a class="item-menu" href="veiculos.html"><span class="icone" style="--icone:url(../assets/bus.png)" aria-hidden="true"></span>Meus veículos</a>
-                <a class="item-menu" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span>Passagens</a>
-                <a class="item-menu" href="encomendas.html"><span class="icone" style="--icone:url(../assets/encomendas.png)" aria-hidden="true"></span>Encomendas</a>
-                <a class="item-menu" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span>Passageiros</a>
-                <a class="item-menu" href="perfil.html"><span class="icone" style="--icone:url(../assets/do-utilizador.png)" aria-hidden="true"></span>Meu perfil</a>
-                <a class="item-menu" href="estatisticas.html"><span class="icone" style="--icone:url(../assets/grafico-de-negocios.png)" aria-hidden="true"></span>Estatísticas</a>
-                <a class="item-menu ativo" aria-current="page" href="relatorios.html"><span class="icone" style="--icone:url(../assets/relatorio-de-negocios-2.png)" aria-hidden="true"></span>Relatórios</a>
-                <a class="item-menu" href="backup.html"><span class="icone" style="--icone:url(../assets/armazenamento-de-banco-de-dados.png)" aria-hidden="true"></span>Cópia de segurança</a>
+                <a class="item-menu" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span>Início</a>
+                <a class="item-menu" href="viagens.html"><span class="icone icone-viajar-por" aria-hidden="true"></span>Minhas viagens</a>
+                <a class="item-menu" href="veiculos.html"><span class="icone icone-bus" aria-hidden="true"></span>Meus veículos</a>
+                <a class="item-menu" href="passagens.html"><span class="icone icone-bilhete" aria-hidden="true"></span>Passagens</a>
+                <a class="item-menu" href="encomendas.html"><span class="icone icone-encomendas" aria-hidden="true"></span>Encomendas</a>
+                <a class="item-menu" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span>Passageiros</a>
+                <a class="item-menu" href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
+                <a class="item-menu" href="estatisticas.html"><span class="icone icone-grafico-de-negocios" aria-hidden="true"></span>Estatísticas</a>
+                <a class="item-menu ativo" aria-current="page" href="relatorios.html"><span class="icone icone-relatorio-de-negocios-2" aria-hidden="true"></span>Relatórios</a>
+                <a class="item-menu" href="backup.html"><span class="icone icone-armazenamento-de-banco-de-dados" aria-hidden="true"></span>Cópia de segurança</a>
             </nav>
 
             <footer>
@@ -40,7 +45,6 @@
                 <a class="sair-conta" href="login.html">Sair da conta</a>
             </footer>
         </aside>
-
         <a class="fundo-sobreposicao" href="#" aria-label="Fechar menu"></a>
 
         <header class="barra-superior">
@@ -49,20 +53,241 @@
                 <small>Meu espaço</small>
                 <strong>Relatórios</strong>
             </div>
-            <a class="avatar" href="perfil.html">MQ</a>
+
+            <details class="conta-cabecalho">
+                <summary class="avatar" aria-label="Abrir opções da conta de Miguel Queiroz">MQ</summary>
+
+                <nav class="menu-conta" aria-label="Opções da conta">
+                    <div class="identificacao-conta">
+                        <strong>Miguel Queiroz</strong>
+                        <small>Motorista independente</small>
+                    </div>
+                    <a href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
+                    <a class="sair-menu-conta" href="login.html"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 4H5v16h5M9 12h12m-4-4 4 4-4 4"></path></svg> Sair da conta</a>
+                </nav>
+            </details>
         </header>
 
-        <a href="#" class="mascara" aria-label="Fechar menu"></a>
+        <main id="conteudo">
+            <div class="marca-relatorio-impresso">
+                <strong>Rota Fácil</strong>
+                <span>Miguel Queiroz</span>
+            </div>
+            <div class="titulo-pagina">
+                <div>
+                    <h1>Relatórios</h1>
+                    <p class="introducao">Dados das suas viagens, passagens, pagamentos e encomendas.</p>
+                </div>
+            </div>
 
-        <main>
-        </main>
+            <section class="cartao bloco filtro-relatorio">
+
+                <form>
+                    <label>
+                        Tipo de relatório
+                        <select>
+                            <option>Passagens e encomendas</option>
+                            <option>Viagens</option>
+                            <option>Pagamentos</option>
+                            <option>Passageiros</option>
+                        </select>
+                    </label>
+                    <label>
+                        Período
+                        <select>
+                            <option>30 dias</option>
+                            <option>7 dias</option>
+                            <option>6 meses</option>
+                            <option>1 ano</option>
+                            <option>Personalizado</option>
+                        </select>
+                    </label>
+                    <label>
+                        De
+                        <input type="date" value="2026-10-14">
+                    </label>
+                    <label>
+                        Até
+                        <input type="date" value="2026-11-12">
+                    </label>
+                    <button type="button" class="botao" disabled title="Prévia visual: ação disponível na etapa com dados.">Gerar relatório</button>
+                </form>
+            </section>
+            <div class="periodo-resumo">
+                <span>14/10/2026 a 12/11/2026</span>
+            </div>
+
+            <section class="metricas">
+
+                <article class="cartao metrica">
+                    <p>Viagens</p>
+                    <strong class="">2</strong>
+                </article>
+
+                <article class="cartao metrica">
+                    <p>Passagens</p>
+                    <strong class="">13</strong>
+                </article>
+
+                <article class="cartao metrica">
+                    <p>Encomendas</p>
+                    <strong class="">1</strong>
+                </article>
+
+                <article class="cartao metrica">
+                    <p>Recebido</p>
+                    <strong class="">R$ 212,50</strong>
+                </article>
+            </section>
+
+            <section class="cartao vendas-estatistica">
+
+                <header class="linha">
+                    <h2>14 registro(s)</h2>
+                    <div class="acoes-exportar">
+                        <a class="botao secundario" href="../assets/relatorios/relatorio-vendas.csv" download>Exportar CSV</a>
+                        <a class="botao" href="../assets/relatorios/relatorio-vendas.pdf" download>Baixar relatório</a>
+                    </div>
+                </header>
+                <div class="tabela-rolagem">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Passageiro / remetente</th>
+                                <th scope="col">Rota</th>
+                                <th scope="col">Serviço</th>
+                                <th scope="col">Valor</th>
+                                <th scope="col">Situação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Código">101</td>
+                                <td data-label="Passageiro / remetente">Mariana Costa</td>
+                                <td data-label="Rota"><strong>São Miguel · Pau dos Ferros</strong></td>
+                                <td data-label="Serviço">Passagem</td>
+                                <td data-label="Valor"><strong>R$ 25,00</strong></td>
+                                <td data-label="Situação">Fiado</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Código">102</td>
+                                <td data-label="Passageiro / remetente">João Almeida</td>
+                                <td data-label="Rota"><strong>São Miguel · Pau dos Ferros</strong></td>
+                                <td data-label="Serviço">Passagem</td>
+                                <td data-label="Valor"><strong>R$ 25,00</strong></td>
+                                <td data-label="Situação">Pago</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Código">103</td>
+                                <td data-label="Passageiro / remetente">Antônio Silva</td>
+                                <td data-label="Rota"><strong>São Miguel · Pau dos Ferros</strong></td>
+                                <td data-label="Serviço">Passagem</td>
+                                <td data-label="Valor"><strong>R$ 25,00</strong></td>
+                                <td data-label="Situação">Fiado</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Código">104</td>
+                                <td data-label="Passageiro / remetente">Camila Souza</td>
+                                <td data-label="Rota"><strong>São Miguel · Pau dos Ferros</strong></td>
+                                <td data-label="Serviço">Passagem</td>
+                                <td data-label="Valor"><strong>R$ 25,00</strong></td>
+                                <td data-label="Situação">Fiado</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Código">105</td>
+                                <td data-label="Passageiro / remetente">Fernanda Lima</td>
+                                <td data-label="Rota"><strong>São Miguel · Pau dos Ferros</strong></td>
+                                <td data-label="Serviço">Passagem</td>
+                                <td data-label="Valor"><strong>R$ 25,00</strong></td>
+                                <td data-label="Situação">Pago</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Código">106</td>
+                                <td data-label="Passageiro / remetente">Pedro Santos</td>
+                                <td data-label="Rota"><strong>São Miguel · Pau dos Ferros</strong></td>
+                                <td data-label="Serviço">Passagem</td>
+                                <td data-label="Valor"><strong>R$ 25,00</strong></td>
+                                <td data-label="Situação">Pago parcialmente</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Código">107</td>
+                                <td data-label="Passageiro / remetente">Ana Paula</td>
+                                <td data-label="Rota"><strong>São Miguel · Pau dos Ferros</strong></td>
+                                <td data-label="Serviço">Passagem</td>
+                                <td data-label="Valor"><strong>R$ 25,00</strong></td>
+                                <td data-label="Situação">Pago</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Código">108</td>
+                                <td data-label="Passageiro / remetente">Carlos Eduardo</td>
+                                <td data-label="Rota"><strong>São Miguel · Pau dos Ferros</strong></td>
+                                <td data-label="Serviço">Passagem</td>
+                                <td data-label="Valor"><strong>R$ 25,00</strong></td>
+                                <td data-label="Situação">Fiado</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Código">109</td>
+                                <td data-label="Passageiro / remetente">Luiza Alves</td>
+                                <td data-label="Rota"><strong>São Miguel · Pau dos Ferros</strong></td>
+                                <td data-label="Serviço">Passagem</td>
+                                <td data-label="Valor"><strong>R$ 25,00</strong></td>
+                                <td data-label="Situação">Pago</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Código">110</td>
+                                <td data-label="Passageiro / remetente">José Silva</td>
+                                <td data-label="Rota"><strong>São Miguel · Pau dos Ferros</strong></td>
+                                <td data-label="Serviço">Passagem</td>
+                                <td data-label="Valor"><strong>R$ 25,00</strong></td>
+                                <td data-label="Situação">Pago</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Código">111</td>
+                                <td data-label="Passageiro / remetente">Antônio Silva</td>
+                                <td data-label="Rota"><strong>São Miguel · Pau dos Ferros</strong></td>
+                                <td data-label="Serviço">Passagem</td>
+                                <td data-label="Valor"><strong>R$ 25,00</strong></td>
+                                <td data-label="Situação">Fiado</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Código">202</td>
+                                <td data-label="Passageiro / remetente">João Almeida</td>
+                                <td data-label="Rota"><strong>São Miguel · Mossoró</strong></td>
+                                <td data-label="Serviço">Passagem</td>
+                                <td data-label="Valor"><strong>R$ 75,00</strong></td>
+                                <td data-label="Situação">Pago</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Código">201</td>
+                                <td data-label="Passageiro / remetente">Mariana Costa</td>
+                                <td data-label="Rota"><strong>São Miguel · Mossoró</strong></td>
+                                <td data-label="Serviço">Passagem</td>
+                                <td data-label="Valor"><strong>R$ 75,00</strong></td>
+                                <td data-label="Situação">Fiado</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Código">ENC-010011</td>
+                                <td data-label="Passageiro / remetente">Mariana Costa</td>
+                                <td data-label="Rota"><strong>São Miguel · Mossoró</strong></td>
+                                <td data-label="Serviço">Encomenda</td>
+                                <td data-label="Valor"><strong>R$ 20,00</strong></td>
+                                <td data-label="Situação">Fiado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <footer class="rodape-pagina">Rota Fácil • Cada motorista, seu próprio caminho.</footer>
+</main>
 
         <nav class="menu-inferior" aria-label="Navegação principal">
-            <a class="" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span><span>Início</span></a>
-            <a class="" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span><span>Viagens</span></a>
-            <a class="" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span><span>Passagens</span></a>
-            <a class="" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span><span>Passageiros</span></a>
-            <a class="selecionado" href="#menu"><span class="icone" style="--icone:url(../assets/mais.png)" aria-hidden="true"></span><span>Mais</span></a>
+            <a class="" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span><span>Início</span></a>
+            <a class="" href="viagens.html"><span class="icone icone-viajar-por" aria-hidden="true"></span><span>Viagens</span></a>
+            <a class="" href="passagens.html"><span class="icone icone-bilhete" aria-hidden="true"></span><span>Passagens</span></a>
+            <a class="" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span><span>Passageiros</span></a>
+            <a class="selecionado" href="#menu"><span class="icone icone-mais" aria-hidden="true"></span><span>Mais</span></a>
         </nav>
     </div>
 </body>

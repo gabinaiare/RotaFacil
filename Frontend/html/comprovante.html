@@ -1,69 +1,672 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <meta name="theme-color" content="#102A40">
-    <title>Passagem • Rota Fácil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comprovantes • Rota Fácil</title>
     <link rel="icon" href="../assets/favicon-rota-facil.png">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/comprovante.css">
 </head>
 
 <body>
-    <div class="aplicativo">
-        <aside id="menu" class="menu-lateral">
-            <div class="topo-menu">
+    <header class="barra-impressao">
+        <a class="voltar-passagens" href="passagens.html">← Voltar às passagens</a>
+        <a class="voltar-encomendas" href="encomendas.html">← Voltar às encomendas</a>
+    </header>
+
+    <main class="area-recibo">
+        <article class="recibo recibo-padrao" id="P-001" aria-labelledby="titulo-P-001">
+            <header class="marca-recibo">
                 <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
-                <a class="botao-fechar" href="#" aria-label="Fechar menu">×</a>
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-P-001">Sua viagem está registrada</h1>
+                <p>Comprovante P-001</p>
             </div>
-            <nav>
-                <a class="item-menu" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span>Início</a>
-                <a class="item-menu" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span>Minhas viagens</a>
-                <a class="item-menu" href="veiculos.html"><span class="icone" style="--icone:url(../assets/bus.png)" aria-hidden="true"></span>Meus veículos</a>
-                <a class="item-menu ativo" aria-current="page" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span>Passagens</a>
-                <a class="item-menu" href="encomendas.html"><span class="icone" style="--icone:url(../assets/encomendas.png)" aria-hidden="true"></span>Encomendas</a>
-                <a class="item-menu" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span>Passageiros</a>
-                <a class="item-menu" href="perfil.html"><span class="icone" style="--icone:url(../assets/do-utilizador.png)" aria-hidden="true"></span>Meu perfil</a>
-                <a class="item-menu" href="estatisticas.html"><span class="icone" style="--icone:url(../assets/grafico-de-negocios.png)" aria-hidden="true"></span>Estatísticas</a>
-                <a class="item-menu" href="relatorios.html"><span class="icone" style="--icone:url(../assets/relatorio-de-negocios-2.png)" aria-hidden="true"></span>Relatórios</a>
-                <a class="item-menu" href="backup.html"><span class="icone" style="--icone:url(../assets/armazenamento-de-banco-de-dados.png)" aria-hidden="true"></span>Cópia de segurança</a>
-            </nav>
-
-            <footer>
-                <div class="usuario">
-                    <span class="avatar">MQ</span>
-                    <div>
-                        <strong>Miguel Queiroz</strong>
-                        <small>Motorista independente</small>
-                    </div>
-                </div>
-                <a class="sair-conta" href="login.html">Sair da conta</a>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Ana Paula Oliveira</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>01</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>Pago</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
             </footer>
-        </aside>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="passagens.html">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-P-001.pdf" download>Baixar PDF</a></nav>
+        </article>
 
-        <a class="fundo-sobreposicao" href="#" aria-label="Fechar menu"></a>
-
-        <header class="barra-superior">
-            <a class="botao-menu" href="#menu" aria-label="Abrir menu"><span></span><span></span><span></span></a>
-            <div>
-                <small>Meu espaço</small>
-                <strong>Passagem</strong>
+        <article class="recibo" id="P-002" aria-labelledby="titulo-P-002">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-P-002">Sua viagem está registrada</h1>
+                <p>Comprovante P-002</p>
             </div>
-            <a class="avatar" href="perfil.html">MQ</a>
-        </header>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Carlos Eduardo Lima</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>02</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>Pago</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="passagens.html">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-P-002.pdf" download>Baixar PDF</a></nav>
+        </article>
 
-        <a href="#" class="mascara" aria-label="Fechar menu"></a>
+        <article class="recibo" id="P-003" aria-labelledby="titulo-P-003">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-P-003">Sua viagem está registrada</h1>
+                <p>Comprovante P-003</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Mariana Fernandes</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>03</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>A receber</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 0,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="passagens.html">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-P-003.pdf" download>Baixar PDF</a></nav>
+        </article>
 
-        <main>
-        </main>
+        <article class="recibo" id="P-004" aria-labelledby="titulo-P-004">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-P-004">Sua viagem está registrada</h1>
+                <p>Comprovante P-004</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>José Ricardo Alves</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>04</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>Pago</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="passagens.html">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-P-004.pdf" download>Baixar PDF</a></nav>
+        </article>
 
-        <nav class="menu-inferior" aria-label="Navegação principal">
-            <a class="" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span><span>Início</span></a>
-            <a class="" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span><span>Viagens</span></a>
-            <a class="selecionado" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span><span>Passagens</span></a>
-            <a class="" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span><span>Passageiros</span></a>
-            <a class="" href="#menu"><span class="icone" style="--icone:url(../assets/mais.png)" aria-hidden="true"></span><span>Mais</span></a>
-        </nav>
-    </div>
+        <article class="recibo" id="P-005" aria-labelledby="titulo-P-005">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-P-005">Sua viagem está registrada</h1>
+                <p>Comprovante P-005</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Beatriz Costa</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>05</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>A receber</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 0,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="passagens.html">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-P-005.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="P-006" aria-labelledby="titulo-P-006">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-P-006">Sua viagem está registrada</h1>
+                <p>Comprovante P-006</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Lucas Gabriel Santos</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>06</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>A receber</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 0,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="passagens.html">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-P-006.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="P-007" aria-labelledby="titulo-P-007">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-P-007">Sua viagem está registrada</h1>
+                <p>Comprovante P-007</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Fernanda Souza</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>07</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>Pago</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="passagens.html">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-P-007.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="P-008" aria-labelledby="titulo-P-008">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-P-008">Sua viagem está registrada</h1>
+                <p>Comprovante P-008</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Pedro Santos</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>08</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>A receber</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 0,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="passagens.html">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-P-008.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="P-009" aria-labelledby="titulo-P-009">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-P-009">Sua viagem está registrada</h1>
+                <p>Comprovante P-009</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Luiza Alves</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>09</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>Pago</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="passagens.html">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-P-009.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="P-010" aria-labelledby="titulo-P-010">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-P-010">Sua viagem está registrada</h1>
+                <p>Comprovante P-010</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>João Almeida</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>10</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>Pago</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="passagens.html">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-P-010.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="V-001" aria-labelledby="titulo-V-001">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-V-001">Sua viagem está registrada</h1>
+                <p>Comprovante V-001</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Mariana Costa</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>01</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>A receber</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 0,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="viagens.html#detalhe-viagem">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-V-001.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="V-002" aria-labelledby="titulo-V-002">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-V-002">Sua viagem está registrada</h1>
+                <p>Comprovante V-002</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>João Almeida</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>02</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>Pago</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="viagens.html#detalhe-viagem">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-V-002.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="V-003" aria-labelledby="titulo-V-003">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-V-003">Sua viagem está registrada</h1>
+                <p>Comprovante V-003</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Fernanda Lima</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>04</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>Pago parcialmente</dd></div>
+                <div><dt>Valor recebido</dt><dd>Não informado</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="viagens.html#detalhe-viagem">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-V-003.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="V-004" aria-labelledby="titulo-V-004">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-V-004">Sua viagem está registrada</h1>
+                <p>Comprovante V-004</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Pedro Santos</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>05</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>A receber</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 0,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="viagens.html#detalhe-viagem">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-V-004.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="V-005" aria-labelledby="titulo-V-005">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-V-005">Sua viagem está registrada</h1>
+                <p>Comprovante V-005</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Ana Paula</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>07</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>Pago</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="viagens.html#detalhe-viagem">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-V-005.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="V-006" aria-labelledby="titulo-V-006">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-V-006">Sua viagem está registrada</h1>
+                <p>Comprovante V-006</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Carlos Eduardo</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>08</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>Pago</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="viagens.html#detalhe-viagem">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-V-006.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="V-007" aria-labelledby="titulo-V-007">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-V-007">Sua viagem está registrada</h1>
+                <p>Comprovante V-007</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Luiza Alves</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>09</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>Pago</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="viagens.html#detalhe-viagem">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-V-007.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="V-008" aria-labelledby="titulo-V-008">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-V-008">Sua viagem está registrada</h1>
+                <p>Comprovante V-008</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>José Silva</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>12</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>Pago</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="viagens.html#detalhe-viagem">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-V-008.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="V-009" aria-labelledby="titulo-V-009">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-V-009">Sua viagem está registrada</h1>
+                <p>Comprovante V-009</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Rita Souza</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>13</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>Pago</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="viagens.html#detalhe-viagem">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-V-009.pdf" download>Baixar PDF</a></nav>
+        </article>
+
+        <article class="recibo" id="V-010" aria-labelledby="titulo-V-010">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE PASSAGEM</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-V-010">Sua viagem está registrada</h1>
+                <p>Comprovante V-010</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Pau dos Ferros</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Passageiro</dt><dd>Paulo Lima</dd></div>
+                <div><dt>Data</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída / chegada</dt><dd>06:30 → 07:40</dd></div>
+                <div><dt>Veículo</dt><dd>Mercedes-Benz Sprinter</dd></div>
+                <div><dt>Assento</dt><dd>16</dd></div>
+                <div><dt>Valor da passagem</dt><dd>R$ 25,00</dd></div>
+                <div><dt>Situação do pagamento</dt><dd>A receber</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 0,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <p class="informacao-recibo">Apresente este comprovante no embarque. Caso não possa viajar, avise ao motorista.</p>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da passagem não comprova a quitação de valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Retorno"><a href="viagens.html#detalhe-viagem">Voltar ao registro</a><a class="baixar-recibo" href="../assets/comprovantes/passagem-V-010.pdf" download>Baixar PDF</a></nav>
+        </article>
+        <article class="recibo" id="ENC-010011" aria-labelledby="titulo-ENC-010011">
+            <header class="marca-recibo">
+                <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+                <span>COMPROVANTE DE ENCOMENDA</span>
+            </header>
+            <div class="cabecalho-recibo">
+                <h1 id="titulo-ENC-010011">Sua encomenda está registrada</h1>
+                <p>Comprovante ENC-010011</p>
+            </div>
+            <section class="rota-recibo" aria-label="Trajeto">
+                <strong>São Miguel</strong><span aria-hidden="true">→</span><strong>Mossoró</strong>
+            </section>
+            <dl class="dados-recibo">
+                <div><dt>Remetente</dt><dd>Mariana Costa</dd></div>
+                <div><dt>Destinatário</dt><dd>Juliana Costa</dd></div>
+                <div><dt>Descrição</dt><dd>Caixa de roupas</dd></div>
+                <div><dt>Data da viagem</dt><dd>13/11/2026</dd></div>
+                <div><dt>Saída</dt><dd>05:00</dd></div>
+                <div><dt>Situação da encomenda</dt><dd>Cadastrada</dd></div>
+                <div><dt>Valor do transporte</dt><dd>R$ 20,00</dd></div>
+                <div><dt>Valor recebido</dt><dd>R$ 0,00</dd></div>
+                <div><dt>A receber</dt><dd>R$ 20,00</dd></div>
+                <div><dt>Motorista</dt><dd>Miguel Queiroz</dd></div>
+            </dl>
+            <footer class="rodape-recibo">
+                <p>Comprovante não fiscal. O registro da encomenda não comprova a quitação dos valores indicados como “A receber”.</p>
+                <strong>Rota Fácil • Cada motorista, seu próprio caminho.</strong>
+            </footer>
+            <nav class="retorno-recibo" aria-label="Ações do comprovante">
+                <a href="encomendas.html">Voltar à encomenda</a>
+                <a class="baixar-recibo" href="../assets/comprovantes/encomenda-ENC-010011.pdf" download>Baixar PDF</a>
+            </nav>
+        </article>
+    </main>
 </body>
 </html>

@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f7fa;
+    color: #19354b;
+    font: 14px Arial, sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: #079474;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.barra-impressao {
+    max-width: 760px;
+    margin: 24px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.barra-impressao details {
+    max-width: 360px;
+}
+
+.barra-impressao summary {
+    color: #fff;
+    background: #16a577;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.barra-impressao details p {
+    font-size: 13px;
+    margin: 12px 0;
+}
+
+kbd {
+    padding: 2px 4px;
+    background: #e6edf2;
+    border-radius: 3px;
+}
+
+.area-recibo {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    padding: 0 16px;
+}
+
+.recibo {
+    display: none;
+    border: 1px solid #dce5ee;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.recibo:target,
+.area-recibo:not(:has(.recibo:target)) .recibo-padrao {
+    display: block;
+}
+
+.marca-recibo {
+    background: #182f41;
+    color: #fff;
+    padding: 24px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.marca-recibo img {
+    width: 140px;
+    height: auto;
+}
+
+.marca-recibo span {
+    font-size: 10px;
+    letter-spacing: 1.3px;
+}
+
+.cabecalho-recibo {
+    padding: 24px 28px 10px;
+}
+
+.cabecalho-recibo h1 {
+    font-size: 23px;
+    margin: 0 0 6px;
+}
+
+.cabecalho-recibo p {
+    color: #7d91a4;
+    margin: 0;
+    font-size: 12px;
+}
+
+.rota-recibo {
+    margin: 16px 28px;
+    padding: 18px;
+    border-radius: 12px;
+    background: #edf8f3;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: #137d63;
+    font-size: 18px;
+}
+
+.dados-recibo {
+    padding: 0 28px;
+    margin: 20px 0;
+}
+
+.dados-recibo > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e8eef3;
+}
+
+.dados-recibo dt {
+    color: #73899c;
+}
+
+.dados-recibo dd {
+    margin: 0;
+    text-align: right;
+    font-weight: 600;
+}
+
+.informacao-recibo {
+    margin: 20px 28px;
+    font-size: 12px;
+}
+
+.rodape-recibo {
+    border-top: 1px dashed #dce5ee;
+    padding: 20px 28px;
+    font-size: 11px;
+    color: #73899c;
+}
+
+.rodape-recibo p {
+    margin: 0 0 12px;
+}
+
+.retorno-recibo {
+    padding: 0 28px 24px;
+}
+
+@media (max-width: 480px) {
+    .barra-impressao {
+        flex-direction: column;
+    }
+
+    .marca-recibo,
+    .cabecalho-recibo,
+    .rodape-recibo {
+        padding-inline: 20px;
+    }
+
+    .marca-recibo {
+        flex-wrap: wrap;
+    }
+
+    .dados-recibo {
+        padding-inline: 20px;
+    }
+
+    .rota-recibo {
+        margin-inline: 20px;
+        font-size: 16px;
+    }
+
+    .dados-recibo > div {
+        gap: 12px;
+    }
+}
+
+@page {
+    size: A4;
+    margin: 16mm;
+}
+
+@media print {
+    body {
+        background: #fff;
+        color: #182f41;
+        font-size: 11pt;
+    }
+
+    .barra-impressao,
+    .retorno-recibo {
+        display: none;
+    }
+
+    .area-recibo {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .recibo {
+        border: 1px solid #cdd9e2;
+        border-radius: 0;
+        break-inside: avoid;
+    }
+
+    .marca-recibo {
+        background: #182f41;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .rota-recibo {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+.voltar-encomendas {
+    display: none;
+}
+
+body:has(#ENC-010011:target) .voltar-passagens {
+    display: none;
+}
+
+body:has(#ENC-010011:target) .voltar-encomendas {
+    display: inline;
+}
+
+.retorno-recibo .baixar-recibo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+    margin-left: 12px;
+    border-radius: 8px;
+    background: #16a577;
+    color: #fff;
+}

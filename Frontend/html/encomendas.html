@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -7,26 +7,30 @@
     <title>Encomendas • Rota Fácil</title>
     <link rel="icon" href="../assets/favicon-rota-facil.png">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/desktop.css">
 </head>
 
-<body>
+<body class="pagina-encomendas">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
     <div class="aplicativo">
+
         <aside id="menu" class="menu-lateral">
             <div class="topo-menu">
                 <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
                 <a class="botao-fechar" href="#" aria-label="Fechar menu">×</a>
             </div>
+
             <nav>
-                <a class="item-menu" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span>Início</a>
-                <a class="item-menu" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span>Minhas viagens</a>
-                <a class="item-menu" href="veiculos.html"><span class="icone" style="--icone:url(../assets/bus.png)" aria-hidden="true"></span>Meus veículos</a>
-                <a class="item-menu" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span>Passagens</a>
-                <a class="item-menu ativo" aria-current="page" href="encomendas.html"><span class="icone" style="--icone:url(../assets/encomendas.png)" aria-hidden="true"></span>Encomendas</a>
-                <a class="item-menu" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span>Passageiros</a>
-                <a class="item-menu" href="perfil.html"><span class="icone" style="--icone:url(../assets/do-utilizador.png)" aria-hidden="true"></span>Meu perfil</a>
-                <a class="item-menu" href="estatisticas.html"><span class="icone" style="--icone:url(../assets/grafico-de-negocios.png)" aria-hidden="true"></span>Estatísticas</a>
-                <a class="item-menu" href="relatorios.html"><span class="icone" style="--icone:url(../assets/relatorio-de-negocios-2.png)" aria-hidden="true"></span>Relatórios</a>
-                <a class="item-menu" href="backup.html"><span class="icone" style="--icone:url(../assets/armazenamento-de-banco-de-dados.png)" aria-hidden="true"></span>Cópia de segurança</a>
+                <a class="item-menu" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span>Início</a>
+                <a class="item-menu" href="viagens.html"><span class="icone icone-viajar-por" aria-hidden="true"></span>Minhas viagens</a>
+                <a class="item-menu" href="veiculos.html"><span class="icone icone-bus" aria-hidden="true"></span>Meus veículos</a>
+                <a class="item-menu" href="passagens.html"><span class="icone icone-bilhete" aria-hidden="true"></span>Passagens</a>
+                <a class="item-menu ativo" aria-current="page" href="encomendas.html"><span class="icone icone-encomendas" aria-hidden="true"></span>Encomendas</a>
+                <a class="item-menu" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span>Passageiros</a>
+                <a class="item-menu" href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
+                <a class="item-menu" href="estatisticas.html"><span class="icone icone-grafico-de-negocios" aria-hidden="true"></span>Estatísticas</a>
+                <a class="item-menu" href="relatorios.html"><span class="icone icone-relatorio-de-negocios-2" aria-hidden="true"></span>Relatórios</a>
+                <a class="item-menu" href="backup.html"><span class="icone icone-armazenamento-de-banco-de-dados" aria-hidden="true"></span>Cópia de segurança</a>
             </nav>
 
             <footer>
@@ -40,7 +44,6 @@
                 <a class="sair-conta" href="login.html">Sair da conta</a>
             </footer>
         </aside>
-
         <a class="fundo-sobreposicao" href="#" aria-label="Fechar menu"></a>
 
         <header class="barra-superior">
@@ -49,21 +52,416 @@
                 <small>Meu espaço</small>
                 <strong>Encomendas</strong>
             </div>
-            <a class="avatar" href="perfil.html">MQ</a>
+
+            <details class="conta-cabecalho">
+                <summary class="avatar" aria-label="Abrir opções da conta de Miguel Queiroz">MQ</summary>
+
+                <nav class="menu-conta" aria-label="Opções da conta">
+                    <div class="identificacao-conta">
+                        <strong>Miguel Queiroz</strong>
+                        <small>Motorista independente</small>
+                    </div>
+                    <a href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
+                    <a class="sair-menu-conta" href="login.html"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 4H5v16h5M9 12h12m-4-4 4 4-4 4"></path></svg> Sair da conta</a>
+                </nav>
+            </details>
         </header>
 
-        <a href="#" class="mascara" aria-label="Fechar menu"></a>
+        <main id="conteudo">
+            <div class="titulo-pagina">
+                <div>
+                    <h1>Encomendas</h1>
+                    <p class="introducao">Cadastre, consulte pelo código e acompanhe até a entrega.</p>
+                </div>
+                <a class="botao " href="#nova-encomenda">+ Nova encomenda</a>
+            </div>
 
-        <main>
+            <section class="resumo-verde">
+                <div>
+                    <small>Em acompanhamento</small>
+                    <strong>1</strong>
+                </div>
+
+                <div>
+                    <small>Entregues</small>
+                    <strong>0</strong>
+                </div>
+            </section>
+
+            <section class="cartao bloco filtros">
+
+                <form>
+                    <label>
+                        Código ou descrição
+                        <input type="text" placeholder="ENC-010011, remetente ou destinatário">
+                    </label>
+
+                    <label>
+                        Situação
+                        <select>
+                            <option>Todas</option>
+                            <option>Cadastrada</option>
+                            <option>Em transporte</option>
+                            <option>Entregue</option>
+                        </select>
+                    </label>
+
+                    <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Consultar</button>
+                </form>
+            </section>
+
+            <article class="cartao bloco encomenda-card">
+                <div class="linha">
+                    <span class="selo neutro">ENC-010011</span>
+                    <span class="selo pendente">Cadastrada</span>
+                </div>
+
+                <h2>Caixa de roupas</h2>
+                <p class="texto-secundario">Remetente:<strong>Mariana Costa</strong><br>Destinatário: Juliana Costa</p>
+                <p class="nota">São Miguel → Mossoró<br>13/11/2026 • 05:00</p>
+                <div class="valor-encomenda">
+                    <small>Transporte</small>
+                    <h3>R$ 20,00</h3>
+                    <div class="duas-colunas">
+                        <div>
+                            <small>Recebido</small>
+                            <h3 class="verde">R$ 0,00</h3>
+                        </div>
+
+                        <div>
+                            <small>Fiado</small>
+                            <h3 class="amarelo">R$ 20,00</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acoes-card">
+                    <a href="comprovante.html#ENC-010011">Ver comprovante</a>
+                    <a class="botao secundario" href="#detalhe-encomenda">Detalhes e histórico</a>
+                    <a href="#editar-encomenda">Editar</a>
+                    <a class="botao " href="#status-encomenda">Atualizar status</a>
+                    <a href="#pagamento-encomenda">Receber</a>
+                </div>
+            </article>
+
+            <footer class="rodape-pagina">Rota Fácil • Cada motorista, seu próprio caminho.</footer>
         </main>
 
         <nav class="menu-inferior" aria-label="Navegação principal">
-            <a class="" href="index.html"><span class="icone" style="--icone:url(../assets/icons8-casa-24.png)" aria-hidden="true"></span><span>Início</span></a>
-            <a class="" href="viagens.html"><span class="icone" style="--icone:url(../assets/viajar-por.png)" aria-hidden="true"></span><span>Viagens</span></a>
-            <a class="" href="passagens.html"><span class="icone" style="--icone:url(../assets/bilhete.png)" aria-hidden="true"></span><span>Passagens</span></a>
-            <a class="" href="clientes.html"><span class="icone" style="--icone:url(../assets/cliente.png)" aria-hidden="true"></span><span>Passageiros</span></a>
-            <a class="selecionado" href="#menu"><span class="icone" style="--icone:url(../assets/mais.png)" aria-hidden="true"></span><span>Mais</span></a>
+            <a class="" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span><span>Início</span></a>
+            <a class="" href="viagens.html"><span class="icone icone-viajar-por" aria-hidden="true"></span><span>Viagens</span></a>
+            <a class="" href="passagens.html"><span class="icone icone-bilhete" aria-hidden="true"></span><span>Passagens</span></a>
+            <a class="" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span><span>Passageiros</span></a>
+            <a class="selecionado" href="#menu"><span class="icone icone-mais" aria-hidden="true"></span><span>Mais</span></a>
         </nav>
+
+        <section class="janela" id="nova-encomenda" aria-label="Painel: nova encomenda">
+            <a class="fundo-janela" href="encomendas.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="nova-encomenda-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="nova-encomenda-titulo">Nova encomenda</h2>
+                    </div>
+
+                    <a class="fechar-painel" href="encomendas.html" aria-label="Fechar nova encomenda">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label>
+                            Remetente cadastrado
+                            <small>opcional</small>
+                            <select name="remetente-cadastrado">
+                                <option>Selecione o remetente</option>
+                                <option>Mariana Costa</option>
+                                <option>João Almeida</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Nome do remetente
+                            <input type="text" value="" name="nome-do-remetente">
+                        </label>
+
+                        <label>
+                            Telefone do remetente
+                            <input type="tel" value="" name="telefone-do-remetente">
+                        </label>
+
+                        <label>
+                            Nome do destinatário
+                            <input type="text" value="" name="nome-do-destinatario">
+                        </label>
+
+                        <label>
+                            Telefone do destinatário
+                            <input type="tel" value="" name="telefone-do-destinatario">
+                        </label>
+
+                        <label>
+                            Descrição da encomenda
+                            <input type="text" value="" name="descricao-da-encomenda">
+                        </label>
+
+                        <label>
+                            Valor do transporte (R$)
+                            <input type="number" value="" name="valor-do-transporte-r">
+                        </label>
+
+                        <label>
+                            Viagem
+                            <small>pode ser definida depois</small>
+                            <select name="viagem">
+                                <option>Selecionar depois</option>
+                                <option>São Miguel → Mossoró • 13/11/2026</option>
+                                <option>São Miguel → Pau dos Ferros • 13/11/2026</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Origem da encomenda
+                            <input type="text" value="São Miguel" name="origem-da-encomenda">
+                        </label>
+
+                        <label>
+                            Destino da encomenda
+                            <input type="text" value="" name="destino-da-encomenda">
+                        </label>
+
+                        <p class="nota largura-total">O código será gerado ao salvar. A encomenda começa como Cadastrada e as movimentações ficam no histórico.</p>
+                    </div>
+
+                    <div class="acoes">
+                        <a class="botao secundario" href="encomendas.html">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar encomenda</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="janela" id="editar-encomenda" aria-label="Painel: editar encomenda">
+            <a class="fundo-janela" href="encomendas.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="editar-encomenda-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="editar-encomenda-titulo">Editar encomenda</h2>
+                    </div>
+                    <a class="fechar-painel" href="encomendas.html" aria-label="Fechar editar encomenda">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label>
+                            Remetente cadastrado
+                            <small>opcional</small>
+                            <select name="remetente-cadastrado">
+                                <option>Selecione o remetente</option>
+                                <option>Mariana Costa</option>
+                                <option>João Almeida</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Nome do remetente
+                            <input type="text" value="Mariana Costa" name="nome-do-remetente">
+                        </label>
+
+                        <label>
+                            Telefone do remetente
+                            <input type="tel" value="" name="telefone-do-remetente">
+                        </label>
+
+                        <label>
+                            Nome do destinatário
+                            <input type="text" value="Juliana Costa" name="nome-do-destinatario">
+                        </label>
+
+                        <label>
+                            Telefone do destinatário
+                            <input type="tel" value="" name="telefone-do-destinatario">
+                        </label>
+
+                        <label>
+                            Descrição da encomenda
+                            <input type="text" value="Caixa de roupas" name="descricao-da-encomenda">
+                        </label>
+
+                        <label>
+                            Valor do transporte (R$)
+                            <input type="number" value="20" name="valor-do-transporte-r">
+                        </label>
+
+                        <label>
+                            Viagem
+                            <small>pode ser definida depois</small>
+                            <select name="viagem">
+                                <option>Selecionar depois</option>
+                                <option>São Miguel → Mossoró • 13/11/2026</option>
+                                <option>São Miguel → Pau dos Ferros • 13/11/2026</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Origem da encomenda
+                            <input type="text" value="São Miguel" name="origem-da-encomenda">
+                        </label>
+
+                        <label>
+                            Destino da encomenda
+                            <input type="text" value="Mossoró" name="destino-da-encomenda">
+                        </label>
+
+                        <p class="nota largura-total">O código será gerado ao salvar. A encomenda começa como Cadastrada e as movimentações ficam no histórico.</p>
+                    </div>
+
+                    <div class="acoes">
+                        <a class="botao secundario" href="encomendas.html">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar encomenda</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="janela" id="detalhe-encomenda" aria-label="Painel: detalhe encomenda">
+            <a class="fundo-janela" href="encomendas.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="detalhe-encomenda-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="detalhe-encomenda-titulo">Detalhes da encomenda</h2>
+                    </div>
+
+                    <a class="fechar-painel" href="encomendas.html" aria-label="Fechar detalhes da encomenda">×</a>
+                </header>
+                <span class="selo pendente">Cadastrada</span>
+                <h2 class="espaco">Caixa de roupas</h2>
+                <dl class="dados">
+                    <div>
+                        <dt>Código</dt>
+                        <dd>ENC-010011</dd>
+                    </div>
+
+                    <div>
+                        <dt>Remetente</dt>
+                        <dd>Mariana Costa</dd>
+                    </div>
+
+                    <div>
+                        <dt>Destinatário</dt>
+                        <dd>Juliana Costa</dd>
+                    </div>
+
+                    <div>
+                        <dt>Trajeto</dt>
+                        <dd>São Miguel → Mossoró</dd>
+                    </div>
+
+                    <div>
+                        <dt>Transporte</dt>
+                        <dd>R$ 20,00</dd>
+                    </div>
+
+                    <div>
+                        <dt>Pagamento</dt>
+                        <dd>Fiado</dd>
+                    </div>
+                </dl>
+                <h2 class="espaco">Histórico</h2>
+                <p class="nota">13/11/2026 • 04:30<br>Encomenda cadastrada e aguardando transporte.</p>
+                <div class="acoes">
+                    <a class="botao secundario" href="comprovante.html#ENC-010011">Comprovante</a>
+                    <a class="botao secundario" href="encomendas.html">Voltar</a>
+                    <a class="botao " href="#status-encomenda">Atualizar status</a>
+                </div>
+            </section>
+        </section>
+
+        <section class="janela" id="status-encomenda" aria-label="Painel: status encomenda">
+            <a class="fundo-janela" href="encomendas.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="status-encomenda-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="status-encomenda-titulo">Atualizar situação</h2>
+                    </div>
+                    <a class="fechar-painel" href="encomendas.html" aria-label="Fechar atualizar situação">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <p class="nota largura-total">ENC-010011 • Caixa de roupas</p>
+                        <label>
+                            Nova situação
+                            <select name="nova-situacao">
+                                <option>Cadastrada</option>
+                                <option>Em transporte</option>
+                                <option>Entregue</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Observação (opcional)
+                            <input type="text" value="" name="observacao-opcional">
+                        </label>
+
+                    </div>
+                    <div class="acoes">
+                        <a class="botao secundario" href="encomendas.html">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar situação</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="janela" id="pagamento-encomenda" aria-label="Painel: pagamento encomenda">
+            <a class="fundo-janela" href="encomendas.html" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="pagamento-encomenda-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="pagamento-encomenda-titulo">Receber pagamento</h2>
+                    </div>
+                    <a class="fechar-painel" href="encomendas.html" aria-label="Fechar receber pagamento">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <p class="nota largura-total">ENC-010011 • Caixa de roupas<br>Valor do transporte: R$ 20,00 • Pendente: R$ 20,00</p>
+                        <label>
+                            Valor recebido (R$)
+                            <input type="number" value="20" name="valor-recebido-r">
+                        </label>
+
+                        <label>
+                            Forma de pagamento
+                            <select name="forma-de-pagamento">
+                                <option>Dinheiro</option>
+                                <option>Pix</option>
+                                <option>Cartão</option>
+                                <option>Transferência</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="acoes">
+                        <a class="botao secundario" href="encomendas.html">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Registrar recebimento</button>
+                    </div>
+                </form>
+            </section>
+        </section>
     </div>
 </body>
 </html>

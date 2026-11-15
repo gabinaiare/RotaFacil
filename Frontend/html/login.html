@@ -7,32 +7,39 @@
     <title>Entrar • Rota Fácil</title>
     <link rel="icon" href="../assets/favicon-rota-facil.png">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/desktop.css">
 </head>
 
-<body class="pagina-acesso">
+<body class="pagina-acesso pagina-login">
     <div class="aplicativo">
         <header class="topo-acesso">
             <img src="../assets/logo-rota-facil.png" alt="Rota Fácil">
+
+            <section class="apresentacao-acesso">
+                <small>NO SEU RITMO</small>
+                <h2>Você escolhe a rota.<br>A gente organiza.</h2>
+                <p>Defina destinos, horários e valores. Cada viagem com o transporte e os assentos que você precisa.</p>
+            </section>
         </header>
 
         <main>
-            <span class="selo">ESPAÇO DO MOTORISTA</span>
+            <span class="selo selo-motorista"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="16" rx="3"></rect><path d="M4 10h16M12 3v7M7 19v2M17 19v2M7 14h1M16 14h1"></path></svg><span>ESPAÇO DO MOTORISTA</span></span>
             <h1>Seu dia na direção</h1>
             <p class="introducao">Entre para cuidar das viagens e receba com tranquilidade.</p>
-            <form action="index.html">
+
+            <form>
                 <label>
                     Login ou e-mail
-                    <input type="email" placeholder="Seu login ou e-mail">
+                    <input type="text" placeholder="Seu login ou e-mail">
                 </label>
                 <label>
                     Senha
                     <input type="password" placeholder="Digite sua senha">
                 </label>
                 <a class="link-acesso recuperar-senha" href="recuperar-acesso.html">Esqueci minha senha</a>
-                <button class="botao" type="submit">Entrar no meu painel</button>
+                <a class="botao" href="index.html">Entrar no meu painel</a>
             </form>
-
-            <p class="observacao-acesso">Primeira vez aqui? <a href="cadastro.html">Criar conta de motorista</a></p>
+            <p class="observacao-acesso">Primeira vez aqui?<a href="cadastro.html">Criar conta de motorista</a></p>
         </main>
     </div>
 </body>
