@@ -233,6 +233,10 @@ small {
     color: #ad711b;
 }
 
+.ciano {
+    color: #FF00FF;
+}
+
 .cartao {
     overflow: hidden;
     margin-bottom: 20px;
