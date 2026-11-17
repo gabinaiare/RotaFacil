@@ -29,9 +29,7 @@
                 <a class="item-menu" href="encomendas.html"><span class="icone icone-encomendas" aria-hidden="true"></span>Encomendas</a>
                 <a class="item-menu" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span>Passageiros</a>
                 <a class="item-menu" href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
-                <a class="item-menu" href="estatisticas.html"><span class="icone icone-grafico-de-negocios" aria-hidden="true"></span>Estatísticas</a>
                 <a class="item-menu" href="relatorios.html"><span class="icone icone-relatorio-de-negocios-2" aria-hidden="true"></span>Relatórios</a>
-                <a class="item-menu" href="backup.html"><span class="icone icone-armazenamento-de-banco-de-dados" aria-hidden="true"></span>Cópia de segurança</a>
             </nav>
 
             <footer>
@@ -270,7 +268,6 @@
                         </div>
                         <p>Assento 11 · A receber</p>
                         <div class="botoes-presenca"><span class="assento-liberado">Assento liberado</span></div>
-        
                     </div>
                 </article>
             </section>
@@ -494,7 +491,7 @@
                         <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Registrar passagem</button>
                     </div>
                 </form>
-</section>
+            </section>
         </section>
 
         <section class="janela" id="vender-passagem-livre" aria-label="Painel: vender passagem">
@@ -574,7 +571,7 @@
                         <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Registrar passagem</button>
                     </div>
                 </form>
-</section>
+            </section>
         </section>
 
         <section class="janela" id="editar-passagem" aria-label="Painel: editar passagem">
@@ -738,7 +735,7 @@
                         <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar alterações</button>
                     </div>
                 </form>
-</section>
+            </section>
         </section>
 
         <section class="janela pagamento-passagem" id="pagamento" aria-label="Painel: pagamento">
@@ -990,7 +987,7 @@
                 </section>
                 <a class="botao" href="comprovante.html#P-001">Abrir para impressão / PDF</a>
                 <a class="botao secundario" href="passagens.html">Voltar às passagens</a>
-</section>
+            </section>
         </section>
     </div>
     <section class="janela" id="solicitar-confirmacao" aria-label="Solicitar confirmação pelo WhatsApp">
@@ -1006,19 +1003,21 @@
             </header>
             <form class="formulario">
                 <label>Mensagem para o WhatsApp
-                    <textarea name="mensagem-confirmacao" rows="10">Olá, [nome]! 👋
+                    <textarea name="mensagem-confirmacao" rows="10">
+                        Olá, [nome]! 👋
 
-    Estamos confirmando sua presença na viagem:
-    📍 São Miguel → Pau dos Ferros
-    📅 13 de novembro de 2026
-    🕒 Saída às 06:30
-    💺 Assento [assento]
+                        Estamos confirmando sua presença na viagem:
+                        📍 São Miguel → Pau dos Ferros
+                        📅 13 de novembro de 2026
+                        🕒 Saída às 06:30
+                        💺 Assento [assento]
 
-    Está tudo certo para você viajar?
-    Responda SIM para confirmar ou NÃO caso não possa ir.
+                        Está tudo certo para você viajar?
+                        Responda SIM para confirmar ou NÃO caso não possa ir.
 
-    Obrigado!
-    Miguel Queiroz — Rota Fácil</textarea>
+                        Obrigado!
+                        Miguel Queiroz — Rota Fácil
+                    </textarea>
                 </label>
                 <p class="personalizacao-confirmacao">O nome e o assento serão personalizados para cada passageiro.</p>
                 <fieldset class="destinatarios-confirmacao">
@@ -1145,20 +1144,24 @@
                     <label>Passageiro da lista de espera<select name="contato-espera"><option>Camila Souza · 1ª da fila</option>
                             <option>Paulo Henrique · 2º da fila</option>
                             <option>Rosa Maria · 3ª da fila</option></select></label>
-                    <label>Mensagem para o WhatsApp<textarea name="mensagem-espera" rows="12">Olá, [nome]! 👋
+                    <label>Mensagem para o WhatsApp
+                        <textarea name="mensagem-espera" rows="12">
+                            Olá, [nome]! 👋
 
-Você está na nossa lista de espera e surgiu uma vaga para a viagem:
-📍 São Miguel → Pau dos Ferros
-📅 13 de novembro de 2026
-🕒 Saída às 06:30
-💰 Passagem: R$ 25,00
+                            Você está na nossa lista de espera e surgiu uma vaga para a viagem:
+                            📍 São Miguel → Pau dos Ferros
+                            📅 13 de novembro de 2026
+                            🕒 Saída às 06:30
+                            💰 Passagem: R$ 25,00
 
-Você ainda tem interesse em viajar?
-Responda SIM se quiser a vaga ou NÃO se não precisar mais.
+                            Você ainda tem interesse em viajar?
+                            Responda SIM se quiser a vaga ou NÃO se não precisar mais.
 
-Vou confirmar com você o assento e os dados da passagem antes de concluir o registro.
-Obrigado!
-Miguel Queiroz — Rota Fácil</textarea></label>
+                            Vou confirmar com você o assento e os dados da passagem antes de concluir o registro.
+                            Obrigado!
+                            Miguel Queiroz — Rota Fácil
+                        </textarea>
+                    </label>
                     <p class="nota largura-total">Consulte um passageiro por vez, respeitando a ordem da fila. O motorista registra a resposta recebida no WhatsApp.</p>
                 </div>
                 <div class="acoes">

@@ -8,6 +8,7 @@
     <link rel="icon" href="../assets/favicon-rota-facil.png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/desktop.css">
+    <link rel="stylesheet" href="../css/passagens.css">
 </head>
 
 <body class="pagina-index">
@@ -27,9 +28,7 @@
                 <a class="item-menu" href="encomendas.html"><span class="icone icone-encomendas" aria-hidden="true"></span>Encomendas</a>
                 <a class="item-menu" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span>Passageiros</a>
                 <a class="item-menu" href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
-                <a class="item-menu" href="estatisticas.html"><span class="icone icone-grafico-de-negocios" aria-hidden="true"></span>Estatísticas</a>
                 <a class="item-menu" href="relatorios.html"><span class="icone icone-relatorio-de-negocios-2" aria-hidden="true"></span>Relatórios</a>
-                <a class="item-menu" href="backup.html"><span class="icone icone-armazenamento-de-banco-de-dados" aria-hidden="true"></span>Cópia de segurança</a>
             </nav>
 
             <footer>
@@ -69,50 +68,12 @@
         <main id="conteudo">
             <h1>Olá, Miguel</h1>
             <p class="introducao">Seu transporte, seus clientes e suas contas em um só lugar.</p>
-            <a class="botao" href="viagens.html#nova-viagem">+ Nova rota</a>
+            <a class="botao" href="#nova-viagem">+ Nova rota</a>
             <div class="atalhos">
-                <a href="passagens.html#vender-passagem"><span class="icone icone-bilhete" aria-hidden="true"></span><strong>Vender passagem</strong></a>
-                <a href="encomendas.html#nova-encomenda"><span class="icone icone-encomendas" aria-hidden="true"></span><strong>Nova encomenda</strong></a>
-                <a href="clientes.html#novo-cliente"><span class="icone icone-cliente" aria-hidden="true"></span><strong>Novo cliente</strong></a>
+                <a href="#vender-passagem"><span class="icone icone-bilhete" aria-hidden="true"></span><strong>Vender passagem</strong></a>
+                <a href="#nova-encomenda"><span class="icone icone-encomendas" aria-hidden="true"></span><strong>Nova encomenda</strong></a>
+                <a href="#novo-cliente"><span class="icone icone-cliente" aria-hidden="true"></span><strong>Novo cliente</strong></a>
             </div>
-
-            <section class="indicadores">
-                <article class="indicador">
-                    <p>Recebido neste mês</p>
-                    <strong class="verde">R$ 187,50</strong>
-                    <small>Pagamentos registrados</small>
-                </article>
-
-                <article class="indicador">
-                    <p>Fiado a receber</p>
-                    <strong class="amarelo">R$ 232,50</strong>
-                    <a class="link-fiado" href="clientes.html#clientes-com-fiado">Ver clientes com fiado</a>
-                </article>
-
-                <article class="indicador">
-                    <p>Rotas cadastradas</p>
-                    <strong class="">2</strong>
-                    <small>Disponíveis no seu painel</small>
-                </article>
-
-                <article class="indicador">
-                    <p>Passagens ocupadas</p>
-                    <strong class="">12</strong>
-                    <small>Nas viagens programadas</small>
-                </article>
-
-                <article class="indicador">
-                    <p>Assentos disponíveis</p>
-                    <strong class="">10</strong>
-                    <small>Somando todas as viagens</small>
-                </article>
-
-                <article class="indicador">
-                    <p>Meus veículos</p>
-                    <strong class="">2</strong>
-                    <small>Prontos para viajar</small>
-                </article>
-            </section>
 
             <section class="cartao lista-viagens">
                 <div class="cabecalho-secao">
@@ -136,7 +97,6 @@
                         
                         <div>
                             <h3>Pau dos Ferros</h3>
-                            <small>Chegada às 07:40</small>
                         </div>
                     </div>
 
@@ -175,7 +135,6 @@
                         <span class="icone icone-viajar-por" aria-hidden="true"></span>
                         <div>
                             <h3>Mossoró</h3>
-                            <small>Chegada às 08:30</small>
                         </div>
                     </div>
 
@@ -206,7 +165,7 @@
                 <small>NO SEU RITMO</small>
                 <h2>Você escolhe a rota.<br>A gente organiza.</h2>
                 <p>Defina destinos, horários e valores. Cada viagem com o transporte e os assentos que você precisa.</p>
-                <a class="botao" href="viagens.html#nova-viagem">+ Cadastrar uma rota</a>
+                <a class="botao" href="#nova-viagem">+ Cadastrar uma rota</a>
             </section>
 
             <section class="cartao acesso-rapido">
@@ -214,7 +173,7 @@
                     <h2>Acesso rápido</h2>
                 </div>
 
-                <a class="item-acesso-rapido" href="veiculos.html#novo-veiculo">
+                <a class="item-acesso-rapido" href="#novo-veiculo">
                     <span class="icone icone-bus" aria-hidden="true"></span>
                     <div>
                         <strong>Cadastrar veículo</strong>
@@ -262,7 +221,7 @@
                     <span class="etiqueta"><span class="icone icone-cadeira-de-carro" aria-hidden="true"></span>16 assentos</span>
                     <span class="etiqueta"><span class="icone icone-bilhete" aria-hidden="true"></span>Numerados</span>
                 </div>
-                <a class="editar" href="veiculos.html#novo-veiculo">Editar veículo</a>
+                <a class="editar" href="#novo-veiculo">Editar veículo</a>
             </article>
 
             <article class="veiculo cartao">
@@ -280,7 +239,7 @@
                     <span class="etiqueta"><span class="icone icone-cadeira-de-carro" aria-hidden="true"></span>6 assentos</span>
                     <span class="etiqueta"><span class="icone icone-bilhete" aria-hidden="true"></span>Livres</span>
                 </div>
-                <a class="editar" href="veiculos.html#novo-veiculo">Editar veículo</a>
+                <a class="editar" href="#novo-veiculo">Editar veículo</a>
             </article>
             <footer class="rodape-pagina">Rota Fácil • Cada motorista, seu próprio caminho.</footer>
         </main>
@@ -292,6 +251,416 @@
             <a class="" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span><span>Passageiros</span></a>
             <a class="" href="#menu"><span class="icone icone-mais" aria-hidden="true"></span><span>Mais</span></a>
         </nav>
+
+        <section class="janela" id="nova-viagem" aria-label="Painel: nova viagem">
+            <a class="fundo-janela" href="#conteudo" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="nova-viagem-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="nova-viagem-titulo">Nova viagem</h2>
+                    </div>
+                    <a class="fechar-painel" href="#conteudo" aria-label="Fechar nova viagem">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label>
+                            Origem
+                            <input type="text" placeholder="São Miguel" name="origem">
+                        </label>
+                        <label>
+                            Destino
+                            <input type="text" placeholder="Pau dos Ferros" name="destino">
+                        </label>
+                        <label>
+                            Data de saída
+                            <input type="date" placeholder="" name="data-de-saida">
+                        </label>
+                        <label>
+                            Horário de saída
+                            <input type="time" placeholder="" name="horario-de-saida">
+                        </label>
+                        <label>
+                            Data de chegada
+                            <input type="date" placeholder="" name="data-de-chegada">
+                        </label>
+                        <label>
+                            Veículo
+                            <small>opcional</small>
+                            <select name="veiculo">
+                                <option>Selecione o veículo</option>
+                                <option>Mercedes-Benz Sprinter · 16 assentos</option>
+                                <option>Van de viagens · 6 assentos</option>
+                            </select>
+                        </label>
+                        <label>
+                            Valor por passageiro (R$)
+                            <input type="number" placeholder="25,00" name="valor-por-passageiro-r">
+                        </label>
+                    </div>
+                    <div class="acoes">
+                        <a class="botao secundario" href="#conteudo">Voltar</a>
+                        <button class="botao" type="button" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="janela pagina-passagens" id="vender-passagem" aria-label="Painel: vender passagem">
+            <a class="fundo-janela" href="#conteudo" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="vender-passagem-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="vender-passagem-titulo">Registrar venda de passagem</h2>
+                    </div>
+                    <a class="fechar-painel" href="#conteudo" aria-label="Fechar registrar venda de passagem">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label class="largura-total">
+                            Cliente
+                            <select name="cliente">
+                                <option>Selecione o cliente</option>
+                                <option>Mariana Costa</option>
+                                <option>João Almeida</option>
+                                <option>Fernanda Lima</option>
+                            </select>
+                        </label>
+                        <a class="link-cadastro largura-total" href="#novo-cliente">+ Cadastrar passageiro</a>
+                        <label class="largura-total">
+                            Viagem
+                            <select name="viagem">
+                                <option>São Miguel → Pau dos Ferros • 13/11/2026 • 06:30</option>
+                                <option>São Miguel → Mossoró • 13/11/2026 • 05:00</option>
+                            </select>
+                        </label>
+                        <div class="largura-total">
+
+                            <fieldset class="campo-assentos">
+                                <legend class="sr-only">Mapa de assentos</legend>
+                                <p class="frente">FRENTE DO VEÍCULO</p>
+                                <div class="assentos">
+                                    <label class="assento">
+                                        <input aria-label="Assento 01" type="radio" name="assento" value="1" disabled>
+                                        <span>01</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 02" type="radio" name="assento" value="2" disabled>
+                                        <span>02</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 03" type="radio" name="assento" value="3" checked>
+                                        <span>03</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 04" type="radio" name="assento" value="4" disabled>
+                                        <span>04</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 05" type="radio" name="assento" value="5" disabled>
+                                        <span>05</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 06" type="radio" name="assento" value="6">
+                                        <span>06</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 07" type="radio" name="assento" value="7" disabled>
+                                        <span>07</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 08" type="radio" name="assento" value="8" disabled>
+                                        <span>08</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 09" type="radio" name="assento" value="9" disabled>
+                                        <span>09</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 10" type="radio" name="assento" value="10">
+                                        <span>10</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 11" type="radio" name="assento" value="11">
+                                        <span>11</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 12" type="radio" name="assento" value="12" disabled>
+                                        <span>12</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 13" type="radio" name="assento" value="13" disabled>
+                                        <span>13</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 14" type="radio" name="assento" value="14">
+                                        <span>14</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 15" type="radio" name="assento" value="15">
+                                        <span>15</span>
+                                    </label>
+                                    <label class="assento">
+                                        <input aria-label="Assento 16" type="radio" name="assento" value="16" disabled>
+                                        <span>16</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <div class="legenda">
+                                <span><i class="livre"></i> Livre</span>
+                                <span><i class="ocupado"></i> Ocupado</span>
+                                <span><i class="selecionado"></i> Selecionado</span>
+                            </div>
+                        </div>
+                        <label>
+                            Valor da passagem (R$)
+                            <input type="number" value="25" name="valor-da-passagem-r">
+                        </label>
+                        <label class="forma-pagamento-principal">
+                            Forma de pagamento
+                            <select name="forma-de-pagamento">
+                                <option>Dinheiro</option>
+                                <option>Pix</option>
+                                <option>Cartão</option>
+                                <option>Transferência</option>
+                            </select>
+                        </label>
+                        <label>
+                            Situação do pagamento
+                            <select name="situacao-do-pagamento">
+                                <option>Fiado • ainda não recebido</option>
+                                <option>Pago</option>
+                                <option value="parcial">Pago parcialmente</option>
+                            </select>
+                        </label>
+                        <div class="valor-parcial largura-total">
+                            <div class="campos-valor-parcial">
+                                <label>
+                                    Valor já recebido (R$)
+                                    <input type="number" name="valor-ja-recebido" min="0" step="0.01" placeholder="Ex.: 10,00">
+                                </label>
+                                <label>
+                                    Forma de pagamento da entrada
+                                    <select name="forma-pagamento-parcial">
+                                        <option>Pix</option>
+                                        <option>Dinheiro</option>
+                                        <option>Cartão</option>
+                                        <option>Transferência</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <small>Informe o total já recebido e como foi pago. O restante fica a receber.</small>
+                        </div>
+                    </div>
+                    <div class="acoes">
+                        <a class="botao secundario" href="#conteudo">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Registrar passagem</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="janela" id="nova-encomenda" aria-label="Painel: nova encomenda">
+            <a class="fundo-janela" href="#conteudo" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="nova-encomenda-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="nova-encomenda-titulo">Nova encomenda</h2>
+                    </div>
+
+                    <a class="fechar-painel" href="#conteudo" aria-label="Fechar nova encomenda">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label>
+                            Remetente cadastrado
+                            <small>opcional</small>
+                            <select name="remetente-cadastrado">
+                                <option>Selecione o remetente</option>
+                                <option>Mariana Costa</option>
+                                <option>João Almeida</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Nome do remetente
+                            <input type="text" value="" name="nome-do-remetente">
+                        </label>
+
+                        <label>
+                            Telefone do remetente
+                            <input type="tel" value="" name="telefone-do-remetente">
+                        </label>
+
+                        <label>
+                            Nome do destinatário
+                            <input type="text" value="" name="nome-do-destinatario">
+                        </label>
+
+                        <label>
+                            Telefone do destinatário
+                            <input type="tel" value="" name="telefone-do-destinatario">
+                        </label>
+
+                        <label>
+                            Descrição da encomenda
+                            <input type="text" value="" name="descricao-da-encomenda">
+                        </label>
+
+                        <label>
+                            Valor do transporte (R$)
+                            <input type="number" value="" name="valor-do-transporte-r">
+                        </label>
+
+                        <label>
+                            Viagem
+                            <small>pode ser definida depois</small>
+                            <select name="viagem">
+                                <option>Selecionar depois</option>
+                                <option>São Miguel → Mossoró • 13/11/2026</option>
+                                <option>São Miguel → Pau dos Ferros • 13/11/2026</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Origem da encomenda
+                            <input type="text" value="São Miguel" name="origem-da-encomenda">
+                        </label>
+
+                        <label>
+                            Destino da encomenda
+                            <input type="text" value="" name="destino-da-encomenda">
+                        </label>
+
+                        <p class="nota largura-total">O código será gerado ao salvar. A encomenda começa como Cadastrada e as movimentações ficam no histórico.</p>
+                    </div>
+
+                    <div class="acoes">
+                        <a class="botao secundario" href="#conteudo">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar encomenda</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="janela" id="novo-cliente" aria-label="Painel: novo cliente">
+            <a class="fundo-janela" href="#conteudo" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="novo-cliente-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="novo-cliente-titulo">Cadastrar passageiro</h2>
+                    </div>
+                    <a class="fechar-painel" href="#conteudo" aria-label="Fechar cadastrar passageiro">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label>
+                            Nome completo
+                            <input type="text" placeholder="Nome do passageiro" name="nome-completo">
+                        </label>
+
+                        <label>
+                            WhatsApp com DDD
+                            <input type="tel" placeholder="(84) 99999-9999" name="whatsapp-com-ddd">
+                        </label>
+
+                        <label>
+                            E-mail (opcional)
+                            <input type="email" placeholder="" name="e-mail-opcional">
+                        </label>
+
+                        <label>
+                            Endereço (opcional)
+                            <input type="text" placeholder="Rua, número e bairro" name="endereco-opcional">
+                        </label>
+                    </div>
+
+                    <div class="acoes">
+                        <a class="botao secundario" href="#conteudo">Voltar</a>
+                        <button class="botao" type="button" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="janela" id="novo-veiculo" aria-label="Painel: novo veiculo">
+            <a class="fundo-janela" href="#conteudo" aria-label="Fechar painel"></a>
+
+            <section class="painel" role="dialog" aria-modal="true" aria-labelledby="novo-veiculo-titulo" tabindex="-1">
+
+                <header class="painel-cabecalho">
+                    <div>
+                        <span class="marca-painel">ROTA FÁCIL</span>
+                        <h2 id="novo-veiculo-titulo">Cadastrar veículo</h2>
+                    </div>
+                    <a class="fechar-painel" href="#conteudo" aria-label="Fechar cadastrar veículo">×</a>
+                </header>
+
+                <form class="formulario" method="post">
+                    <div class="grade-formulario">
+                        <label>
+                            Modelo
+                            <input type="text" value="" name="modelo">
+                        </label>
+                        <label>
+                            Tipo
+                            <select name="tipo">
+                                <option value="van">Van</option>
+                                <option value="onibus">Ônibus</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </label>
+                        <label class="tipo-transporte-outro">
+                            Especifique o tipo de transporte
+                            <input type="text" name="tipo-transporte-outro" placeholder="Ex.: micro-ônibus ou carro">
+                        </label>
+                        <label>
+                            Placa
+                            <input type="text" value="ABC1D23" name="placa">
+                        </label>
+                        <label>
+                            Capacidade de passageiros
+                            <input type="number" value="16" name="capacidade-de-passageiros">
+                        </label>
+                        <label>
+                            Situação
+                            <select name="situacao">
+                                <option>Disponível</option>
+                                <option>Em manutenção</option>
+                                <option>Indisponível</option>
+                            </select>
+                        </label>
+                        <label>
+                            Assentos
+                            <select name="assentos">
+                                <option>Livres</option>
+                                <option>Numerados</option>
+                            </select>
+                        </label>
+                        <p class="nota largura-total">A placa identifica o veículo. Somente veículos disponíveis podem receber novas viagens.</p>
+                    </div>
+                    <div class="acoes">
+                        <a class="botao secundario" href="#conteudo">Cancelar</a>
+                        <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar veículo</button>
+                    </div>
+                </form>
+            </section>
+        </section>
     </div>
 </body>
 </html>

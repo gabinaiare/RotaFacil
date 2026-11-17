@@ -28,9 +28,7 @@
                 <a class="item-menu" href="encomendas.html"><span class="icone icone-encomendas" aria-hidden="true"></span>Encomendas</a>
                 <a class="item-menu" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span>Passageiros</a>
                 <a class="item-menu" href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
-                <a class="item-menu" href="estatisticas.html"><span class="icone icone-grafico-de-negocios" aria-hidden="true"></span>Estatísticas</a>
                 <a class="item-menu" href="relatorios.html"><span class="icone icone-relatorio-de-negocios-2" aria-hidden="true"></span>Relatórios</a>
-                <a class="item-menu" href="backup.html"><span class="icone icone-armazenamento-de-banco-de-dados" aria-hidden="true"></span>Cópia de segurança</a>
             </nav>
 
             <footer>
@@ -88,15 +86,6 @@
                             Data
                             <input type="date" value="">
                         </label>
-                        <label>
-                            Situação
-                            <select>
-                                <option>Todas</option>
-                                <option>Programada</option>
-                                <option>Concluída</option>
-                                <option>Cancelada</option>
-                            </select>
-                        </label>
                     </div>
                     <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Buscar</button>
                 </form>
@@ -117,7 +106,6 @@
                             <span class="icone icone-viajar-por" aria-hidden="true"></span>
                             <div>
                                 <h3>Pau dos Ferros</h3>
-                                <small>Chegada às 07:40</small>
                             </div>
                         </div>
                         <div class="linha">
@@ -131,10 +119,10 @@
                         <div class="linha final-card">
                             <span class="selo neutro">Assentos numerados</span>
                             <a href="#detalhe-viagem">Ver viagem</a>
+                            <a href="#confirmar-viagem">Concluída</a>
                         </div>
                     </article>
                     <div class="acoes-registro">
-                        <span class="selo neutro">Programada</span>
                         <a href="#editar-viagem">Editar</a>
                         <a class="perigo" href="#cancelar-viagem">Cancelar viagem</a>
                         <a href="passagens.html#solicitar-confirmacao">Confirmar pelo WhatsApp</a>
@@ -155,7 +143,6 @@
                             <span class="icone icone-viajar-por" aria-hidden="true"></span>
                             <div>
                                 <h3>Mossoró</h3>
-                                <small>Chegada às 08:30</small>
                             </div>
                         </div>
                         <div class="linha">
@@ -169,10 +156,10 @@
                         <div class="linha final-card">
                             <span class="selo neutro">Assentos livres</span>
                             <a href="#detalhe-viagem-livre">Ver viagem</a>
+                            <a href="#confirmar-viagem">Concluída</a>
                         </div>
                     </article>
                     <div class="acoes-registro">
-                        <span class="selo neutro">Programada</span>
                         <a href="#editar-viagem">Editar</a>
                         <a class="perigo" href="#cancelar-viagem">Cancelar viagem</a>
                         <a href="passagens.html#solicitar-confirmacao">Confirmar pelo WhatsApp</a>
@@ -193,7 +180,6 @@
                             <span class="icone icone-viajar-por" aria-hidden="true"></span>
                             <div>
                                 <h3>Pau dos Ferros</h3>
-                                <small>Chegada às 07:40</small>
                             </div>
                         </div>
                         <div class="linha">
@@ -207,17 +193,17 @@
                         <div class="linha final-card">
                             <span class="selo neutro">Assentos numerados</span>
                             <a href="#detalhe-viagem">Ver viagem</a>
+                            <a href="#confirmar-viagem">Concluída</a>
                         </div>
                     </article>
                     <div class="acoes-registro">
-                        <span class="selo neutro">Concluída</span>
                         <a href="#editar-viagem">Editar</a>
                     </div>
                 </div>
             </div>
 
             <footer class="rodape-pagina">Rota Fácil • Cada motorista, seu próprio caminho.</footer>
-</main>
+        </main>
 
         <nav class="menu-inferior" aria-label="Navegação principal">
             <a class="" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span><span>Início</span></a>
@@ -263,11 +249,8 @@
                             <input type="date" placeholder="" name="data-de-chegada">
                         </label>
                         <label>
-                            Horário de chegada
-                            <input type="time" placeholder="" name="horario-de-chegada">
-                        </label>
-                        <label>
                             Veículo
+                            <small>opcional</small>
                             <select name="veiculo">
                                 <option>Selecione o veículo</option>
                                 <option>Mercedes-Benz Sprinter · 16 assentos</option>
@@ -284,7 +267,7 @@
                         <button class="botao" type="button" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar</button>
                     </div>
                 </form>
-</section>
+            </section>
         </section>
 
         <section class="janela" id="editar-viagem" aria-label="Painel: editar viagem">
@@ -323,10 +306,6 @@
                             <input type="date" placeholder="" name="data-de-chegada">
                         </label>
                         <label>
-                            Horário de chegada
-                            <input type="time" placeholder="" name="horario-de-chegada">
-                        </label>
-                        <label>
                             Veículo
                             <select name="veiculo">
                                 <option>Selecione o veículo</option>
@@ -344,7 +323,7 @@
                         <button class="botao" type="button" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Salvar</button>
                     </div>
                 </form>
-</section>
+            </section>
         </section>
 
         <section class="janela" id="detalhe-viagem-livre" aria-label="Detalhes da viagem com assentos livres">
@@ -528,7 +507,7 @@
                     <a class="botao secundario" href="#editar-viagem">Editar viagem</a>
                     <a class="botao " href="passagens.html#vender-passagem">Vender passagem</a>
                 </div>
-</section>
+            </section>
         </section>
 
         <section class="janela" id="cancelar-viagem" aria-label="Painel: cancelar viagem">
@@ -557,7 +536,7 @@
                         <button type="button" class="botao" disabled title="Prévia visual: esta ação ainda não salva ou envia dados." aria-disabled="true">Confirmar cancelamento</button>
                     </div>
                 </form>
-</section>
+            </section>
         </section>
     </div>
 </body>

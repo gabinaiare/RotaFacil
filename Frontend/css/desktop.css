@@ -8,7 +8,7 @@
     }
 
     .menu-lateral,
-    .menu-lateral:target {
+    #controle-menu:checked ~ .menu-lateral {
         width: 240px;
         padding: 32px 12px 20px;
         scrollbar-width: thin;

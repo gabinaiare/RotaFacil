@@ -29,9 +29,7 @@
                 <a class="item-menu" href="encomendas.html"><span class="icone icone-encomendas" aria-hidden="true"></span>Encomendas</a>
                 <a class="item-menu" href="clientes.html"><span class="icone icone-cliente" aria-hidden="true"></span>Passageiros</a>
                 <a class="item-menu" href="perfil.html"><span class="icone icone-do-utilizador" aria-hidden="true"></span>Meu perfil</a>
-                <a class="item-menu" href="estatisticas.html"><span class="icone icone-grafico-de-negocios" aria-hidden="true"></span>Estatísticas</a>
                 <a class="item-menu ativo" aria-current="page" href="relatorios.html"><span class="icone icone-relatorio-de-negocios-2" aria-hidden="true"></span>Relatórios</a>
-                <a class="item-menu" href="backup.html"><span class="icone icone-armazenamento-de-banco-de-dados" aria-hidden="true"></span>Cópia de segurança</a>
             </nav>
 
             <footer>
@@ -80,75 +78,210 @@
                 </div>
             </div>
 
-            <section class="cartao bloco filtro-relatorio">
+            <div class="seletor-periodo" role="group" aria-label="Período (seleção visual)">
+                <label>
+                    <input type="radio" name="periodo" value="0">
+                    <span>7 dias</span>
+                </label>
 
+                <label>
+                    <input type="radio" name="periodo" value="1" checked>
+                    <span>30 dias</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="periodo" value="2">
+                    <span>6 meses</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="periodo" value="3">
+                    <span>1 ano</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="periodo" value="4">
+                    <span>Personalizado</span>
+                </label>
+            </div>
+
+            <section class="periodo-personalizado cartao" aria-label="Período personalizado">
                 <form>
                     <label>
-                        Tipo de relatório
-                        <select>
-                            <option>Passagens e encomendas</option>
-                            <option>Viagens</option>
-                            <option>Pagamentos</option>
-                            <option>Passageiros</option>
-                        </select>
-                    </label>
-                    <label>
-                        Período
-                        <select>
-                            <option>30 dias</option>
-                            <option>7 dias</option>
-                            <option>6 meses</option>
-                            <option>1 ano</option>
-                            <option>Personalizado</option>
-                        </select>
-                    </label>
-                    <label>
                         De
-                        <input type="date" value="2026-10-14">
+                        <input type="date" name="inicio-personalizado" value="2026-10-14">
                     </label>
                     <label>
                         Até
-                        <input type="date" value="2026-11-12">
+                        <input type="date" name="fim-personalizado" value="2026-11-12">
                     </label>
-                    <button type="button" class="botao" disabled title="Prévia visual: ação disponível na etapa com dados.">Gerar relatório</button>
+                    <button class="botao" type="button" disabled title="A aplicação do período depende da integração com os dados.">Aplicar período</button>
                 </form>
             </section>
+
+            <section class="destaque-mes">
+                <span>MÊS ATUAL · NOVEMBRO</span>
+                <h2>R$ 212,50</h2>
+                <p>Recebido de 01/11/2026 até 12/11/2026</p>
+                <div>
+                    <article>
+                        <small>Valor das vendas no período</small>
+                        <strong>R$ 445,00</strong>
+                    </article>
+
+                    <article>
+                        <small>Valor médio da passagem</small>
+                        <strong>R$ 32,69</strong>
+                    </article>
+
+                    <article>
+                        <small>Clientes no período</small>
+                        <strong>10</strong>
+                    </article>
+                </div>
+            </section>
+
             <div class="periodo-resumo">
                 <span>14/10/2026 a 12/11/2026</span>
             </div>
 
-            <section class="metricas">
+            <section class="indicadores">
+                <article class="indicador">
+                    <p>Recebido neste mês</p>
+                    <strong class="verde">R$ 187,50</strong>
+                    <small>Pagamentos registrados</small>
+                </article>
 
-                <article class="cartao metrica">
-                    <p>Viagens</p>
+                <article class="indicador">
+                    <p>Fiado a receber</p>
+                    <strong class="amarelo">R$ 232,50</strong>
+                    <a class="link-fiado" href="clientes.html#clientes-com-fiado">Ver clientes com fiado</a>
+                </article>
+
+                <article class="indicador">
+                    <p>Rotas cadastradas</p>
                     <strong class="">2</strong>
+                    <small>Disponíveis no seu painel</small>
                 </article>
 
-                <article class="cartao metrica">
-                    <p>Passagens</p>
-                    <strong class="">13</strong>
+                <article class="indicador">
+                    <p>Passagens ocupadas</p>
+                    <strong class="">12</strong>
+                    <small>Nas viagens programadas</small>
                 </article>
 
-                <article class="cartao metrica">
-                    <p>Encomendas</p>
-                    <strong class="">1</strong>
+                <article class="indicador">
+                    <p>Assentos disponíveis</p>
+                    <strong class="">10</strong>
+                    <small>Somando todas as viagens</small>
                 </article>
 
-                <article class="cartao metrica">
-                    <p>Recebido</p>
-                    <strong class="">R$ 212,50</strong>
+                <article class="indicador">
+                    <p>Meus veículos</p>
+                    <strong class="">2</strong>
+                    <small>Prontos para viajar</small>
                 </article>
             </section>
 
-            <section class="cartao vendas-estatistica">
+            <div class="grade-graficos">
+                <section class="cartao painel-estatistica">
+                    <header>
+                        <h2>Recebimentos ao longo do tempo</h2>
+                        <p>Passagens e encomendas, pela data do pagamento.</p>
+                    </header>
 
+                    <div class="conteudo-grafico">
+                        <div class="linha">
+                            <div class="legenda-grafico">
+                                <span><i></i> Passagens</span>
+                                <span><i class="azul"></i> Encomendas</span>
+                            </div>
+                            <small>Valores em R$</small>
+                        </div>
+                        <div class="rolagem-grafico" tabindex="0" role="region" aria-label="Recebimentos por data. Role para os lados para ver todas as datas."><svg class="grafico-recebimentos" viewbox="0 0 540 220" role="img" aria-labelledby="grafico-titulo grafico-desc"><title id="grafico-titulo">Recebimentos por data</title><desc id="grafico-desc">Passagens: 25 reais em 5 de novembro e 187 reais e 50 centavos em 12 de novembro. Encomendas: zero. Total 212 reais e 50 centavos.</desc><line x1="38" y1="180" x2="518" y2="180" stroke="#e8eef3"></line><text x="28" y="184" text-anchor="end">0</text><line x1="38" y1="140" x2="518" y2="140" stroke="#e8eef3"></line><text x="28" y="144" text-anchor="end">50</text><line x1="38" y1="100" x2="518" y2="100" stroke="#e8eef3"></line><text x="28" y="104" text-anchor="end">100</text><line x1="38" y1="60" x2="518" y2="60" stroke="#e8eef3"></line><text x="28" y="64" text-anchor="end">150</text><line x1="38" y1="20" x2="518" y2="20" stroke="#e8eef3"></line><text x="28" y="24" text-anchor="end">200</text><text x="38" y="207" text-anchor="middle">14/10</text><text x="86" y="207" text-anchor="middle">17/10</text><text x="134" y="207" text-anchor="middle">20/10</text><text x="182" y="207" text-anchor="middle">23/10</text><text x="230" y="207" text-anchor="middle">26/10</text><text x="278" y="207" text-anchor="middle">29/10</text><text x="326" y="207" text-anchor="middle">01/11</text><text x="374" y="207" text-anchor="middle">04/11</text><text x="422" y="207" text-anchor="middle">07/11</text><text x="470" y="207" text-anchor="middle">10/11</text><text x="518" y="207" text-anchor="middle">12/11</text><rect x="391" y="160" width="10" height="20" rx="2" fill="#18aa80"></rect><rect x="508" y="30" width="10" height="150" rx="2" fill="#18aa80"></rect></svg></div><small class="dica-grafico">Deslize para os lados para ver todas as datas.</small>
+                    </div>
+                </section>
+
+                <section class="cartao painel-estatistica">
+                    <header>
+                        <h2>Formas de pagamento</h2>
+                    </header>
+
+                    <div class="rosca-pagamento" role="img" aria-label="Recebido: R$ 212,50. Não informado: R$ 187,50, 88,2%. Pix: R$ 25,00, 11,8%.">
+                        <div>
+                            <small>Recebido</small>
+                            <strong>R$ 212,50</strong>
+                        </div>
+                    </div>
+
+                    <ul class="lista-pagamentos">
+                        <li><span><i></i> Não informado</span><strong>R$ 187,50</strong><small>88,2%</small></li>
+                        <li><span><i class="azul"></i> Pix</span><strong>R$ 25,00</strong><small>11,8%</small></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="cabecalho-resultados">
+                <h2>Resultados por rota</h2>
+                <small>Vendas realizadas no período</small>
+            </div>
+
+            <section class="cartao bloco">
+                <div class="tabela-rolagem">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Rota</th>
+                                <th scope="col">Passagens</th>
+                                <th scope="col">Encomendas</th>
+                                <th scope="col">Valor vendido</th>
+                                <th scope="col">Já recebido destas vendas</th>
+                                <th scope="col">Fiado atual</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td data-label="Rota"><strong>São Miguel · Pau dos Ferros</strong></td>
+                                <td data-label="Passagens">11</td>
+                                <td data-label="Encomendas">0</td>
+                                <td data-label="Valor vendido">R$ 275,00</td>
+                                <td data-label="Já recebido destas vendas"><strong class="verde">R$ 137,50</strong></td>
+                                <td data-label="Fiado atual"><span class="amarelo">R$ 137,50</span></td>
+                            </tr>
+
+                            <tr>
+                                <td data-label="Rota"><strong>São Miguel · Mossoró</strong></td>
+                                <td data-label="Passagens">2</td>
+                                <td data-label="Encomendas">1</td>
+                                <td data-label="Valor vendido">R$ 170,00</td>
+                                <td data-label="Já recebido destas vendas"><strong class="verde">R$ 75,00</strong></td>
+                                <td data-label="Fiado atual"><span class="amarelo">R$ 95,00</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="cartao vendas-estatistica">
                 <header class="linha">
-                    <h2>14 registro(s)</h2>
-                    <div class="acoes-exportar">
+                    <header>
+                        <label class="sr-only" for="busca-vendas">Buscar cliente ou rota</label>
+                        <input id="busca-vendas" type="search" placeholder="Buscar cliente ou rota">
+                        <p class="texto-secundario">Recebido e fiado mostram o saldo atual de cada venda.</p>
+                    </header>
+
+                     <div class="acoes-exportar">
                         <a class="botao secundario" href="../assets/relatorios/relatorio-vendas.csv" download>Exportar CSV</a>
                         <a class="botao" href="../assets/relatorios/relatorio-vendas.pdf" download>Baixar relatório</a>
                     </div>
+
+                    <div class="cabecalho-resultados">
+                        <h2>Vendas e encomendas</h2>
+                        <small>14 registros no período</small>
+                    </div>
                 </header>
+                
                 <div class="tabela-rolagem">
                     <table>
                         <thead>
@@ -280,7 +413,7 @@
             </section>
 
             <footer class="rodape-pagina">Rota Fácil • Cada motorista, seu próprio caminho.</footer>
-</main>
+        </main>
 
         <nav class="menu-inferior" aria-label="Navegação principal">
             <a class="" href="index.html"><span class="icone icone-icons8-casa-24" aria-hidden="true"></span><span>Início</span></a>
