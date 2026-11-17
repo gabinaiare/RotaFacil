@@ -740,14 +740,14 @@
 }
 
 @media screen and (min-width: 1100px) {
-    .pagina-estatisticas:has(.seletor-periodo input[value="4"]:checked) .periodo-personalizado {
+    :is(.pagina-estatisticas, .pagina-relatorios):has(.seletor-periodo input[value="4"]:checked) .periodo-personalizado {
         display: block;
         padding: 20px;
         margin: 20px 0;
         border-radius: 12px;
     }
 
-    .pagina-estatisticas .periodo-personalizado form {
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado form {
         display: grid;
         grid-template-columns: 180px 180px max-content;
         align-items: end;
@@ -755,53 +755,53 @@
         margin: 0;
     }
 
-    .pagina-estatisticas .periodo-personalizado label {
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado label {
         margin: 0;
     }
 
-    .pagina-estatisticas .periodo-personalizado input {
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado input {
         width: 100%;
     }
 
-    .pagina-estatisticas .periodo-personalizado .botao {
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado .botao {
         min-height: 45px;
     }
 }
 
 @media screen and (max-width: 1099px) {
-    .pagina-estatisticas:has(.seletor-periodo input[value="4"]:checked) .periodo-personalizado {
+    :is(.pagina-estatisticas, .pagina-relatorios):has(.seletor-periodo input[value="4"]:checked) .periodo-personalizado {
         display: block;
         margin: 20px 0;
         padding: 20px;
     }
 
-    .pagina-estatisticas .periodo-personalizado form {
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado form {
         display: grid;
         gap: 16px;
         margin: 0;
     }
 
-    .pagina-estatisticas .periodo-personalizado label {
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado label {
         min-width: 0;
         margin: 0;
     }
 
-    .pagina-estatisticas .periodo-personalizado input {
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado input {
         width: 100%;
         min-width: 0;
     }
 
-    .pagina-estatisticas .periodo-personalizado .botao {
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado .botao {
         width: 100%;
     }
 }
 
 @media screen and (min-width: 700px) and (max-width: 1099px) {
-    .pagina-estatisticas .periodo-personalizado form {
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado form {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .pagina-estatisticas .periodo-personalizado .botao {
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado .botao {
         grid-column: 1 / -1;
         justify-self: end;
         width: fit-content;
