@@ -1,0 +1,12 @@
+button.botao {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    width: 100%;
+}
+
+.erro-formulario {
+    color: #c0392b;
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0.75rem;
+}
