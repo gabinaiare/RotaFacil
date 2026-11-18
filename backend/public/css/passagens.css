@@ -1,0 +1,815 @@
+.pagina-passagens .resumo-confirmacao {
+    padding: 24px;
+    border-left: 5px solid var(--verde);
+    margin: 24px 0 18px;
+}
+
+.pagina-passagens .codigo-viagem {
+    color: var(--texto-secundario);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.pagina-passagens .resumo-confirmacao .trajeto {
+    grid-template-columns: 1fr 32px 1fr;
+    margin: 18px 0;
+}
+
+.pagina-passagens .resumo-confirmacao h2 {
+    font-size: 24px;
+}
+
+.pagina-passagens .resumo-confirmacao .trajeto h2:last-child {
+    text-align: right;
+}
+
+.pagina-passagens .informacoes-confirmacao {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+.pagina-passagens .rodape-confirmacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--borda);
+    padding-top: 16px;
+    margin-top: 20px;
+}
+
+.pagina-passagens .contadores-confirmacao {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 18px 0 24px;
+}
+
+.pagina-passagens .contador-confirmacao {
+    padding: 20px;
+    background: #fff;
+}
+
+.pagina-passagens .contador-confirmacao strong {
+    display: block;
+    color: var(--cor-texto);
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+
+.pagina-passagens .contador-confirmacao small {
+    display: block;
+}
+
+.pagina-passagens .solicitar-confirmacao {
+    padding: 24px;
+    margin: 24px 0;
+}
+
+.pagina-passagens .solicitar-confirmacao > p {
+    margin: 10px 0 18px;
+    color: var(--texto-secundario);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.pagina-passagens .solicitar-confirmacao .orientacao-confirmacao {
+    background: #edf7f4;
+    border-radius: 12px;
+    color: #527c77;
+    padding: 16px;
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+.pagina-passagens .lista-confirmacoes {
+    overflow: hidden;
+}
+
+.pagina-passagens .lista-confirmacoes > header {
+    padding: 24px 20px 0;
+}
+
+.pagina-passagens .lista-confirmacoes > header p {
+    margin: 8px 0 18px;
+    color: var(--texto-secundario);
+}
+
+.pagina-passagens .abas-presenca {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--borda);
+    margin-top: 14px;
+}
+
+.pagina-passagens .abas-presenca button {
+    border: 0;
+    background: transparent;
+    color: var(--texto-secundario);
+    padding: 14px 0;
+    border-bottom: 2px solid transparent;
+    font-size: 13px;
+}
+
+.pagina-passagens .abas-presenca .ativa {
+    color: #058f73;
+    border-color: #058f73;
+    font-weight: 700;
+}
+
+.pagina-passagens .registro-presenca {
+    display: flex;
+    gap: 14px;
+    padding: 24px 20px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.pagina-passagens .registro-presenca:last-child {
+    border-bottom: 0;
+}
+
+.pagina-passagens .registro-presenca > .avatar {
+    background: #edf3f6;
+    color: #78909d;
+    margin-top: 16px;
+}
+
+.pagina-passagens .dados-presenca {
+    flex: 1;
+    min-width: 0;
+}
+
+.pagina-passagens .topo-presenca {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pagina-passagens .topo-presenca h3 {
+    font-size: 15px;
+    letter-spacing: -.2px;
+}
+
+.pagina-passagens .dados-presenca p {
+    color: var(--texto-secundario);
+    margin: 5px 0 10px;
+    font-size: 12px;
+}
+
+.pagina-passagens .estado-presenca {
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.pagina-passagens .estado-presenca.confirmado {
+    background: #e3f5ed;
+    color: #137d63;
+}
+
+.pagina-passagens .estado-presenca.aguardando {
+    background: #fff4dd;
+    color: #a07a28;
+}
+
+.pagina-passagens .estado-presenca.cancelado {
+    background: #eff2f5;
+    color: #7c8e9e;
+}
+
+.pagina-passagens .botoes-presenca {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.pagina-passagens .acao-presenca {
+    border: 1px solid #e0e7ed;
+    border-radius: 7px;
+    padding: 7px 10px;
+    color: #6b8390;
+    background: #f5f8fa;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.pagina-passagens .acao-presenca.positiva {
+    background: #f0faf6;
+    color: #147f64;
+}
+
+.pagina-passagens .acao-presenca.negativa {
+    background: #fff;
+    color: #aa7278;
+}
+
+.pagina-passagens .assento-liberado {
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+.pagina-passagens .painel-cabecalho p {
+    color: var(--texto-secundario);
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.pagina-passagens .destinatarios-confirmacao {
+    border: 0;
+    padding: 0;
+    margin: 24px 0;
+}
+
+.pagina-passagens .destinatarios-confirmacao legend {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.pagina-passagens .destinatario-confirmacao {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin: 0;
+    padding: 14px 4px;
+}
+
+.pagina-passagens .destinatario-confirmacao input {
+    width: 18px;
+    height: 18px;
+    min-height: 18px;
+    margin: 0;
+    flex-shrink: 0;
+    accent-color: var(--verde);
+}
+
+.pagina-passagens .destinatario-confirmacao strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.pagina-passagens .destinatario-confirmacao small {
+    display: block;
+    margin-top: 2px;
+}
+
+.pagina-passagens .personalizacao-confirmacao {
+    font-size: 12px;
+    color: var(--texto-secundario);
+}
+
+@media (max-width: 699px) {
+    .pagina-passagens .contadores-confirmacao {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pagina-passagens .resumo-confirmacao h2 {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 380px) {
+    .pagina-passagens .resumo-confirmacao {
+        padding: 18px;
+    }
+
+    .pagina-passagens .resumo-confirmacao h2 {
+        font-size: 18px;
+    }
+
+    .pagina-passagens .registro-presenca {
+        padding: 20px 14px;
+        gap: 10px;
+    }
+}
+
+.pagina-passagens .link-lista-espera {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.pagina-passagens .lista-espera {
+    margin-top: 28px;
+    overflow: hidden;
+    scroll-margin-top: 100px;
+}
+
+.pagina-passagens .cabecalho-espera {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.pagina-passagens .cabecalho-espera h2 {
+    font-size: 21px;
+}
+
+.pagina-passagens .cabecalho-espera p {
+    color: var(--texto-secundario);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.pagina-passagens .cabecalho-espera > .botao {
+    width: auto;
+    font-size: 13px;
+}
+
+.pagina-passagens .quantidade-espera {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 25px;
+    height: 25px;
+    margin-left: 6px;
+    border-radius: 50%;
+    background: #edf3f6;
+    color: #5d7d91;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.pagina-passagens .regra-espera {
+    margin: 0 24px 20px;
+    padding: 16px;
+    background: #edf7f4;
+    color: #527c77;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.pagina-passagens .fila-espera {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pagina-passagens .fila-espera > li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 22px 24px;
+    border-top: 1px solid var(--borda);
+}
+
+.pagina-passagens .posicao-espera {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: #f1f5f8;
+    color: #6b879b;
+    font-size: 16px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.pagina-passagens .pessoa-espera {
+    flex: 1;
+    min-width: 0;
+}
+
+.pagina-passagens .pessoa-espera > p {
+    color: var(--texto-secundario);
+    font-size: 12px;
+    margin: 7px 0 12px;
+}
+
+.pagina-passagens .estado-presenca.contato-realizado {
+    background: #eaf2fb;
+    color: #4b7196;
+}
+
+.pagina-passagens .rodape-espera {
+    padding: 20px 24px;
+    border-top: 1px solid var(--borda);
+    background: #fafcfd;
+    font-size: 13px;
+}
+
+.pagina-passagens .rodape-espera p {
+    margin-bottom: 8px;
+    color: var(--texto-secundario);
+}
+
+.pagina-passagens .contexto-espera {
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    background: #f2f7fa;
+    font-size: 13px;
+}
+
+@media (max-width: 420px) {
+    .pagina-passagens .cabecalho-espera,
+    .pagina-passagens .fila-espera > li,
+    .pagina-passagens .rodape-espera {
+        padding: 20px 16px;
+    }
+
+    .pagina-passagens .regra-espera {
+        margin-inline: 16px;
+    }
+
+    .pagina-passagens .cabecalho-espera > .botao {
+        width: 100%;
+    }
+}
+
+.pagina-passagens .acao-presenca.receber-passagem {
+    background: var(--verde);
+    border-color: var(--verde);
+    color: #fff;
+    font-weight: 700;
+}
+
+.pagamento-passagem .resumo-recebimento {
+    padding: 22px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    background: #ecf7f2;
+    color: #256d54;
+    text-align: center;
+}
+
+.pagamento-passagem .resumo-recebimento label {
+    display: block;
+    margin: 0;
+    font-size: 12px;
+}
+
+.pagamento-passagem .resumo-recebimento select {
+    width: 100%;
+    margin-bottom: 12px;
+    border-color: #cfe5da;
+    color: #256d54;
+}
+
+.pagamento-passagem .resumo-recebimento > strong {
+    display: block;
+    font-size: 34px;
+    line-height: 1.3;
+}
+
+.pagamento-passagem .resumo-recebimento > small {
+    display: block;
+    margin-top: 12px;
+    color: #5d8978;
+}
+
+.pagamento-passagem .campos-dinheiro {
+    display: none;
+    gap: 18px;
+}
+
+.pagamento-passagem:has(select[name="forma-recebimento"] option[value="dinheiro"]:checked) .campos-dinheiro {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pagamento-passagem .campos-dinheiro label,
+.pagamento-passagem .campos-dinheiro input {
+    min-width: 0;
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    .pagamento-passagem:has(select[name="forma-recebimento"] option[value="dinheiro"]:checked) .campos-dinheiro {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+.pagina-passagens .formulario .valor-parcial {
+    display: none;
+}
+
+.pagina-passagens .formulario:has(select[name="situacao-do-pagamento"] option[value="parcial"]:checked) .valor-parcial {
+    display: block;
+    padding: 16px;
+    border: 1px solid #cce7db;
+    border-radius: 10px;
+    background: #f1faf6;
+}
+
+.pagina-passagens .valor-parcial small {
+    color: #527365;
+    margin-top: 8px;
+}
+
+.pagina-passagens .lista-confirmacoes .botoes-presenca {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pagina-passagens .lista-confirmacoes .acao-presenca {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 36px;
+    padding: 8px 12px;
+    border: 1px solid #cddbe5;
+    border-radius: 8px;
+    background: #fff;
+    color: #29495f;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: center;
+    text-decoration: none;
+    opacity: 1;
+}
+
+.pagina-passagens .lista-confirmacoes a.acao-presenca:hover {
+    background: #edf3f7;
+    border-color: #9eb6c7;
+}
+
+.pagina-passagens .lista-confirmacoes .acao-presenca[href="#editar-passagem"],
+.pagina-passagens .lista-confirmacoes .acao-presenca.positiva {
+    border-color: #c8e6d8;
+    background: #eef9f3;
+    color: #13734f;
+}
+
+.pagina-passagens .lista-confirmacoes .acao-presenca.negativa {
+    border-color: #f0d6d9;
+    background: #fff6f7;
+    color: #b33f52;
+}
+
+.pagina-passagens .lista-confirmacoes .acao-presenca.negativa:hover {
+    border-color: #dca4ad;
+    background: #fcebee;
+}
+
+.pagina-passagens .lista-confirmacoes .acao-presenca.receber-passagem {
+    border-color: var(--verde);
+    background: var(--verde);
+    color: #fff;
+    font-weight: 700;
+}
+
+.pagina-passagens .lista-confirmacoes .acao-presenca.receber-passagem:hover {
+    border-color: #118765;
+    background: #118765;
+}
+
+@media (max-width: 699px) {
+    .pagina-passagens .lista-confirmacoes .botoes-presenca {
+        margin-top: 14px;
+    }
+}
+
+.pagina-passagens .formulario:has(select[name="situacao-do-pagamento"] option[value="parcial"]:checked) .forma-pagamento-principal {
+    display: none;
+}
+
+.pagina-passagens .valor-parcial .campos-valor-parcial {
+    display: grid;
+    gap: 16px;
+}
+
+.pagina-passagens .valor-parcial .campos-valor-parcial label {
+    min-width: 0;
+    margin: 0;
+}
+
+.pagina-passagens .valor-parcial input,
+.pagina-passagens .valor-parcial select {
+    width: 100%;
+    min-width: 0;
+}
+
+.pagina-passagens .valor-parcial > small {
+    display: block;
+    line-height: 1.5;
+}
+
+@media (min-width: 700px) {
+    .pagina-passagens .campos-valor-parcial {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .pagina-passagens .lista-confirmacoes .dados-presenca {
+        grid-template-columns: minmax(0, 1fr) minmax(120px, auto) minmax(100px, auto);
+        gap: 12px 20px;
+    }
+
+    .pagina-passagens .lista-confirmacoes .botoes-presenca {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        flex-wrap: nowrap;
+        margin: 0;
+    }
+
+    .pagina-passagens .lista-confirmacoes .acao-presenca {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        padding-inline: 10px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .pagina-passagens .lista-confirmacoes .dados-presenca {
+        grid-template-columns: minmax(140px, 1fr) minmax(120px, .7fr) minmax(100px, .6fr) max-content;
+        gap: 12px;
+    }
+
+    .pagina-passagens .lista-confirmacoes .botoes-presenca {
+        grid-column: 4;
+        grid-row: 1;
+    }
+}
+
+.pagamento-passagem .resumo-recebimento > p {
+    color: #5d8978;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 14px;
+}
+
+.pagamento-passagem .formulario .grade-formulario {
+    padding-bottom: 0;
+}
+
+.pagamento-passagem .formulario > .nota {
+    margin: 4px 0 20px;
+}
+
+.pagamento-passagem .formulario .acoes {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 699px) {
+    .pagina-passagens .lista-confirmacoes .registro-presenca {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 6px 12px;
+        padding: 20px;
+    }
+
+    .pagina-passagens .lista-confirmacoes .registro-presenca > .avatar {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        align-self: start;
+        margin-top: 0;
+    }
+
+    .pagina-passagens .lista-confirmacoes .dados-presenca {
+        display: contents;
+    }
+
+    .pagina-passagens .lista-confirmacoes .topo-presenca {
+        grid-column: 2;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .pagina-passagens .lista-confirmacoes .topo-presenca h3 {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .pagina-passagens .lista-confirmacoes .dados-presenca > p {
+        grid-column: 2;
+        margin: 0;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+
+    .pagina-passagens .lista-confirmacoes .botoes-presenca {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin: 10px 0 0;
+        align-items: stretch;
+    }
+
+    .pagina-passagens .lista-confirmacoes .acao-presenca {
+        width: 100%;
+        min-width: 0;
+        min-height: 44px;
+        box-sizing: border-box;
+        padding: 10px 8px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .pagina-passagens .lista-confirmacoes .acao-presenca.negativa:last-child:nth-child(odd),
+    .pagina-passagens .lista-confirmacoes .assento-liberado {
+        grid-column: 1 / -1;
+    }
+
+    .pagina-passagens .abas-presenca {
+        flex-wrap: wrap;
+        gap: 4px 16px;
+    }
+}
+
+.pagina-passagens .lista-espera .botoes-presenca {
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.pagina-passagens .lista-espera .acao-presenca {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    border: 1px solid #cddbe5;
+    border-radius: 8px;
+    background: #fff;
+    color: #29495f;
+    font-weight: 600;
+    text-align: center;
+}
+
+.pagina-passagens .lista-espera .acao-presenca.positiva {
+    border-color: #c8e6d8;
+    background: #eef9f3;
+    color: #13734f;
+}
+
+@media screen and (max-width: 1099px) {
+    .pagina-passagens .fila-espera > li {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 8px 12px;
+        padding: 20px;
+    }
+
+    .pagina-passagens .fila-espera .posicao-espera {
+        grid-column: 1;
+        grid-row: 1 / 3;
+    }
+
+    .pagina-passagens .pessoa-espera {
+        display: contents;
+    }
+
+    .pagina-passagens .pessoa-espera > .topo-presenca,
+    .pagina-passagens .pessoa-espera > p {
+        grid-column: 2;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .pagina-passagens .pessoa-espera > .topo-presenca {
+        align-items: flex-start;
+    }
+
+    .pagina-passagens .lista-espera .botoes-presenca {
+        display: grid;
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin: 10px 0 0;
+    }
+
+    .pagina-passagens .lista-espera .acao-presenca {
+        width: 100%;
+        min-width: 0;
+        min-height: 44px;
+        padding: 10px 8px;
+        white-space: normal;
+    }
+
+    .pagina-passagens .cabecalho-espera {
+        padding: 20px;
+    }
+
+    .pagina-passagens .cabecalho-espera > .botao {
+        width: 100%;
+        min-height: 44px;
+    }
+}
