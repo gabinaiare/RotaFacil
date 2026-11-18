@@ -12,9 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pagamentos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+    $table->id();
+    $table->foreignId('passagem_id')->nullable()->constrained('passagens')->cascadeOnDelete();
+    $table->foreignId('encomenda_id')->nullable()->constrained('encomendas')->cascadeOnDelete();
+    $table->enum('forma', ['dinheiro', 'pix', 'cartao', 'fiado']);
+    $table->enum('situacao', ['pago', 'pendente']);
+    $table->decimal('valor', 10, 2);
+    $table->dateTime('data_pagamento')->nullable();
+    $table->timestamps();
+});
     }
 
     /**
