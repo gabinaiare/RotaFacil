@@ -1,0 +1,1255 @@
+.apresentacao-acesso {
+    display: none;
+}
+
+@media screen and (min-width: 1100px) {
+    body:not(.pagina-acesso) .aplicativo {
+        padding-left: 240px;
+    }
+
+    .menu-lateral,
+    #controle-menu:checked ~ .menu-lateral {
+        width: 240px;
+        padding: 32px 12px 20px;
+        scrollbar-width: thin;
+        scrollbar-color: #638091 var(--azul-escuro);
+    }
+
+    .topo-menu {
+        padding: 0 10px;
+        margin-bottom: 44px;
+    }
+
+    .topo-menu img {
+        width: 146px;
+    }
+
+    .item-menu {
+        min-height: 49px;
+        height: auto;
+        padding: 14px 16px;
+        gap: 14px;
+        border-radius: 9px;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    .item-menu.ativo {
+        background: #304c5d;
+        font-weight: 700;
+    }
+
+    .menu-lateral footer {
+        padding-inline: 5px;
+    }
+
+    .barra-superior {
+        min-height: 88px;
+        padding: 20px 42px;
+        background: #fff;
+        color: var(--cor-texto);
+        border-bottom: 1px solid var(--borda);
+    }
+
+    .barra-superior > div {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .barra-superior > div > small {
+        color: var(--texto-secundario);
+        font-size: 14px;
+    }
+
+    .barra-superior > div > small::after {
+        content: "/";
+        margin-left: 20px;
+        color: #c5d3df;
+    }
+
+    .barra-superior > div > strong {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .conta-cabecalho > .avatar {
+        width: 38px;
+        height: 38px;
+    }
+
+    main#conteudo {
+        max-width: 1460px;
+        padding: 48px 48px 40px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .titulo-pagina {
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 30px;
+    }
+
+    .titulo-pagina > .botao,
+    main > .botao {
+        min-width: 0;
+        width: fit-content;
+    }
+
+    .titulo-pagina .introducao {
+        margin-top: 10px;
+    }
+
+    .botao {
+        min-height: 44px;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 13px;
+    }
+
+    input,
+    select,
+    textarea {
+        min-height: 45px;
+        padding: 11px 13px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    input::placeholder {
+        font-size: 14px;
+    }
+
+    .cartao {
+        border-radius: 15px;
+    }
+
+    .bloco {
+        padding: 24px;
+    }
+
+    .filtros form {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 16px;
+    }
+
+    .filtros .grade-formulario {
+        gap: 16px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .filtros label {
+        margin-bottom: 0;
+    }
+
+    .filtros .botao {
+        margin: 0;
+        max-width: none;
+    }
+
+    .pagina-encomendas .filtros form {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+    }
+
+    .grade-cartoes {
+        gap: 26px 20px;
+    }
+
+    .viagem-card {
+        padding: 24px;
+    }
+
+    .viagem-card .preco {
+        font-size: 23px;
+    }
+
+    .acoes-registro {
+        justify-content: flex-end;
+        gap: 14px;
+        padding-inline: 8px;
+        font-size: 13px;
+    }
+
+    .resumo-verde {
+        display: flex;
+        gap: 52px;
+        padding: 24px;
+    }
+
+    .pagina-encomendas .encomenda-card {
+        width: calc((100% - 20px) / 2);
+        min-width: 540px;
+    }
+
+    .valor-encomenda {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 4px 20px;
+    }
+
+    .valor-encomenda > .duas-colunas {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        margin: 0;
+    }
+
+    body:has(#conteudo > .atalhos) main#conteudo {
+        display: grid;
+        grid-template-columns: repeat(24, minmax(0, 1fr));
+        gap: 26px 24px;
+        position: relative;
+    }
+
+    body:has(#conteudo > .atalhos) main > * {
+        grid-column: 1 / -1;
+        min-width: 0;
+    }
+
+    body:has(#conteudo > .atalhos) main > h1 {
+        padding-right: 180px;
+    }
+
+    body:has(#conteudo > .atalhos) main > .introducao {
+        margin: -16px 180px 0 0;
+    }
+
+    body:has(#conteudo > .atalhos) main > .botao {
+        position: absolute;
+        top: 54px;
+        right: 48px;
+    }
+
+    body:has(#conteudo > .atalhos) .atalhos {
+        margin: 4px 0 0;
+        gap: 12px;
+    }
+
+    body:has(#conteudo > .atalhos) .atalhos a {
+        min-height: 100px;
+        flex-direction: row;
+        gap: 16px;
+        font-size: 14px;
+    }
+
+    body:has(#conteudo > .atalhos) .indicadores {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 24px 18px;
+        margin: 0;
+    }
+
+    body:has(#conteudo > .atalhos) .indicador {
+        grid-column: span 3;
+        padding: 22px;
+        min-height: 142px;
+    }
+
+    body:has(#conteudo > .atalhos) .indicador:nth-child(-n+2) {
+        grid-column: span 6;
+    }
+
+    body:has(#conteudo > .atalhos) .lista-viagens {
+        grid-column: 1 / 16;
+        grid-row: 5 / 7;
+        grid-template-columns: 1fr;
+        align-self: start;
+    }
+
+    body:has(#conteudo > .atalhos) .lista-viagens .viagem + .viagem {
+        border-left: 0;
+        border-top: 1px solid var(--borda);
+    }
+
+    body:has(#conteudo > .atalhos) .destaque {
+        grid-column: 16 / -1;
+        grid-row: 5;
+        align-self: start;
+        margin: 0;
+        padding: 28px 24px;
+    }
+
+    body:has(#conteudo > .atalhos) .acesso-rapido {
+        grid-column: 16 / -1;
+        grid-row: 6;
+        align-self: start;
+        overflow: hidden;
+    }
+
+    body:has(#conteudo > .atalhos) .acesso-rapido .cabecalho-secao {
+        padding: 22px 24px;
+    }
+
+    body:has(#conteudo > .atalhos) .item-acesso-rapido {
+        min-height: 72px;
+        padding: 16px 24px;
+    }
+
+    body:has(#conteudo > .atalhos) .cabecalho-veiculos {
+        grid-row: 7;
+        padding: 4px 0 0;
+    }
+
+    body:has(#conteudo > .atalhos) main > .veiculo {
+        grid-column: span 12;
+        grid-row: 8;
+        display: grid;
+        grid-template-columns: 64px minmax(0, 1fr) auto;
+        gap: 6px 16px;
+        align-items: center;
+        padding: 20px;
+        margin: 0;
+    }
+
+    body:has(#conteudo > .atalhos) main > .veiculo .veiculo-cabecalho {
+        display: contents;
+    }
+
+    body:has(#conteudo > .atalhos) main > .veiculo .icone-veiculo {
+        grid-column: 1;
+        grid-row: 1 / 4;
+    }
+
+    body:has(#conteudo > .atalhos) main > .veiculo .disponibilidade {
+        position: static;
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: start;
+        padding: 4px 8px;
+    }
+
+    body:has(#conteudo > .atalhos) main > .veiculo .veiculo-dados {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    body:has(#conteudo > .atalhos) main > .veiculo .etiquetas {
+        grid-column: 2;
+        grid-row: 3;
+        margin: 0;
+        gap: 6px;
+    }
+
+    body:has(#conteudo > .atalhos) main > .veiculo .editar {
+        grid-column: 3;
+        grid-row: 1 / 4;
+        padding: 8px 0 8px 8px;
+        border: 0;
+    }
+
+    .lista-veiculos {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .lista-veiculos .veiculo {
+        margin: 0;
+    }
+
+    .pagina-passagens .registro-presenca {
+        align-items: center;
+        padding: 20px 24px;
+    }
+
+    .pagina-passagens .registro-presenca > .avatar {
+        margin: 0;
+    }
+
+    .pagina-passagens .dados-presenca {
+        display: grid;
+        grid-template-columns: minmax(150px, 1fr) minmax(120px, .8fr) minmax(110px, .8fr) minmax(260px, 1.8fr);
+        align-items: center;
+        gap: 12px;
+    }
+
+    .pagina-passagens .topo-presenca {
+        display: contents;
+    }
+
+    .pagina-passagens .topo-presenca h3 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .pagina-passagens .estado-presenca {
+        width: fit-content;
+    }
+
+    .pagina-passagens .topo-presenca .estado-presenca {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .pagina-passagens .dados-presenca > p {
+        grid-column: 2;
+        grid-row: 1;
+        margin: 0;
+    }
+
+    .pagina-passagens .botoes-presenca {
+        grid-column: 4;
+        grid-row: 1;
+        margin: 0;
+        justify-content: flex-end;
+    }
+
+    .janela .painel,
+    .pagina-painel main.painel {
+        inset: 50% auto auto 50%;
+        transform: translate(-50%, -50%);
+        width: 620px;
+        max-width: calc(100vw - 64px);
+        max-height: calc(100dvh - 64px);
+        height: auto;
+        margin: 0;
+        padding: 0 28px;
+        border-radius: 17px;
+        box-shadow: 0 24px 70px #102a4029;
+    }
+
+    .painel-cabecalho {
+        padding: 28px 0 22px;
+        margin-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .fechar-painel {
+        width: 34px;
+        height: 34px;
+        font-size: 20px;
+    }
+
+    .painel .formulario {
+        min-height: 0;
+    }
+
+    .painel .grade-formulario {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 18px;
+    }
+
+    .painel .grade-formulario > .nota,
+    .painel .grade-formulario > .tipo-transporte-outro,
+    .painel .grade-formulario > .largura-total {
+        grid-column: 1 / -1;
+    }
+
+    .painel label {
+        font-size: 13px;
+        margin-bottom: 18px;
+    }
+
+    .painel .acoes {
+        justify-content: flex-end;
+        padding: 20px 0 26px;
+        border-top: 0;
+    }
+
+    .painel .acoes > .botao {
+        flex: 0 1 auto;
+        font-size: 13px;
+    }
+
+    .pagina-acesso {
+        padding: 0;
+        background: var(--fundo);
+    }
+
+    .pagina-acesso .aplicativo {
+        max-width: none;
+        min-height: 100dvh;
+        display: grid;
+        grid-template-columns: 45% 55%;
+        border-radius: 0;
+        box-shadow: none;
+        background: var(--fundo);
+    }
+
+    .pagina-acesso .topo-acesso {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        min-height: 100dvh;
+        border-radius: 0;
+        padding: 48px 52px;
+    }
+
+    .pagina-acesso .topo-acesso > img {
+        width: 160px;
+        margin: 0;
+    }
+
+    .pagina-acesso .apresentacao-acesso {
+        display: block;
+        margin: auto 0;
+        max-width: 520px;
+        text-align: left;
+        padding: 64px 0;
+    }
+
+    .apresentacao-acesso small {
+        color: var(--verde-claro);
+        font-size: 10px;
+        letter-spacing: 1.6px;
+        font-weight: 700;
+    }
+
+    .apresentacao-acesso h2 {
+        color: #fff;
+        font-size: clamp(34px, 2.5vw, 46px);
+        line-height: 1.25;
+        margin: 26px 0;
+    }
+
+    .apresentacao-acesso p {
+        color: #adc5d6;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .pagina-acesso main {
+        width: min(100%, 500px);
+        max-width: none;
+        margin: auto;
+        padding: 64px 40px;
+    }
+
+    .pagina-acesso main > .selo {
+        margin-bottom: 28px;
+    }
+
+    .pagina-acesso main form {
+        margin-top: 28px;
+    }
+
+    .pagina-acesso form .botao {
+        width: 100%;
+        margin-top: 18px;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .pagina-estatisticas .seletor-periodo {
+        width: fit-content;
+        max-width: 100%;
+        grid-template-columns: repeat(4, minmax(72px, auto)) minmax(116px, auto);
+        gap: 4px;
+        padding: 5px;
+        border-radius: 10px;
+        margin: 28px 0 20px;
+    }
+
+    .pagina-estatisticas .seletor-periodo span {
+        min-height: 40px;
+        padding: 0 16px;
+        border-radius: 6px;
+        font-size: 13px;
+    }
+
+    .pagina-estatisticas .periodo-custom:not([open]) {
+        display: none;
+    }
+
+    .pagina-estatisticas .periodo-custom {
+        display: none;
+    }
+
+    .pagina-estatisticas .periodo-resumo {
+        margin: 20px 0 24px;
+    }
+
+    .pagina-estatisticas .metricas {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin: 0 0 28px;
+    }
+
+    .pagina-estatisticas .metrica {
+        min-height: 142px;
+        padding: 22px;
+        border-radius: 13px;
+    }
+
+    .pagina-estatisticas .metrica p {
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+
+    .pagina-estatisticas .metrica > strong {
+        font-size: 29px;
+        line-height: 1.2;
+    }
+
+    .pagina-estatisticas .metrica > small {
+        margin-top: 12px;
+        line-height: 1.5;
+    }
+
+    .pagina-estatisticas .destaque-mes {
+        display: grid;
+        grid-template-columns: minmax(240px, 1fr) minmax(480px, auto);
+        gap: 0 32px;
+        align-items: center;
+        padding: 30px;
+        margin: 0 0 24px;
+        min-height: 158px;
+        border-radius: 13px;
+    }
+
+    .pagina-estatisticas .destaque-mes > span {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .pagina-estatisticas .destaque-mes > h2 {
+        grid-column: 1;
+        grid-row: 2;
+        font-size: 34px;
+        margin: 16px 0 8px;
+    }
+
+    .pagina-estatisticas .destaque-mes > p {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .pagina-estatisticas .destaque-mes > div {
+        grid-column: 2;
+        grid-row: 1 / 4;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px;
+        margin: 0;
+    }
+
+    .pagina-estatisticas .destaque-mes article strong {
+        margin-top: 10px;
+        font-size: 21px;
+    }
+
+    .pagina-estatisticas .grade-graficos {
+        grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+        gap: 24px;
+        align-items: stretch;
+        margin-bottom: 32px;
+    }
+
+    .pagina-estatisticas .painel-estatistica {
+        min-width: 0;
+        border-radius: 13px;
+    }
+
+    .pagina-estatisticas .painel-estatistica > header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 96px;
+        padding: 24px;
+    }
+
+    .pagina-estatisticas .painel-estatistica > header h2 {
+        font-size: 19px;
+    }
+
+    .pagina-estatisticas .conteudo-grafico {
+        padding: 24px 22px 26px;
+    }
+
+    .pagina-estatisticas .grafico-recebimentos {
+        width: 100%;
+        height: auto;
+        margin-top: 24px;
+    }
+
+    .pagina-estatisticas .rosca-pagamento {
+        width: 154px;
+        height: 154px;
+        margin: 48px auto 40px;
+    }
+
+    .pagina-estatisticas .rosca-pagamento > div {
+        width: 110px;
+        height: 110px;
+    }
+
+    .pagina-estatisticas .lista-pagamentos {
+        padding: 0 22px 28px;
+        gap: 14px;
+    }
+
+    .pagina-estatisticas .cabecalho-resultados {
+        margin: 32px 0 18px;
+    }
+
+    .pagina-estatisticas .cabecalho-resultados h2 {
+        font-size: 20px;
+    }
+
+    .pagina-estatisticas .cabecalho-resultados + .cartao.bloco {
+        padding: 0;
+        overflow: hidden;
+        border-radius: 13px;
+    }
+
+    .pagina-estatisticas .vendas-estatistica {
+        border-radius: 13px;
+    }
+
+    .pagina-estatisticas .vendas-estatistica > header {
+        padding: 20px 24px;
+    }
+
+    .pagina-estatisticas .vendas-estatistica > header input {
+        width: min(100%, 400px);
+    }
+
+    .pagina-estatisticas .vendas-estatistica .tabela-rolagem {
+        padding: 0;
+    }
+
+    .pagina-estatisticas table {
+        font-size: 13px;
+    }
+
+    .pagina-estatisticas th,
+    .pagina-estatisticas td {
+        padding: 18px 22px;
+    }
+
+    .pagina-estatisticas th {
+        color: var(--texto-secundario);
+        background: #f7f9fb;
+        font-size: 11px;
+        font-weight: 600;
+    }
+
+    .pagina-estatisticas tr:last-child td {
+        border-bottom: 0;
+    }
+}
+
+.periodo-personalizado {
+    display: none;
+}
+
+@media screen and (min-width: 1100px) {
+    :is(.pagina-estatisticas, .pagina-relatorios):has(.seletor-periodo input[value="4"]:checked) .periodo-personalizado {
+        display: block;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 12px;
+    }
+
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado form {
+        display: grid;
+        grid-template-columns: 180px 180px max-content;
+        align-items: end;
+        gap: 16px;
+        margin: 0;
+    }
+
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado label {
+        margin: 0;
+    }
+
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado input {
+        width: 100%;
+    }
+
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado .botao {
+        min-height: 45px;
+    }
+}
+
+@media screen and (max-width: 1099px) {
+    :is(.pagina-estatisticas, .pagina-relatorios):has(.seletor-periodo input[value="4"]:checked) .periodo-personalizado {
+        display: block;
+        margin: 20px 0;
+        padding: 20px;
+    }
+
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado form {
+        display: grid;
+        gap: 16px;
+        margin: 0;
+    }
+
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado label {
+        min-width: 0;
+        margin: 0;
+    }
+
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado .botao {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1099px) {
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    :is(.pagina-estatisticas, .pagina-relatorios) .periodo-personalizado .botao {
+        grid-column: 1 / -1;
+        justify-self: end;
+        width: fit-content;
+    }
+}
+
+@media screen {
+    .encomenda-card > .acoes-card,
+    .passageiro-card > .acoes-passageiro {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+        padding-top: 18px;
+        margin-top: 24px;
+        border-top: 1px solid var(--borda);
+    }
+
+    .passageiro-card > .acoes-passageiro {
+        border-top: 0;
+        padding-top: 0;
+        margin-top: 18px;
+    }
+
+    .encomenda-card > .acoes-card > a,
+    .passageiro-card > .acoes-passageiro > a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 auto;
+        width: auto;
+        min-width: 0;
+        min-height: 38px;
+        padding: 9px 14px;
+        margin: 0;
+        border: 1px solid var(--borda);
+        border-radius: 8px;
+        background: #fff;
+        color: var(--cor-texto);
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 18px;
+        text-align: center;
+        white-space: nowrap;
+        transition: background-color .15s, border-color .15s;
+    }
+
+    .encomenda-card > .acoes-card > a[href="#editar-encomenda"],
+    .passageiro-card > .acoes-passageiro > a:not(.botao) {
+        background: #f1faf6;
+        border-color: #c9e9dc;
+        color: #087b59;
+    }
+
+    .encomenda-card > .acoes-card > a[href="#status-encomenda"] {
+        background: var(--azul-escuro);
+        border-color: var(--azul-escuro);
+        color: #fff;
+    }
+
+    .encomenda-card > .acoes-card > a[href="#pagamento-encomenda"],
+    .passageiro-card > .acoes-passageiro > a.botao.secundario {
+        background: var(--verde);
+        border-color: var(--verde);
+        color: #fff;
+    }
+
+    .encomenda-card > .acoes-card > a:hover,
+    .passageiro-card > .acoes-passageiro > a:hover {
+        border-color: #91b5a5;
+        background: #e7f5ee;
+        color: #125e47;
+    }
+
+    .encomenda-card > .acoes-card > a[href="#status-encomenda"]:hover {
+        background: #29495e;
+        border-color: #29495e;
+        color: #fff;
+    }
+
+    .encomenda-card > .acoes-card > a[href="#pagamento-encomenda"]:hover,
+    .passageiro-card > .acoes-passageiro > a.botao.secundario:hover {
+        background: #118765;
+        border-color: #118765;
+        color: #fff;
+    }
+}
+
+@media screen {
+    .passageiro-card > .acoes-passageiro > a.botao:first-child {
+        background: #fff;
+        border-color: #ccd9e3;
+        color: var(--cor-texto);
+    }
+
+    .passageiro-card > .acoes-passageiro > a.botao:first-child:hover {
+        background: #edf3f7;
+        border-color: #9bb1c2;
+        color: var(--cor-texto);
+    }
+}
+
+#receber-fiado .resumo-conta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 24px;
+    margin: 0 0 22px;
+    border: 0;
+    border-radius: 12px;
+    background: #ecf7f2;
+    color: #256d54;
+    text-align: center;
+}
+
+#receber-fiado .resumo-conta > p {
+    margin: 0;
+    color: #5d8978;
+    font-size: 14px;
+}
+
+#receber-fiado .resumo-conta > strong {
+    font-size: 34px;
+    line-height: 1.3;
+}
+
+#receber-fiado .resumo-conta > small {
+    color: #5d8978;
+}
+
+#receber-fiado .campos-dinheiro-cliente {
+    display: none;
+    gap: 18px;
+}
+
+#receber-fiado:has(select[name="forma-de-pagamento"] option[value="dinheiro"]:checked) .campos-dinheiro-cliente {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#receber-fiado label,
+#receber-fiado input,
+#receber-fiado select {
+    min-width: 0;
+}
+
+#receber-fiado input,
+#receber-fiado select {
+    width: 100%;
+}
+
+#receber-fiado .nota {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 480px) {
+    #receber-fiado:has(select[name="forma-de-pagamento"] option[value="dinheiro"]:checked) .campos-dinheiro-cliente {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+.grade-formulario {
+    align-items: end;
+}
+
+.janela .grade-formulario > label,
+.janela .campos-valor-parcial > label,
+.janela .campos-dinheiro > label,
+.janela .campos-dinheiro-cliente > label {
+    align-self: end;
+    min-width: 0;
+}
+
+.janela label > small:has(+ input, + select, + textarea) {
+    display: inline;
+    margin: 0 0 0 6px;
+    font-size: 11px;
+    line-height: inherit;
+}
+
+.janela label > input:not([type="radio"]):not([type="checkbox"]),
+.janela label > select,
+.janela label > textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.janela .grade-formulario > label:has(input[name^="endereco"], textarea) {
+    grid-column: 1 / -1;
+}
+
+.janela .campos-valor-parcial,
+.janela .campos-dinheiro,
+.janela .campos-dinheiro-cliente {
+    align-items: end;
+}
+
+.acoes-exportar {
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.acoes-exportar > .botao,
+.acoes-registro > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 40px;
+    padding: 10px 14px;
+    border: 1px solid #c8e6d8;
+    border-radius: 8px;
+    background: #eef9f3;
+    color: #13734f;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.acoes-exportar > .botao:not(.secundario) {
+    background: var(--verde);
+    border-color: var(--verde);
+    color: #fff;
+}
+
+.acoes-registro > a.perigo {
+    border-color: #f0d6d9;
+    background: #fff6f7;
+    color: #b33f52;
+}
+
+.acoes-registro > a[href*="solicitar-confirmacao"] {
+    background: var(--verde);
+    border-color: var(--verde);
+    color: #fff;
+}
+
+.rolagem-grafico {
+    min-width: 0;
+}
+
+.dica-grafico {
+    display: none;
+}
+
+@media screen and (max-width: 1099px) {
+    .acoes-registro {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        padding: 14px 0 0;
+    }
+
+    .acoes-registro > .selo {
+        grid-column: 1 / -1;
+        justify-self: start;
+        margin-bottom: 4px;
+    }
+
+    .acoes-registro > a {
+        min-width: 0;
+        min-height: 44px;
+    }
+
+    .acoes-registro > a[href*="solicitar-confirmacao"] {
+        grid-column: 1 / -1;
+    }
+
+    .encomenda-card > .acoes-card,
+    .passageiro-card > .acoes-passageiro {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        align-items: stretch;
+    }
+
+    .encomenda-card > .acoes-card > a,
+    .passageiro-card > .acoes-passageiro > a {
+        width: 100%;
+        min-width: 0;
+        min-height: 44px;
+        margin: 0;
+        padding: 10px 8px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .encomenda-card > .acoes-card > a:last-child:nth-child(odd),
+    .passageiro-card > .acoes-passageiro > a:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+    .pagina-estatisticas .destaque-mes > div {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 24px;
+    }
+
+    .pagina-estatisticas .destaque-mes article {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-top: 14px;
+        border-top: 1px solid #385060;
+    }
+
+    .pagina-estatisticas .destaque-mes article strong {
+        flex-shrink: 0;
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .pagina-estatisticas .destaque-mes article small {
+        line-height: 1.6;
+    }
+
+    .rolagem-grafico {
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        padding-bottom: 8px;
+    }
+
+    .pagina-estatisticas .rolagem-grafico .grafico-recebimentos {
+        width: 100%;
+        min-width: 560px;
+        height: auto;
+        max-height: none;
+    }
+
+    .pagina-estatisticas .grafico-recebimentos text {
+        font-size: 11px;
+    }
+
+    .dica-grafico {
+        display: block;
+        margin-top: 8px;
+        color: var(--texto-secundario);
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .vendas-estatistica > header:has(.acoes-exportar) {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .acoes-exportar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .acoes-exportar > .botao {
+        min-width: 0;
+        min-height: 44px;
+        padding: 10px 8px;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .pagina-cadastro main {
+        width: min(100%, 680px);
+        padding: 32px 40px;
+    }
+
+    .pagina-cadastro main form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px 20px;
+        margin: 24px 0 0;
+        align-items: end;
+    }
+
+    .pagina-cadastro main form > label {
+        min-width: 0;
+        margin: 0;
+    }
+
+    .pagina-cadastro main form > label:first-child,
+    .pagina-cadastro main form > .botao {
+        grid-column: 1 / -1;
+    }
+
+    .pagina-cadastro main form > .botao {
+        margin-top: 4px;
+    }
+
+    .pagina-cadastro .observacao-acesso {
+        margin-top: 20px;
+    }
+}
+
+.pagina-cadastro .campo-senha {
+    position: relative;
+    display: block;
+    margin-top: 7px;
+}
+
+.pagina-cadastro .campo-senha > input {
+    margin-top: 0;
+    padding-right: 48px;
+}
+
+.pagina-cadastro .olhinho-senha {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 100%;
+    color: #73899c;
+    pointer-events: none;
+}
+
+.pagina-cadastro .olhinho-senha > svg {
+    width: 20px;
+    height: 20px;
+}
+
+.pagina-acesso main > .selo-motorista {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #e3f6ee;
+    color: #07917b;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: .7px;
+}
+
+.pagina-acesso .selo-motorista > svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
