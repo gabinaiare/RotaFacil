@@ -11,10 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('passageiros', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+       Schema::create('passageiros', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+    $table->string('nome', 120);
+    $table->string('cpf', 11);
+    $table->string('telefone', 20);
+    $table->string('endereco', 200)->nullable();
+    $table->timestamps();
+
+    $table->unique(['user_id', 'cpf']);
+});
     }
 
     /**

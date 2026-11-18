@@ -11,10 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('viagens', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+       Schema::create('viagens', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+    $table->foreignId('veiculo_id')->constrained('veiculos');
+    $table->string('codigo', 12)->unique();
+    $table->string('origem', 80);
+    $table->string('destino', 80);
+    $table->dateTime('saida');
+    $table->decimal('valor', 10, 2);
+    $table->unsignedSmallInteger('capacidade');
+    $table->enum('situacao', ['agendada', 'em_andamento', 'concluida', 'cancelada'])
+          ->default('agendada');
+    $table->timestamps();
+
+    $table->unique(['veiculo_id', 'saida']);
+    $table->index(['user_id', 'saida']);
+});
     }
 
     /**
