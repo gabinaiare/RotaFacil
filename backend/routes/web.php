@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/login');
@@ -16,11 +17,21 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-    // Página provisória, será trocada pela tela "Visão geral"
-    Route::get('/inicio', function () {
-        return '<h1>Olá, ' . e(auth()->user()->name) . '</h1>'
-            . '<form method="POST" action="' . route('logout') . '">'
-            . csrf_field()
-            . '<button>Sair</button></form>';
-    })->name('dashboard');
+    Route::get('/inicio', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Telas ainda não construídas. Cada uma sai desta lista quando ganhar seu controller.
+    $provisorias = [
+        'viagens'     => 'Minhas viagens',
+        'veiculos'    => 'Meus veículos',
+        'passagens'   => 'Passagens',
+        'encomendas'  => 'Encomendas',
+        'passageiros' => 'Passageiros',
+        'perfil'      => 'Meu perfil',
+        'relatorios'  => 'Relatórios',
+    ];
+
+    foreach ($provisorias as $caminho => $titulo) {
+        Route::get("/{$caminho}", fn () => view('em-construcao', ['titulo' => $titulo]))
+            ->name("{$caminho}.index");
+    }
 });
