@@ -87,7 +87,7 @@
             <h2>Acesso rápido</h2>
         </div>
 
-        <a class="item-acesso-rapido" href="{{ route('veiculos.index') }}">
+        <a class="item-acesso-rapido" href="{{ route('veiculos.index') }}#novo-veiculo">
             <span class="icone icone-bus" aria-hidden="true"></span>
             <div>
                 <strong>Cadastrar veículo</strong>
