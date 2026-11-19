@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Passageiro extends Model
 {
-    protected $fillable = ['nome', 'cpf', 'telefone', 'endereco'];
+    protected $fillable = ['nome', 'cpf', 'telefone', 'email', 'endereco'];
 
     public function motorista(): BelongsTo
     {
