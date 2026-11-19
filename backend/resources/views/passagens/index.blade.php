@@ -95,13 +95,30 @@
                                 · falta {{ $dinheiro($p->saldo) }}
                             @endif
                         </p>
-                        <div class="botoes-presenca">
+                     <div class="botoes-presenca">
                             @if ($ativa)
-                                <a class="acao-presenca" href="{{ route('passagens.comprovante', $p->id) }}" target="_blank">Ver comprovante</a>
-                                @if ($p->saldo > 0)
-                                    <a class="acao-presenca receber-passagem" href="#pagamento-{{ $p->id }}">Receber</a>
+                         @php
+                        $fone = preg_replace('/\D/', '', (string) $p->passageiro->telefone);
+                        $mensagem = 'Olá, ' . $p->passageiro->nome . '! Sua passagem '
+                     . $viagem->origem . ' → ' . $viagem->destino
+                     . ', dia ' . $viagem->saida->format('d/m')
+                     . ' às ' . $viagem->saida->format('H:i')
+                    . ', assento ' . sprintf('%02d', $p->assento)
+                    . ', está registrada. Pode confirmar sua presença?';
+                    $texto = rawurlencode($mensagem);
+                    @endphp
+
+                            <a class="botao secundario" href="{{ route('passagens.comprovante', $p->id) }}" target="_blank">Ver comprovante</a>
+
+                                @if (strlen($fone) >= 10)
+                                    <a class="botao secundario" href="https://wa.me/55{{ $fone }}?text={{ $texto }}" target="_blank" rel="noopener">Confirmar via WhatsApp</a>
                                 @endif
-                                <a class="acao-presenca negativa" href="#cancelar-passagem-{{ $p->id }}">Cancelar passagem</a>
+
+                                @if ($p->saldo > 0)
+                                    <a class="botao secundario" href="#pagamento-{{ $p->id }}">Receber</a>
+                                @endif
+
+                                <a class="botao secundario" href="#cancelar-passagem-{{ $p->id }}">Cancelar passagem</a>
                             @else
                                 <span class="assento-liberado">Assento liberado</span>
                             @endif

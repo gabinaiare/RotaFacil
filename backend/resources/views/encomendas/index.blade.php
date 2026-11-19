@@ -97,26 +97,26 @@
                 </div>
             @endif
 
-            <div class="acoes-card">
-                <a href="{{ route('encomendas.comprovante', $e->id) }}" target="_blank">Ver comprovante</a>
-                <a class="botao secundario" href="#detalhe-encomenda-{{ $e->id }}">Detalhes e histórico</a>
+             <div class="acoes-card">
+            <a class="botao secundario" href="{{ route('encomendas.comprovante', $e->id) }}" target="_blank">Ver comprovante</a>
+            <a class="botao secundario" href="#detalhe-encomenda-{{ $e->id }}">Detalhes e histórico</a>
 
-                @if ($e->situacao !== 'entregue')
-                    <a href="#editar-encomenda-{{ $e->id }}">Editar</a>
-                    <a class="botao" href="#status-encomenda-{{ $e->id }}">Atualizar status</a>
-                    <form method="POST" action="{{ route('encomendas.status', $e->id) }}" style="display:inline"
-                          onsubmit="return confirm('Confirmar que a encomenda foi entregue a {{ e($e->destinatario_nome) }}?')">
-                        @csrf
-                        <input type="hidden" name="situacao" value="entregue">
-                        <input type="hidden" name="observacao" value="Entrega confirmada pelo motorista.">
-                        <button type="submit" class="link-botao">Confirmar entrega</button>
-                    </form>
-                @endif
+            @if ($e->situacao !== 'entregue')
+                <a class="botao secundario" href="#editar-encomenda-{{ $e->id }}">Editar</a>
+                <a class="botao" href="#status-encomenda-{{ $e->id }}">Atualizar status</a>
+                <form method="POST" action="{{ route('encomendas.status', $e->id) }}"
+                    onsubmit="return confirm('Confirmar que a encomenda foi entregue a {{ e($e->destinatario_nome) }}?')">
+                    @csrf
+                    <input type="hidden" name="situacao" value="entregue">
+                    <input type="hidden" name="observacao" value="Entrega confirmada pelo motorista.">
+                    <button type="submit" class="botao">Confirmar entrega</button>
+                </form>
+            @endif
 
-                @if ($e->saldo > 0)
-                    <a href="#pagamento-encomenda-{{ $e->id }}">Receber</a>
-                @endif
-            </div>
+            @if ($e->saldo > 0)
+                <a class="botao secundario" href="#pagamento-encomenda-{{ $e->id }}">Receber</a>
+            @endif
+        </div>
         </article>
     @empty
         <p class="texto-secundario">

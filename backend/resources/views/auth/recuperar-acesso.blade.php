@@ -32,7 +32,6 @@
                 <p class="sucesso-formulario">{{ session('status') }}</p>
             @endif
 
-            
          <form method="POST" action="{{ route('senha.enviar') }}">
                     @csrf
 

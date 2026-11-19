@@ -38,3 +38,11 @@ button.botao {
     cursor: pointer;
     text-decoration: underline;
 }
+/* Botões padronizados */
+.acoes-card form { display: inline; margin: 0; }
+.acoes-card a.botao:not(.secundario),
+.acoes-card button.botao,
+.botao:not(.secundario) { color: #fff; text-decoration: none; }
+.acoes-card .botao,
+.botao.secundario { text-decoration: none; cursor: pointer; }
+[hidden] { display: none !important; }
