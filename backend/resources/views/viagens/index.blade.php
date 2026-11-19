@@ -199,7 +199,7 @@
                     @if ($v->situacao === 'agendada')
                         <a class="botao secundario" href="#editar-viagem-{{ $v->id }}">Editar viagem</a>
                         @if ($ocupados < $v->capacidade)
-                            <a class="botao" href="{{ route('passagens.index', ['viagem' => $v->id]) }}">Vender passagem</a>
+                            <a class="botao" href="{{ route('passagens.index', ['viagem' => $v->id]) }}#vender-passagem">Vender passagem</a>
                         @endif
                     @else
                         <a class="botao secundario" href="{{ route('viagens.index') }}">Voltar</a>

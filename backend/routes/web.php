@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PassageiroController;
+use App\Http\Controllers\PassagemController;
 use App\Http\Controllers\VeiculoController;
 use App\Http\Controllers\ViagemController;
 use Illuminate\Support\Facades\Route;
@@ -36,12 +37,17 @@ Route::middleware('auth')->group(function () {
     Route::post('/viagens/{id}/cancelar', [ViagemController::class, 'cancelar'])->whereNumber('id')->name('viagens.cancelar');
     Route::post('/viagens/{id}/concluir', [ViagemController::class, 'concluir'])->whereNumber('id')->name('viagens.concluir');
 
+    Route::get('/passagens', [PassagemController::class, 'index'])->name('passagens.index');
+    Route::post('/passagens', [PassagemController::class, 'store'])->name('passagens.store');
+    Route::post('/passagens/{id}/cancelar', [PassagemController::class, 'cancelar'])->whereNumber('id')->name('passagens.cancelar');
+    Route::post('/passagens/{id}/pagamento', [PassagemController::class, 'receber'])->whereNumber('id')->name('passagens.receber');
+    Route::get('/passagens/{id}/comprovante', [PassagemController::class, 'comprovante'])->whereNumber('id')->name('passagens.comprovante');
+
     // Telas ainda não construídas. Cada uma sai desta lista quando ganhar seu controller.
     $provisorias = [
-        'passagens'   => 'Passagens',
-        'encomendas'  => 'Encomendas',
-        'perfil'      => 'Meu perfil',
-        'relatorios'  => 'Relatórios',
+        'encomendas' => 'Encomendas',
+        'perfil'     => 'Meu perfil',
+        'relatorios' => 'Relatórios',
     ];
 
     foreach ($provisorias as $caminho => $titulo) {

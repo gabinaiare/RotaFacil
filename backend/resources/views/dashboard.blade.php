@@ -8,7 +8,7 @@
     <a class="botao" href="{{ route('viagens.index') }}#nova-viagem">+ Nova rota</a>
 
     <div class="atalhos">
-        <a href="{{ route('passagens.index') }}"><span class="icone icone-bilhete" aria-hidden="true"></span><strong>Vender passagem</strong></a>
+        <a href="{{ route('passagens.index') }}#vender-passagem"><span class="icone icone-bilhete" aria-hidden="true"></span><strong>Vender passagem</strong></a>
         <a href="{{ route('encomendas.index') }}"><span class="icone icone-encomendas" aria-hidden="true"></span><strong>Nova encomenda</strong></a>
         <a href="{{ route('passageiros.index') }}#novo-cliente"><span class="icone icone-cliente" aria-hidden="true"></span><strong>Novo cliente</strong></a>
     </div>
