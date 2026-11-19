@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RecuperarAcessoController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\RelatorioController;
 use App\Http\Controllers\AuthController;
@@ -16,7 +17,12 @@ Route::redirect('/', '/login');
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'mostrarLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login']);
+    Route::get('/recuperar-acesso', [RecuperarAcessoController::class, 'mostrarPedido'])->name('senha.pedir');
+    Route::post('/recuperar-acesso', [RecuperarAcessoController::class, 'enviarLink'])
+        ->middleware('throttle:5,1')->name('senha.enviar');
 
+    Route::get('/redefinir-senha/{token}', [RecuperarAcessoController::class, 'mostrarRedefinicao'])->name('password.reset');
+    Route::post('/redefinir-senha', [RecuperarAcessoController::class, 'redefinir'])->name('senha.redefinir');
     Route::get('/cadastro', [AuthController::class, 'mostrarCadastro'])->name('cadastro');
     Route::post('/cadastro', [AuthController::class, 'cadastrar']);
 });

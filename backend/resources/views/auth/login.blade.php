@@ -51,7 +51,7 @@
                     <p class="erro-formulario">{{ $message }}</p>
                 @enderror
 
-                <a class="link-acesso recuperar-senha" href="#">Esqueci minha senha</a>
+                <a class="link-acesso recuperar-senha" href="{{ route('senha.pedir') }}">Esqueci minha senha</a>
                 <button type="submit" class="botao">Entrar no meu painel</button>
             </form>
             <p class="observacao-acesso">Primeira vez aqui?<a href="{{ route('cadastro') }}">Criar conta de motorista</a></p>
