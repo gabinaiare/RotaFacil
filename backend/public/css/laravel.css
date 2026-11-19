@@ -28,3 +28,13 @@ button.botao {
     background: #102A40;
     color: #fff;
 }
+
+.link-botao {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+}

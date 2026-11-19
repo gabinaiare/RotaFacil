@@ -5,7 +5,7 @@
 @section('conteudo')
     <h1>Olá, {{ auth()->user()->primeiro_nome }}</h1>
     <p class="introducao">Seu transporte, seus clientes e suas contas em um só lugar.</p>
-    <a class="botao" href="{{ route('viagens.index') }}">+ Nova rota</a>
+    <a class="botao" href="{{ route('viagens.index') }}#nova-viagem">+ Nova rota</a>
 
     <div class="atalhos">
         <a href="{{ route('passagens.index') }}"><span class="icone icone-bilhete" aria-hidden="true"></span><strong>Vender passagem</strong></a>
@@ -66,7 +66,7 @@
 
                 <div class="linha">
                     <span></span>
-                    <a href="{{ route('viagens.index') }}">Ver viagem</a>
+                    <a href="{{ route('viagens.index') }}#detalhe-viagem-{{ $viagem->id }}">Ver viagem</a>
                 </div>
             </article>
         @empty
@@ -79,7 +79,7 @@
         <small>NO SEU RITMO</small>
         <h2>Você escolhe a rota.<br>A gente organiza.</h2>
         <p>Defina destinos, horários e valores. Cada viagem com o transporte e os assentos que você precisa.</p>
-        <a class="botao" href="{{ route('viagens.index') }}">+ Cadastrar uma rota</a>
+        <a class="botao" href="{{ route('viagens.index') }}#nova-viagem">+ Cadastrar uma rota</a>
     </section>
 
     <section class="cartao acesso-rapido">

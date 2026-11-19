@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PassageiroController;
 use App\Http\Controllers\VeiculoController;
+use App\Http\Controllers\ViagemController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/login');
@@ -29,9 +30,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/passageiros', [PassageiroController::class, 'store'])->name('passageiros.store');
     Route::put('/passageiros/{id}', [PassageiroController::class, 'update'])->whereNumber('id')->name('passageiros.update');
 
+    Route::get('/viagens', [ViagemController::class, 'index'])->name('viagens.index');
+    Route::post('/viagens', [ViagemController::class, 'store'])->name('viagens.store');
+    Route::put('/viagens/{id}', [ViagemController::class, 'update'])->whereNumber('id')->name('viagens.update');
+    Route::post('/viagens/{id}/cancelar', [ViagemController::class, 'cancelar'])->whereNumber('id')->name('viagens.cancelar');
+    Route::post('/viagens/{id}/concluir', [ViagemController::class, 'concluir'])->whereNumber('id')->name('viagens.concluir');
+
     // Telas ainda não construídas. Cada uma sai desta lista quando ganhar seu controller.
     $provisorias = [
-        'viagens'     => 'Minhas viagens',
         'passagens'   => 'Passagens',
         'encomendas'  => 'Encomendas',
         'perfil'      => 'Meu perfil',
