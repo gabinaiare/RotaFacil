@@ -23,3 +23,8 @@ button.botao {
     font-size: 0.95rem;
     margin: 0 0 1rem;
 }
+
+.filtros-clientes a.ativa {
+    background: #102A40;
+    color: #fff;
+}

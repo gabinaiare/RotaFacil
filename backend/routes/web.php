@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PassageiroController;
 use App\Http\Controllers\VeiculoController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,12 +25,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/veiculos', [VeiculoController::class, 'store'])->name('veiculos.store');
     Route::put('/veiculos/{id}', [VeiculoController::class, 'update'])->whereNumber('id')->name('veiculos.update');
 
+    Route::get('/passageiros', [PassageiroController::class, 'index'])->name('passageiros.index');
+    Route::post('/passageiros', [PassageiroController::class, 'store'])->name('passageiros.store');
+    Route::put('/passageiros/{id}', [PassageiroController::class, 'update'])->whereNumber('id')->name('passageiros.update');
+
     // Telas ainda não construídas. Cada uma sai desta lista quando ganhar seu controller.
     $provisorias = [
         'viagens'     => 'Minhas viagens',
         'passagens'   => 'Passagens',
         'encomendas'  => 'Encomendas',
-        'passageiros' => 'Passageiros',
         'perfil'      => 'Meu perfil',
         'relatorios'  => 'Relatórios',
     ];

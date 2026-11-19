@@ -10,7 +10,7 @@
     <div class="atalhos">
         <a href="{{ route('passagens.index') }}"><span class="icone icone-bilhete" aria-hidden="true"></span><strong>Vender passagem</strong></a>
         <a href="{{ route('encomendas.index') }}"><span class="icone icone-encomendas" aria-hidden="true"></span><strong>Nova encomenda</strong></a>
-        <a href="{{ route('passageiros.index') }}"><span class="icone icone-cliente" aria-hidden="true"></span><strong>Novo cliente</strong></a>
+        <a href="{{ route('passageiros.index') }}#novo-cliente"><span class="icone icone-cliente" aria-hidden="true"></span><strong>Novo cliente</strong></a>
     </div>
 
     <section class="cartao lista-viagens">

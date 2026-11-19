@@ -10,12 +10,51 @@ class PassageiroController extends Controller
 {
     public function index(Request $request)
     {
-        $passageiros = $request->user()->passageiros()
-            ->withCount(['passagens as total_passagens' => fn ($q) => $q->where('situacao', 'ativa')])
+        $busca = trim((string) $request->query('busca'));
+        $filtro = $request->query('filtro', 'todos');
+        $digitos = preg_replace('/\D/', '', $busca);
+
+        // Parte sempre do motorista logado: cada um vê só os próprios passageiros
+        $todos = $request->user()->passageiros()
+            ->with(['passagens' => fn ($q) => $q->where('situacao', 'ativa')->with(['pagamentos', 'viagem'])])
+            ->when($busca !== '', function ($q) use ($busca, $digitos) {
+                $q->where(function ($q) use ($busca, $digitos) {
+                    $q->where('nome', 'like', "%{$busca}%");
+                    if ($digitos !== '') {
+                        $q->orWhere('cpf', 'like', "%{$digitos}%")
+                          ->orWhere('telefone', 'like', "%{$digitos}%");
+                    }
+                });
+            })
             ->orderBy('nome')
             ->get();
 
-        return view('passageiros.index', compact('passageiros'));
+        foreach ($todos as $p) {
+            $pagamentos = $p->passagens->flatMap(fn ($passagem) => $passagem->pagamentos);
+
+            $p->recebido = round((float) $pagamentos->where('situacao', 'pago')->sum('valor'), 2);
+            $p->fiado = round((float) $pagamentos->where('situacao', 'pendente')->sum('valor'), 2);
+            $p->ultima_viagem = $p->passagens->map(fn ($passagem) => $passagem->viagem)->filter()->max('saida');
+        }
+
+        $total = $todos->count();
+        $comFiado = $todos->filter(fn ($p) => $p->fiado > 0)->count();
+
+        $passageiros = match ($filtro) {
+            'fiado' => $todos->filter(fn ($p) => $p->fiado > 0),
+            'em-dia' => $todos->filter(fn ($p) => $p->fiado <= 0),
+            default => $todos,
+        };
+
+        return view('passageiros.index', [
+            'passageiros' => $passageiros->values(),
+            'todos' => $todos,
+            'busca' => $busca,
+            'filtro' => $filtro,
+            'total' => $total,
+            'comFiado' => $comFiado,
+            'emDia' => $total - $comFiado,
+        ]);
     }
 
     public function store(Request $request)
