@@ -1,0 +1,199 @@
+.marca-relatorio-impresso {
+    display: none;
+}
+
+.opcoes-impressao {
+    position: relative;
+    font-size: 13px;
+}
+
+.opcoes-impressao > summary {
+    cursor: pointer;
+    color: var(--verde);
+    font-weight: 700;
+    padding: 8px 0;
+}
+
+.opcoes-impressao > div {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 10;
+    width: min(330px, calc(100vw - 64px));
+    padding: 16px;
+    background: #fff;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px #182f411a;
+    color: var(--cor-texto);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.opcoes-impressao p + p {
+    margin-top: 8px;
+}
+
+.opcoes-impressao kbd {
+    font: inherit;
+    font-weight: 700;
+}
+
+@page {
+    size: A4 portrait;
+    margin: 15mm;
+}
+
+@media print {
+    html,
+    body.pagina-relatorios {
+        height: auto;
+        overflow: visible;
+        background: #fff;
+        color: #182f41;
+        font-size: 10pt;
+    }
+
+    .pagina-relatorios .menu-lateral,
+    .pagina-relatorios .barra-superior,
+    .pagina-relatorios .menu-inferior,
+    .pagina-relatorios .fundo-sobreposicao,
+    .pagina-relatorios .pular-conteudo,
+    .pagina-relatorios .filtro-relatorio,
+    .pagina-relatorios .acoes-exportar,
+    .pagina-relatorios .rodape-pagina,
+    .pagina-relatorios .janela {
+        display: none !important;
+    }
+
+    body.pagina-relatorios .aplicativo,
+    .pagina-relatorios main#conteudo {
+        display: block;
+        width: 100%;
+        max-width: none;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+    }
+
+    .pagina-relatorios .marca-relatorio-impresso {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #aabcc9;
+        padding-bottom: 10pt;
+        margin-bottom: 16pt;
+    }
+
+    .pagina-relatorios .titulo-pagina {
+        display: block;
+        margin: 0 0 12pt;
+    }
+
+    .pagina-relatorios h1 {
+        font-size: 22pt;
+    }
+
+    .pagina-relatorios h2 {
+        font-size: 13pt;
+    }
+
+    .pagina-relatorios .introducao {
+        margin: 6pt 0;
+    }
+
+    .pagina-relatorios .periodo-resumo {
+        margin: 10pt 0;
+        color: #40596c;
+    }
+
+    .pagina-relatorios .metricas {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8pt;
+        margin: 14pt 0;
+        break-inside: avoid;
+    }
+
+    .pagina-relatorios .metrica {
+        min-height: 0;
+        padding: 10pt;
+        border: 1px solid #cbd5df;
+        border-radius: 0;
+    }
+
+    .pagina-relatorios .metrica p {
+        font-size: 9pt;
+    }
+
+    .pagina-relatorios .metrica strong {
+        display: block;
+        font-size: 15pt;
+        margin-top: 6pt;
+    }
+
+    .pagina-relatorios .vendas-estatistica {
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .pagina-relatorios .vendas-estatistica > header {
+        padding: 10pt 0;
+    }
+
+    .pagina-relatorios .tabela-rolagem {
+        overflow: visible;
+        max-height: none;
+        width: 100%;
+    }
+
+    .pagina-relatorios table {
+        display: table;
+        width: 100%;
+        min-width: 0;
+        border-collapse: collapse;
+        font-size: 9pt;
+    }
+
+    .pagina-relatorios thead {
+        display: table-header-group;
+    }
+
+    .pagina-relatorios tbody {
+        display: table-row-group;
+    }
+
+    .pagina-relatorios tr {
+        display: table-row;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .pagina-relatorios th,
+    .pagina-relatorios td {
+        display: table-cell;
+        width: auto;
+        padding: 8pt 5pt;
+        border-bottom: 1px solid #cbd5df;
+        text-align: left;
+        vertical-align: top;
+        color: #182f41;
+        overflow-wrap: anywhere;
+    }
+
+    .pagina-relatorios th {
+        background: #eef2f5;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .pagina-relatorios td::before {
+        display: none;
+    }
+
+    .pagina-relatorios th:nth-child(5),
+    .pagina-relatorios td:nth-child(5) {
+        white-space: nowrap;
+    }
+}
