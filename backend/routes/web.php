@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EncomendaController;
 use App\Http\Controllers\PassageiroController;
 use App\Http\Controllers\PassagemController;
 use App\Http\Controllers\VeiculoController;
@@ -43,9 +44,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/passagens/{id}/pagamento', [PassagemController::class, 'receber'])->whereNumber('id')->name('passagens.receber');
     Route::get('/passagens/{id}/comprovante', [PassagemController::class, 'comprovante'])->whereNumber('id')->name('passagens.comprovante');
 
+    Route::get('/encomendas', [EncomendaController::class, 'index'])->name('encomendas.index');
+    Route::post('/encomendas', [EncomendaController::class, 'store'])->name('encomendas.store');
+    Route::put('/encomendas/{id}', [EncomendaController::class, 'update'])->whereNumber('id')->name('encomendas.update');
+    Route::post('/encomendas/{id}/status', [EncomendaController::class, 'atualizarStatus'])->whereNumber('id')->name('encomendas.status');
+    Route::post('/encomendas/{id}/pagamento', [EncomendaController::class, 'receber'])->whereNumber('id')->name('encomendas.receber');
+    Route::get('/encomendas/{id}/comprovante', [EncomendaController::class, 'comprovante'])->whereNumber('id')->name('encomendas.comprovante');
+
     // Telas ainda não construídas. Cada uma sai desta lista quando ganhar seu controller.
     $provisorias = [
-        'encomendas' => 'Encomendas',
         'perfil'     => 'Meu perfil',
         'relatorios' => 'Relatórios',
     ];

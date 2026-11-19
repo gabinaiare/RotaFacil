@@ -117,6 +117,10 @@ class DatabaseSeeder extends Seeder
         $enc2->movimentacoes()->create(['situacao_anterior' => null, 'nova_situacao' => 'cadastrada']);
         $enc2->movimentacoes()->create(['situacao_anterior' => 'cadastrada', 'nova_situacao' => 'em_transporte']);
         $enc2->movimentacoes()->create(['situacao_anterior' => 'em_transporte', 'nova_situacao' => 'entregue']);
+
+        // Pagamentos das encomendas
+        $enc1->pagamentos()->create(['forma' => 'fiado', 'situacao' => 'pendente', 'valor' => 20]);
+        $enc2->pagamentos()->create(['forma' => 'pix', 'situacao' => 'pago', 'valor' => 10, 'data_pagamento' => now()->subDay()]);
     }
 
     private function vender(Viagem $viagem, Passageiro $passageiro, int $assento, string $forma): void
