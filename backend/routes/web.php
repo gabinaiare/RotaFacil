@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\RelatorioController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EncomendaController;
@@ -51,14 +53,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/encomendas/{id}/pagamento', [EncomendaController::class, 'receber'])->whereNumber('id')->name('encomendas.receber');
     Route::get('/encomendas/{id}/comprovante', [EncomendaController::class, 'comprovante'])->whereNumber('id')->name('encomendas.comprovante');
 
-    // Telas ainda não construídas. Cada uma sai desta lista quando ganhar seu controller.
-    $provisorias = [
-        'perfil'     => 'Meu perfil',
-        'relatorios' => 'Relatórios',
-    ];
+    Route::get('/perfil', [PerfilController::class, 'index'])->name('perfil.index');
+    Route::put('/perfil', [PerfilController::class, 'update'])->name('perfil.update');
 
-    foreach ($provisorias as $caminho => $titulo) {
-        Route::get("/{$caminho}", fn () => view('em-construcao', ['titulo' => $titulo]))
-            ->name("{$caminho}.index");
-    }
-});
+    Route::get('/relatorios', [RelatorioController::class, 'index'])->name('relatorios.index');
+    Route::get('/relatorios/csv', [RelatorioController::class, 'csv'])->name('relatorios.csv');
+  });
