@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -54,6 +55,9 @@ class PerfilController extends Controller
             'cnh_categoria.in' => 'Categoria da CNH inválida.',
             'email.email' => 'Informe um e-mail válido.',
             'email.unique' => 'Este e-mail já está em uso.',
+            'foto.image' => 'A foto deve ser uma imagem válida.',
+            'foto.mimes' => 'A foto deve ser um arquivo do tipo JPG, JPEG, PNG ou WEBP.',
+            'foto.max' => 'A foto não pode exceder 2MB.',
         ]);
 
         if ($validador->fails()) {
@@ -61,6 +65,14 @@ class PerfilController extends Controller
                 ->withErrors($validador)
                 ->withInput();
         }
+
+        if ($request->hasFile('foto')) {
+         if ($motorista->foto) {
+        Storage::disk('public')->delete($motorista->foto);
+    }
+    $motorista->foto = $request->file('foto')->store('fotos', 'public');
+    $motorista->save();
+}
 
         $d = $validador->validated();
 

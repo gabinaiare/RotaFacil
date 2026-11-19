@@ -32,10 +32,12 @@
     @endif
 
     <section class="cartao identidade-perfil">
+        @if ($motorista->foto)
+        <img class="avatar avatar-grande" src="{{ asset('storage/' . $motorista->foto) }}" alt="Foto de {{ $motorista->name }}" style="object-fit:cover;border-radius:50%">
+@else
         <span class="avatar avatar-grande">{{ $iniciais }}</span>
-        <h2>{{ $motorista->name }}</h2>
-        <p class="texto-secundario">Motorista independente</p>
-        <span class="selo">Meu espaço individual</span>
+@endif
+        <a class="link-foto" href="#editar-perfil">{{ $motorista->foto ? 'Trocar foto' : 'Adicionar foto do perfil' }}</a>
         @if ($motorista->cidade)
             <p class="texto-secundario">{{ $motorista->cidade }}</p>
         @endif
@@ -81,7 +83,7 @@
                 <a class="fechar-painel" href="{{ route('perfil.index') }}" aria-label="Fechar">×</a>
             </header>
 
-            <form class="formulario" method="POST" action="{{ route('perfil.update') }}">
+             <form class="formulario" method="POST" action="{{ route('perfil.update') }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -93,6 +95,12 @@
                             @endforeach
                         </div>
                     @endif
+
+                    <label class="largura-total">
+                     Foto do perfil
+                    <small>JPG, PNG ou WebP, até 2 MB</small>
+                    <input type="file" name="foto" accept="image/jpeg,image/png,image/webp">
+                </label>
 
                     <label>
                         Nome completo

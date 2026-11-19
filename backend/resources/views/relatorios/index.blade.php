@@ -31,7 +31,7 @@
         <div class="seletor-periodo" role="group" aria-label="Período">
             @foreach ($opcoes as $chave => $rotulo)
                 <label>
-                    <input type="radio" name="periodo" value="{{ $chave }}" @checked($periodo === $chave) onchange="this.form.submit()">
+                    <input type="radio" name="periodo" value="{{ $chave }}" @checked($periodo === $chave) onchange="mudarPeriodo(this)">
                     <span>{{ $rotulo }}</span>
                 </label>
             @endforeach
@@ -39,14 +39,25 @@
         <noscript><button class="botao" type="submit">Aplicar</button></noscript>
     </form>
 
-    <section class="periodo-personalizado cartao" aria-label="Período personalizado">
-        <form method="GET" action="{{ route('relatorios.index') }}">
-            <input type="hidden" name="periodo" value="custom">
-            <label>De <input type="date" name="inicio" value="{{ $inicio->format('Y-m-d') }}"></label>
-            <label>Até <input type="date" name="fim" value="{{ $fim->format('Y-m-d') }}"></label>
-            <button class="botao" type="submit">Aplicar período</button>
-        </form>
-    </section>
+    <section id="periodo-custom" class="periodo-personalizado cartao" aria-label="Período personalizado" @if ($periodo !== 'custom') hidden @endif>
+    <form method="GET" action="{{ route('relatorios.index') }}">
+        <input type="hidden" name="periodo" value="custom">
+        <label>De <input id="data-inicio" type="date" name="inicio" value="{{ $inicio->format('Y-m-d') }}"></label>
+        <label>Até <input type="date" name="fim" value="{{ $fim->format('Y-m-d') }}"></label>
+        <button class="botao" type="submit">Aplicar período</button>
+    </form>
+</section>
+
+<script>
+    function mudarPeriodo(radio) {
+        if (radio.value === 'custom') {
+            document.getElementById('periodo-custom').hidden = false;
+            document.getElementById('data-inicio').focus();
+        } else {
+            radio.form.submit();
+        }
+    }
+</script>
 
     <section class="destaque-mes">
         <span>MÊS ATUAL · {{ $nomeMes }}</span>
