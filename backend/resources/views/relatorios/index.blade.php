@@ -36,21 +36,15 @@
     </form>
 
     @if ($periodo === 'custom')
-        <section class="periodo-personalizado cartao" aria-label="Período personalizado">
-            <form method="GET" action="{{ route('relatorios.index') }}">
-                <input type="hidden" name="periodo" value="custom">
-                <label>
-                    De
-                    <input type="date" name="de" value="{{ $inicio->format('Y-m-d') }}">
-                </label>
-                <label>
-                    Até
-                    <input type="date" name="ate" value="{{ $fim->format('Y-m-d') }}">
-                </label>
-                <button class="botao" type="submit">Aplicar período</button>
-            </form>
-        </section>
-    @endif
+    <section class="periodo-personalizado cartao" aria-label="Período personalizado">
+        <form method="GET" action="{{ route('relatorios.index') }}">
+            <input type="hidden" name="periodo" value="custom">
+            <label>De <input type="date" name="inicio" value="{{ $inicio->format('Y-m-d') }}"></label>
+            <label>Até <input type="date" name="fim" value="{{ $fim->format('Y-m-d') }}"></label>
+            <button class="botao" type="submit">Aplicar período</button>
+        </form>
+    </section>
+@endif
 
     <section class="destaque-mes">
         <span>MÊS ATUAL · {{ $nomeMes }}</span>

@@ -70,3 +70,9 @@ button.botao {
 }
 .rosca-dinamica > div { position: relative; display: grid; text-align: center; gap: .15rem; }
 .rosca-dinamica small { color: #6b7f90; }
+
+/* Botões: padrão único */
+.botao { display: inline-block; padding: .65rem 1.1rem; border-radius: 10px; font-weight: 600; text-decoration: none; cursor: pointer; border: 1px solid transparent; background: #18aa80; color: #fff; }
+.botao.secundario { background: #fff; color: #102A40; border-color: #c9d6e0; }
+.botao.secundario:hover { background: #eef3f7; }
+.botao.verde, .botao.confirmar { background: #18aa80; color: #fff; }
