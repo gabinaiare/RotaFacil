@@ -2,243 +2,284 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pagamento;
 use App\Models\Passagem;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class RelatorioController extends Controller
 {
-    private const PERIODOS = ['7d', '30d', '6m', '1a', 'custom'];
+    private const FORMAS = [
+        'dinheiro' => ['Dinheiro', '#18aa80'],
+        'pix' => ['Pix', '#2f80ed'],
+        'cartao' => ['Cartão', '#f2994a'],
+    ];
 
     public function index(Request $request)
     {
-        [$periodo, $inicio, $fim, $erroPeriodo] = $this->periodo($request);
-        $m = $request->user();
-        $busca = trim((string) $request->query('busca'));
+        [$periodo, $inicio, $fim] = $this->periodo($request);
 
-        $passagens = $this->passagensDoPeriodo($m, $inicio, $fim);
-        $encomendas = $this->encomendasDoPeriodo($m, $inicio, $fim);
-
-        $linhas = $this->linhas($passagens, $encomendas);
-        $linhasFiltradas = $busca === ''
-            ? $linhas
-            : $linhas->filter(fn ($l) => mb_stripos($l['codigo'] . ' ' . $l['cliente'] . ' ' . $l['rota'], $busca) !== false)->values();
-
-        // Recebimentos do período (pela data do pagamento)
-        $passagemIds = Passagem::whereHas('viagem', fn ($q) => $q->where('user_id', $m->id))->pluck('id');
-        $encomendaIds = $m->encomendas()->pluck('id');
-
-        $recebidos = Pagamento::where('situacao', 'pago')
-            ->whereBetween('data_pagamento', [$inicio, $fim])
-            ->where(fn ($q) => $q->whereIn('passagem_id', $passagemIds)->orWhereIn('encomenda_id', $encomendaIds))
-            ->get();
-
-        $inicioMes = now()->startOfMonth();
-        $recebidoMes = (float) Pagamento::where('situacao', 'pago')
-            ->whereBetween('data_pagamento', [$inicioMes, now()->endOfDay()])
-            ->where(fn ($q) => $q->whereIn('passagem_id', $passagemIds)->orWhereIn('encomenda_id', $encomendaIds))
-            ->sum('valor');
-
-        // Fiado atual (não depende do período): passagens ativas e encomendas
-        $ativasIds = Passagem::whereHas('viagem', fn ($q) => $q->where('user_id', $m->id))
-            ->where('situacao', 'ativa')->pluck('id');
-
-        $fiado = (float) Pagamento::where('situacao', 'pendente')
-            ->where(fn ($q) => $q->whereIn('passagem_id', $ativasIds)->orWhereIn('encomenda_id', $encomendaIds))
-            ->sum('valor');
-
-        // Números gerais das viagens programadas
-        $agendadas = $m->viagens()->where('situacao', 'agendada')->get();
-        $ocupadas = Passagem::whereIn('viagem_id', $agendadas->pluck('id'))->where('situacao', 'ativa')->count();
-        $lugares = (int) $agendadas->sum('capacidade');
-
-        $qtd = $passagens->count();
-        $valorVendas = (float) $passagens->sum('valor');
-
-        return view('relatorios.index', [
+        return view('relatorios.index', $this->montar($request, $inicio, $fim) + [
             'periodo' => $periodo,
             'inicio' => $inicio,
             'fim' => $fim,
-            'erroPeriodo' => $erroPeriodo,
-            'busca' => $busca,
-            'recebidoPeriodo' => round((float) $recebidos->sum('valor'), 2),
-            'recebidoMes' => round($recebidoMes, 2),
-            'valorVendas' => round($valorVendas + (float) $encomendas->sum('valor'), 2),
-            'valorMedio' => $qtd > 0 ? round($valorVendas / $qtd, 2) : 0,
-            'clientes' => $passagens->pluck('passageiro_id')->unique()->count(),
-            'fiado' => round($fiado, 2),
-            'rotasCadastradas' => $m->viagens()->count(),
-            'passagensOcupadas' => $ocupadas,
-            'assentosLivres' => max(0, $lugares - $ocupadas),
-            'veiculos' => $m->veiculos()->count(),
-            'serie' => $this->serie($recebidos, $inicio, $fim),
-            'formas' => $this->formas($recebidos),
-            'rotas' => $this->rotas($passagens, $encomendas),
-            'linhas' => $linhasFiltradas,
-            'totalLinhas' => $linhas->count(),
         ]);
     }
 
-    public function csv(Request $request)
+    /** Exporta as vendas e encomendas do período em CSV (abre direto no Excel) */
+    public function exportar(Request $request)
     {
         [, $inicio, $fim] = $this->periodo($request);
-        $m = $request->user();
+        $linhas = $this->montar($request, $inicio, $fim)['linhas'];
 
-        $linhas = $this->linhas(
-            $this->passagensDoPeriodo($m, $inicio, $fim),
-            $this->encomendasDoPeriodo($m, $inicio, $fim)
-        );
+        $nome = 'relatorio-rota-facil-' . $inicio->format('Ymd') . '-' . $fim->format('Ymd') . '.csv';
 
-        $nome = 'relatorio-vendas-' . $inicio->format('Ymd') . '-' . $fim->format('Ymd') . '.csv';
+        // Evita que o Excel execute como fórmula um texto que começa com = + - @
+        $seguro = fn (string $t) => preg_match('/^[=+\-@\t\r]/', $t) ? "'" . $t : $t;
+        $moeda = fn ($v) => number_format((float) $v, 2, ',', '');
 
-        return response()->streamDownload(function () use ($linhas) {
-            $f = fopen('php://output', 'w');
-            fwrite($f, "\xEF\xBB\xBF"); // para o Excel abrir os acentos
-            fputcsv($f, ['Código', 'Passageiro / remetente', 'Rota', 'Serviço', 'Valor', 'Situação', 'Data'], ';');
+        return response()->streamDownload(function () use ($linhas, $seguro, $moeda) {
+            $saida = fopen('php://output', 'w');
+            fwrite($saida, "\xEF\xBB\xBF"); // acentos corretos no Excel
+
+            fputcsv($saida, ['Data', 'Código', 'Passageiro / remetente', 'Rota', 'Serviço', 'Valor', 'Recebido', 'A receber', 'Situação'], ';', '"', '');
 
             foreach ($linhas as $l) {
-                fputcsv($f, [
-                    $l['codigo'], $l['cliente'], $l['rota'], $l['servico'],
-                    number_format($l['valor'], 2, ',', ''), $l['situacao'], $l['data']->format('d/m/Y'),
-                ], ';');
+                fputcsv($saida, [
+                    $l['data']->format('d/m/Y H:i'),
+                    $l['codigo'],
+                    $seguro($l['nome']),
+                    $seguro($l['rota']),
+                    $l['servico'],
+                    $moeda($l['valor']),
+                    $moeda($l['recebido']),
+                    $moeda($l['saldo']),
+                    $l['situacao'],
+                ], ';', '"', '');
             }
 
-            fclose($f);
+            fclose($saida);
         }, $nome, ['Content-Type' => 'text/csv; charset=UTF-8']);
     }
 
-    /** @return array{0:string,1:Carbon,2:Carbon,3:?string} */
     private function periodo(Request $request): array
     {
-        $periodo = $request->query('periodo', '30d');
-        if (! in_array($periodo, self::PERIODOS, true)) {
+        $hoje = now();
+        $fim = $hoje->copy()->endOfDay();
+        $periodo = (string) $request->query('periodo', '30d');
+
+        if (! in_array($periodo, ['7d', '30d', '6m', '1a', 'custom'], true)) {
             $periodo = '30d';
         }
 
-        $fim = now()->endOfDay();
         $inicio = match ($periodo) {
-            '7d' => now()->subDays(6)->startOfDay(),
-            '6m' => now()->subMonths(6)->startOfDay(),
-            '1a' => now()->subYear()->startOfDay(),
-            default => now()->subDays(29)->startOfDay(),
+            '7d' => $hoje->copy()->subDays(6)->startOfDay(),
+            '6m' => $hoje->copy()->subMonthsNoOverflow(6)->startOfDay(),
+            '1a' => $hoje->copy()->subYearNoOverflow()->startOfDay(),
+            default => $hoje->copy()->subDays(29)->startOfDay(),
         };
-        $erro = null;
 
-        if ($periodo === 'custom' && $request->query('inicio') && $request->query('fim')) {
-            $v = Validator::make($request->query(), [
-                'inicio' => ['date'],
-                'fim' => ['date', 'after_or_equal:inicio'],
-            ]);
+        if ($periodo === 'custom') {
+            try {
+                $de = Carbon::createFromFormat('Y-m-d', (string) $request->query('de'))->startOfDay();
+                $ate = Carbon::createFromFormat('Y-m-d', (string) $request->query('ate'))->endOfDay();
 
-            if ($v->passes()) {
-                $inicio = Carbon::parse($request->query('inicio'))->startOfDay();
-                $fim = Carbon::parse($request->query('fim'))->endOfDay();
-            } else {
-                $erro = 'Período inválido: a data final deve ser igual ou posterior à inicial.';
+                if ($ate->gte($de) && abs($de->diffInDays($ate)) <= 731) {
+                    $inicio = $de;
+                    $fim = $ate;
+                }
+            } catch (\Throwable) {
+                // datas inválidas: mantém os últimos 30 dias
             }
         }
 
-        return [$periodo, $inicio, $fim, $erro];
+        return [$periodo, $inicio, $fim];
     }
 
-    private function passagensDoPeriodo($m, Carbon $inicio, Carbon $fim)
+    private function montar(Request $request, Carbon $inicio, Carbon $fim): array
     {
-        return Passagem::whereHas('viagem', fn ($q) => $q->where('user_id', $m->id))
+        $motorista = $request->user();
+        $uid = $motorista->id;
+
+        // Pagamentos do motorista: de passagens ativas das viagens dele e de encomendas dele
+        $pagamentos = fn () => DB::table('pagamentos as pg')
+            ->leftJoin('passagens as pa', 'pa.id', '=', 'pg.passagem_id')
+            ->leftJoin('viagens as v', 'v.id', '=', 'pa.viagem_id')
+            ->leftJoin('encomendas as e', 'e.id', '=', 'pg.encomenda_id')
+            ->where(fn ($q) => $q
+                ->where(fn ($q) => $q->where('v.user_id', $uid)->where('pa.situacao', 'ativa'))
+                ->orWhere('e.user_id', $uid));
+
+        $recebidoMes = (float) $pagamentos()
+            ->where('pg.situacao', 'pago')
+            ->whereBetween('pg.data_pagamento', [now()->startOfMonth(), now()])
+            ->sum('pg.valor');
+
+        $recebidoPeriodo = (float) $pagamentos()
+            ->where('pg.situacao', 'pago')
+            ->whereBetween('pg.data_pagamento', [$inicio, $fim])
+            ->sum('pg.valor');
+
+        $fiadoTotal = (float) $pagamentos()->where('pg.situacao', 'pendente')->sum('pg.valor');
+
+        // Vendas do período (pela data em que foram registradas)
+        $passagens = Passagem::whereHas('viagem', fn ($q) => $q->where('user_id', $uid))
             ->where('situacao', 'ativa')
             ->whereBetween('created_at', [$inicio, $fim])
             ->with(['viagem', 'passageiro', 'pagamentos'])
             ->get();
-    }
 
-    private function encomendasDoPeriodo($m, Carbon $inicio, Carbon $fim)
-    {
-        return $m->encomendas()->whereBetween('created_at', [$inicio, $fim])->with('pagamentos')->get();
-    }
+        $encomendas = $motorista->encomendas()
+            ->whereBetween('created_at', [$inicio, $fim])
+            ->with('pagamentos')
+            ->get();
 
-    private function linhas($passagens, $encomendas)
-    {
-        $p = $passagens->map(fn ($x) => [
-            'codigo' => $x->codigo,
-            'cliente' => $x->passageiro->nome,
-            'rota' => $x->viagem->origem . ' · ' . $x->viagem->destino,
-            'servico' => 'Passagem',
-            'valor' => (float) $x->valor,
-            'situacao' => $x->situacao_pagamento,
-            'classe' => $x->saldo <= 0 ? 'verde' : ($x->recebido > 0 ? 'ciano' : 'amarelo'),
-            'data' => $x->created_at,
-        ]);
+        $situacao = fn (string $r) => $r === 'A receber' ? 'Fiado' : $r;
+        $classe = fn (string $r) => match ($r) {
+            'Pago' => 'verde',
+            'Pago parcialmente' => 'ciano',
+            'A receber' => 'amarelo',
+            default => '',
+        };
 
-        $e = $encomendas->map(fn ($x) => [
-            'codigo' => $x->codigo,
-            'cliente' => $x->remetente_nome,
-            'rota' => $x->origem . ' · ' . $x->destino,
-            'servico' => 'Encomenda',
-            'valor' => (float) $x->valor,
-            'situacao' => $x->pagamento_rotulo,
-            'classe' => (float) $x->valor <= 0 ? '' : ($x->saldo <= 0 ? 'verde' : ($x->recebido > 0 ? 'ciano' : 'amarelo')),
-            'data' => $x->created_at,
-        ]);
-
-        return $p->concat($e)->sortByDesc('data')->values();
-    }
-
-    /** Recebimentos agrupados por dia (ou por mês, se o período for longo) */
-    private function serie($recebidos, Carbon $inicio, Carbon $fim): array
-    {
-        $porMes = $inicio->diffInDays($fim) > 62;
-        $formato = $porMes ? 'm/Y' : 'd/m';
-
-        $grupos = [];
-        for ($d = $inicio->copy(); $d->lte($fim); $porMes ? $d->addMonth()->startOfMonth() : $d->addDay()) {
-            $grupos[$d->format($formato)] = ['rotulo' => $d->format($formato), 'passagens' => 0.0, 'encomendas' => 0.0];
-        }
-
-        foreach ($recebidos as $r) {
-            $chave = Carbon::parse($r->data_pagamento)->format($formato);
-            if (isset($grupos[$chave])) {
-                $grupos[$chave][$r->passagem_id ? 'passagens' : 'encomendas'] += (float) $r->valor;
-            }
-        }
-
-        return array_values($grupos);
-    }
-
-    private function formas($recebidos): array
-    {
-        $total = (float) $recebidos->sum('valor');
-        $nomes = ['pix' => 'Pix', 'dinheiro' => 'Dinheiro', 'cartao' => 'Cartão'];
-
-        return $recebidos->groupBy('forma')->map(function ($g, $forma) use ($total, $nomes) {
-            $v = round((float) $g->sum('valor'), 2);
-
-            return ['nome' => $nomes[$forma] ?? 'Não informado', 'valor' => $v, 'pct' => $total > 0 ? round($v / $total * 100, 1) : 0];
-        })->sortByDesc('valor')->values()->all();
-    }
-
-    private function rotas($passagens, $encomendas): array
-    {
-        $rotas = [];
+        $linhas = collect();
 
         foreach ($passagens as $p) {
-            $k = $p->viagem->origem . ' · ' . $p->viagem->destino;
-            $rotas[$k] ??= ['rota' => $k, 'passagens' => 0, 'encomendas' => 0, 'vendido' => 0.0, 'recebido' => 0.0, 'fiado' => 0.0];
-            $rotas[$k]['passagens']++;
-            $rotas[$k]['vendido'] += (float) $p->valor;
-            $rotas[$k]['recebido'] += $p->recebido;
-            $rotas[$k]['fiado'] += $p->saldo;
+            $linhas->push([
+                'data' => $p->created_at,
+                'codigo' => $p->codigo,
+                'nome' => $p->passageiro->nome,
+                'rota' => $p->viagem->origem . ' · ' . $p->viagem->destino,
+                'servico' => 'Passagem',
+                'valor' => (float) $p->valor,
+                'recebido' => (float) $p->recebido,
+                'saldo' => (float) $p->saldo,
+                'situacao' => $situacao($p->situacao_pagamento),
+                'classe' => $classe($p->situacao_pagamento),
+            ]);
         }
 
         foreach ($encomendas as $e) {
-            $k = $e->origem . ' · ' . $e->destino;
-            $rotas[$k] ??= ['rota' => $k, 'passagens' => 0, 'encomendas' => 0, 'vendido' => 0.0, 'recebido' => 0.0, 'fiado' => 0.0];
-            $rotas[$k]['encomendas']++;
-            $rotas[$k]['vendido'] += (float) $e->valor;
-            $rotas[$k]['recebido'] += $e->recebido;
-            $rotas[$k]['fiado'] += $e->saldo;
+            $linhas->push([
+                'data' => $e->created_at,
+                'codigo' => $e->codigo,
+                'nome' => $e->remetente_nome,
+                'rota' => $e->origem . ' · ' . $e->destino,
+                'servico' => 'Encomenda',
+                'valor' => (float) ($e->valor ?? 0),
+                'recebido' => (float) $e->recebido,
+                'saldo' => (float) $e->saldo,
+                'situacao' => $situacao($e->pagamento_rotulo),
+                'classe' => $classe($e->pagamento_rotulo),
+            ]);
         }
 
-        return collect($rotas)->sortByDesc('vendido')->values()->all();
+        $linhas = $linhas->sortByDesc('data')->values();
+
+        $rotas = $linhas->groupBy('rota')->map(fn ($g, $rota) => [
+            'rota' => $rota,
+            'passagens' => $g->where('servico', 'Passagem')->count(),
+            'encomendas' => $g->where('servico', 'Encomenda')->count(),
+            'valor' => $g->sum('valor'),
+            'recebido' => $g->sum('recebido'),
+            'fiado' => $g->sum('saldo'),
+        ])->sortByDesc('valor')->values();
+
+        // Situação atual (não depende do período)
+        $agendadas = $motorista->viagens()
+            ->where('situacao', 'agendada')
+            ->withCount(['passagens as ocupados' => fn ($q) => $q->where('situacao', 'ativa')])
+            ->get();
+
+        // Formas de pagamento (valores recebidos no período)
+        $totais = $pagamentos()
+            ->where('pg.situacao', 'pago')
+            ->whereBetween('pg.data_pagamento', [$inicio, $fim])
+            ->selectRaw('pg.forma, SUM(pg.valor) as total')
+            ->groupBy('pg.forma')
+            ->pluck('total', 'forma');
+
+        $formas = [];
+        $acumulado = 0.0;
+        $trechos = [];
+
+        foreach (self::FORMAS as $chave => [$rotulo, $cor]) {
+            $total = (float) ($totais[$chave] ?? 0);
+
+            if ($total <= 0) {
+                continue;
+            }
+
+            $pct = $recebidoPeriodo > 0 ? round($total / $recebidoPeriodo * 100, 1) : 0;
+            $formas[] = ['rotulo' => $rotulo, 'cor' => $cor, 'total' => $total, 'pct' => $pct];
+
+            $trechos[] = "{$cor} {$acumulado}% " . ($acumulado + $pct) . '%';
+            $acumulado += $pct;
+        }
+
+        if ($trechos) {
+            $trechos[count($trechos) - 1] = preg_replace('/ [\d.]+%$/', ' 100%', end($trechos));
+        }
+
+        return [
+            'recebidoMes' => $recebidoMes,
+            'recebidoPeriodo' => $recebidoPeriodo,
+            'fiadoTotal' => $fiadoTotal,
+            'valorVendas' => (float) $linhas->sum('valor'),
+            'valorMedio' => $passagens->count() ? (float) $passagens->avg('valor') : 0.0,
+            'clientes' => $passagens->pluck('passageiro_id')->unique()->count(),
+            'rotasCadastradas' => $agendadas->count(),
+            'passagensOcupadas' => (int) $agendadas->sum('ocupados'),
+            'assentosLivres' => (int) $agendadas->sum(fn ($v) => max(0, $v->capacidade - $v->ocupados)),
+            'veiculosDisponiveis' => $motorista->veiculos()->where('situacao', 'disponivel')->count(),
+            'linhas' => $linhas,
+            'rotas' => $rotas,
+            'formas' => $formas,
+            'rosca' => $trechos ? 'conic-gradient(' . implode(', ', $trechos) . ')' : 'conic-gradient(#e8eef3 0 100%)',
+        ] + $this->serie($pagamentos(), $inicio, $fim);
+    }
+
+    /** Recebimentos por dia (períodos curtos) ou por mês (períodos longos), para o gráfico */
+    private function serie($consulta, Carbon $inicio, Carbon $fim): array
+    {
+        $dias = (int) $inicio->copy()->startOfDay()->diffInDays($fim->copy()->startOfDay()) + 1;
+        $mensal = $dias > 45;
+
+        $buckets = [];
+        $cursor = $mensal ? $inicio->copy()->startOfMonth() : $inicio->copy()->startOfDay();
+
+        while ($cursor->lte($fim)) {
+            $buckets[$cursor->format($mensal ? 'Y-m' : 'Y-m-d')] = [
+                'rotulo' => $mensal ? $cursor->translatedFormat('M/y') : $cursor->format('d/m'),
+                'passagens' => 0.0,
+                'encomendas' => 0.0,
+            ];
+            $mensal ? $cursor->addMonth() : $cursor->addDay();
+        }
+
+        $recebimentos = $consulta
+            ->where('pg.situacao', 'pago')
+            ->whereBetween('pg.data_pagamento', [$inicio, $fim])
+            ->get(['pg.data_pagamento', 'pg.valor', 'pg.passagem_id']);
+
+        foreach ($recebimentos as $r) {
+            $chave = Carbon::parse($r->data_pagamento)->format($mensal ? 'Y-m' : 'Y-m-d');
+
+            if (isset($buckets[$chave])) {
+                $buckets[$chave][$r->passagem_id ? 'passagens' : 'encomendas'] += (float) $r->valor;
+            }
+        }
+
+        $serie = array_values($buckets);
+        $maior = max(array_map(fn ($b) => $b['passagens'] + $b['encomendas'], $serie) ?: [0]);
+
+        if ($maior <= 0) {
+            $topo = 100;
+        } else {
+            $passo = 10 ** floor(log10($maior));
+            $topo = ceil($maior / $passo) * $passo;
+        }
+
+        return ['serie' => $serie, 'topo' => $topo, 'serieVazia' => $maior <= 0];
     }
 }

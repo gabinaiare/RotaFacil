@@ -121,6 +121,11 @@ class DatabaseSeeder extends Seeder
         // Pagamentos das encomendas
         $enc1->pagamentos()->create(['forma' => 'fiado', 'situacao' => 'pendente', 'valor' => 20]);
         $enc2->pagamentos()->create(['forma' => 'pix', 'situacao' => 'pago', 'valor' => 10, 'data_pagamento' => now()->subDay()]);
+
+        // Espalha as datas dos pagamentos nos últimos dias (o gráfico do relatório fica mais realista)
+        foreach (\App\Models\Pagamento::where('situacao', 'pago')->get() as $i => $pg) {
+            $pg->forceFill(['data_pagamento' => now()->subDays(($i * 3) % 25)])->save();
+        }
     }
 
     private function vender(Viagem $viagem, Passageiro $passageiro, int $assento, string $forma): void

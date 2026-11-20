@@ -9,9 +9,8 @@ return new class extends Migration
     private array $colunas = [
         'cpf' => 14,
         'telefone' => 20,
-        'cidade' => 80,
-        'cnh_numero' => 20,
-        'cnh_categoria' => 3,
+        'numero_cnh' => 20,
+        'categoria_cnh' => 3,
     ];
 
     public function up(): void

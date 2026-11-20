@@ -37,7 +37,7 @@
 
             <footer>
                 <div class="usuario">
-                    <span class="avatar">{{ $usuario->iniciais }}</span>
+                    <span class="avatar" @if ($usuario->foto_url) style="background:url('{{ $usuario->foto_url }}') center/cover;color:transparent" @endif>{{ $usuario->iniciais }}</span>
                     <div>
                         <strong>{{ $usuario->name }}</strong>
                         <small>Motorista independente</small>
@@ -56,7 +56,7 @@
             </div>
 
             <details class="conta-cabecalho">
-                <summary class="avatar" aria-label="Abrir opções da conta de {{ $usuario->name }}">{{ $usuario->iniciais }}</summary>
+                <summary class="avatar" aria-label="Abrir opções da conta de {{ $usuario->name }}" @if ($usuario->foto_url) style="background:url('{{ $usuario->foto_url }}') center/cover;color:transparent" @endif>{{ $usuario->iniciais }}</summary>
 
                 <nav class="menu-conta" aria-label="Opções da conta">
                     <div class="identificacao-conta">

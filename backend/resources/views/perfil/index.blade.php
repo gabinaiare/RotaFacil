@@ -5,18 +5,7 @@
 
 @section('conteudo')
     @php
-        $iniciais = collect(preg_split('/\s+/', trim($motorista->name)))
-            ->filter()->map(fn ($p) => mb_strtoupper(mb_substr($p, 0, 1)))->take(2)->implode('');
-
-        $d = preg_replace('/\D/', '', (string) $motorista->cpf);
-        $cpf = strlen($d) === 11 ? sprintf('%s.%s.%s-%s', substr($d, 0, 3), substr($d, 3, 3), substr($d, 6, 3), substr($d, 9)) : null;
-
-        $t = preg_replace('/\D/', '', (string) $motorista->telefone);
-        $telefone = match (strlen($t)) {
-            11 => sprintf('(%s) %s-%s', substr($t, 0, 2), substr($t, 2, 5), substr($t, 7)),
-            10 => sprintf('(%s) %s-%s', substr($t, 0, 2), substr($t, 2, 4), substr($t, 6)),
-            default => $motorista->telefone,
-        };
+        $estiloFoto = $u->foto_url ? "background:url('{$u->foto_url}') center/cover;color:transparent" : null;
     @endphp
 
     <div class="titulo-pagina">
@@ -32,15 +21,14 @@
     @endif
 
     <section class="cartao identidade-perfil">
-        @if ($motorista->foto)
-        <img class="avatar avatar-grande" src="{{ asset('storage/' . $motorista->foto) }}" alt="Foto de {{ $motorista->name }}" style="object-fit:cover;border-radius:50%">
-@else
-        <span class="avatar avatar-grande">{{ $iniciais }}</span>
-@endif
-        <a class="link-foto" href="#editar-perfil">{{ $motorista->foto ? 'Trocar foto' : 'Adicionar foto do perfil' }}</a>
-        @if ($motorista->cidade)
-            <p class="texto-secundario">{{ $motorista->cidade }}</p>
+        <span class="avatar avatar-grande" @if ($estiloFoto) style="{{ $estiloFoto }}" @endif>{{ $u->iniciais }}</span>
+        <h2>{{ $u->name }}</h2>
+        <p class="texto-secundario">Motorista independente</p>
+        <span class="selo">Meu espaço individual</span>
+        @if ($u->cidade_estado)
+            <p class="texto-secundario">{{ $u->cidade_estado }}</p>
         @endif
+        <a class="link-foto" href="#editar-perfil">{{ $u->foto ? 'Trocar foto do perfil' : 'Adicionar foto do perfil' }}</a>
     </section>
 
     <section class="cartao dados-perfil">
@@ -49,26 +37,45 @@
             <a href="#editar-perfil">Editar</a>
         </header>
         <dl>
-            <div><dt>CPF</dt><dd>{{ $cpf ?? 'Não informado' }}</dd></div>
-            <div><dt>CNH / categoria</dt><dd>{{ $motorista->cnh_numero ?: 'Não informado' }} • {{ $motorista->cnh_categoria ?: '—' }}</dd></div>
-            <div><dt>Nome completo</dt><dd>{{ $motorista->name }}</dd></div>
-            <div><dt>Telefone / WhatsApp</dt><dd>{{ $telefone ?: 'Não informado' }}</dd></div>
-            <div><dt>E-mail</dt><dd>{{ $motorista->email ?: 'Não informado' }}</dd></div>
-            <div><dt>Cidade e estado</dt><dd>{{ $motorista->cidade ?: 'Não informado' }}</dd></div>
+            <div>
+                <dt>CPF</dt>
+                <dd>{{ $u->cpf_formatado ?: 'Não informado' }}</dd>
+            </div>
+            <div>
+                <dt>CNH / categoria</dt>
+                <dd>{{ $u->numero_cnh ?: 'Não informado' }} • {{ $u->categoria_cnh ?: '—' }}</dd>
+            </div>
+            <div>
+                <dt>Nome completo</dt>
+                <dd>{{ $u->name }}</dd>
+            </div>
+            <div>
+                <dt>Telefone / WhatsApp</dt>
+                <dd>{{ $u->telefone_formatado ?: 'Não informado' }}</dd>
+            </div>
+            <div>
+                <dt>E-mail</dt>
+                <dd>{{ $u->email }}</dd>
+            </div>
+            <div>
+                <dt>Cidade e estado</dt>
+                <dd>{{ $u->cidade_estado ?: 'Não informado' }}</dd>
+            </div>
         </dl>
 
         <footer class="numeros-perfil">
-            <span><strong>{{ $totais['veiculos'] }}</strong> veículos</span>
-            <span><strong>{{ $totais['viagens'] }}</strong> viagens</span>
-            <span><strong>{{ $totais['passageiros'] }}</strong> passageiros</span>
+            <span><strong>{{ $totais['veiculos'] }}</strong> {{ $totais['veiculos'] === 1 ? 'veículo' : 'veículos' }}</span>
+            <span><strong>{{ $totais['viagens'] }}</strong> {{ $totais['viagens'] === 1 ? 'viagem' : 'viagens' }}</span>
+            <span><strong>{{ $totais['passageiros'] }}</strong> {{ $totais['passageiros'] === 1 ? 'passageiro' : 'passageiros' }}</span>
         </footer>
     </section>
 @endsection
 
 @section('janelas')
     @php
-        $valor = fn (string $campo, $atual) => old($campo, $atual);
-        $catAtual = $valor('cnh_categoria', $motorista->cnh_categoria ?: 'B');
+        $usarOld = $errors->any();
+        $campo = fn (string $nome, $padrao) => $usarOld ? old($nome, $padrao) : $padrao;
+        $categoria = $campo('categoria_cnh', $u->categoria_cnh);
     @endphp
 
     <section class="janela" id="editar-perfil" aria-label="Painel: editar perfil">
@@ -83,7 +90,7 @@
                 <a class="fechar-painel" href="{{ route('perfil.index') }}" aria-label="Fechar">×</a>
             </header>
 
-             <form class="formulario" method="POST" action="{{ route('perfil.update') }}" enctype="multipart/form-data">
+            <form class="formulario" method="POST" action="{{ route('perfil.update') }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -96,45 +103,60 @@
                         </div>
                     @endif
 
-                    <label class="largura-total">
-                     Foto do perfil
-                    <small>JPG, PNG ou WebP, até 2 MB</small>
-                    <input type="file" name="foto" accept="image/jpeg,image/png,image/webp">
-                </label>
+                    <section class="foto-editor largura-total">
+                        <span class="avatar avatar-grande" aria-hidden="true" @if ($estiloFoto) style="{{ $estiloFoto }}" @endif>{{ $u->iniciais }}</span>
+                        <div>
+                            <h2>Foto do perfil</h2>
+                            <p class="texto-secundario">Adicione uma foto para identificar seu espaço.</p>
+                            <label class="escolher-foto">
+                                Escolher foto
+                                <input type="file" name="foto" accept="image/jpeg,image/png,image/webp" aria-describedby="foto-ajuda">
+                            </label>
+                            @if ($u->foto)
+                                <label class="opcao">
+                                    <input type="checkbox" name="remover_foto" value="1" @checked(old('remover_foto'))>
+                                    Remover a foto atual
+                                </label>
+                            @endif
+                        </div>
+                        <p id="foto-ajuda" class="nota largura-total">JPG, PNG ou WebP, com até 2 MB.</p>
+                    </section>
 
                     <label>
                         Nome completo
-                        <input type="text" name="name" value="{{ $valor('name', $motorista->name) }}" maxlength="120" required>
+                        <input type="text" name="name" value="{{ $campo('name', $u->name) }}" maxlength="120" required>
                     </label>
                     <label>
                         CPF
-                        <input type="text" name="cpf" value="{{ $valor('cpf', $cpf) }}" placeholder="000.000.000-00" required>
+                        <input type="text" name="cpf" value="{{ $campo('cpf', $u->cpf_formatado) }}" placeholder="000.000.000-00" inputmode="numeric" required>
                     </label>
                     <label>
                         Telefone / WhatsApp
-                        <input type="tel" name="telefone" value="{{ $valor('telefone', $telefone) }}" placeholder="(84) 99999-9999" required>
+                        <input type="tel" name="telefone" value="{{ $campo('telefone', $u->telefone_formatado) }}" placeholder="(84) 99999-9999" required>
                     </label>
                     <label>
                         Número da CNH
-                        <input type="text" name="cnh_numero" value="{{ $valor('cnh_numero', $motorista->cnh_numero) }}">
+                        <small>opcional</small>
+                        <input type="text" name="numero_cnh" value="{{ $campo('numero_cnh', $u->numero_cnh) }}" inputmode="numeric">
                     </label>
                     <label>
                         Categoria da CNH
-                        <select name="cnh_categoria">
-                            @foreach (['B', 'C', 'D', 'E', 'AB', 'AC', 'AD', 'AE'] as $c)
-                                <option value="{{ $c }}" @selected($catAtual === $c)>{{ $c }}</option>
+                        <small>opcional</small>
+                        <select name="categoria_cnh">
+                            <option value="">Não informada</option>
+                            @foreach ($categorias as $c)
+                                <option value="{{ $c }}" @selected($categoria === $c)>{{ $c }}</option>
                             @endforeach
                         </select>
                     </label>
                     <label>
                         E-mail
-                        <small>opcional</small>
-                        <input type="email" name="email" value="{{ $valor('email', $motorista->email) }}">
+                        <input type="email" name="email" value="{{ $campo('email', $u->email) }}" maxlength="120" required>
                     </label>
                     <label>
                         Cidade e estado
                         <small>opcional</small>
-                        <input type="text" name="cidade" value="{{ $valor('cidade', $motorista->cidade) }}" placeholder="São Miguel, RN">
+                        <input type="text" name="cidade_estado" value="{{ $campo('cidade_estado', $u->cidade_estado) }}" placeholder="São Miguel, RN" maxlength="80">
                     </label>
                 </div>
 

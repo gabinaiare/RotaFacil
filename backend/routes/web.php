@@ -1,13 +1,13 @@
 <?php
 
 use App\Http\Controllers\RecuperarAcessoController;
-use App\Http\Controllers\PerfilController;
-use App\Http\Controllers\RelatorioController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EncomendaController;
 use App\Http\Controllers\PassageiroController;
 use App\Http\Controllers\PassagemController;
+use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\RelatorioController;
 use App\Http\Controllers\VeiculoController;
 use App\Http\Controllers\ViagemController;
 use Illuminate\Support\Facades\Route;
@@ -17,17 +17,19 @@ Route::redirect('/', '/login');
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'mostrarLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login']);
+
+    Route::get('/cadastro', [AuthController::class, 'mostrarCadastro'])->name('cadastro');
+    Route::post('/cadastro', [AuthController::class, 'cadastrar']);
+
     Route::get('/recuperar-acesso', [RecuperarAcessoController::class, 'mostrarPedido'])->name('senha.pedir');
     Route::post('/recuperar-acesso', [RecuperarAcessoController::class, 'enviarLink'])
-        ->middleware('throttle:5,1')->name('senha.enviar');
+    ->middleware('throttle:5,1')->name('senha.enviar');
 
     Route::get('/redefinir-senha/{token}', [RecuperarAcessoController::class, 'mostrarRedefinicao'])->name('password.reset');
     Route::post('/redefinir-senha', [RecuperarAcessoController::class, 'redefinir'])->name('senha.redefinir');
-    Route::get('/cadastro', [AuthController::class, 'mostrarCadastro'])->name('cadastro');
-    Route::post('/cadastro', [AuthController::class, 'cadastrar']);
 });
 
-Route::middleware('auth')->group(function () {
+    Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::get('/inicio', [DashboardController::class, 'index'])->name('dashboard');
@@ -59,9 +61,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/encomendas/{id}/pagamento', [EncomendaController::class, 'receber'])->whereNumber('id')->name('encomendas.receber');
     Route::get('/encomendas/{id}/comprovante', [EncomendaController::class, 'comprovante'])->whereNumber('id')->name('encomendas.comprovante');
 
+    Route::get('/relatorios', [RelatorioController::class, 'index'])->name('relatorios.index');
+    Route::get('/relatorios/exportar', [RelatorioController::class, 'exportar'])->name('relatorios.exportar');
+
     Route::get('/perfil', [PerfilController::class, 'index'])->name('perfil.index');
     Route::put('/perfil', [PerfilController::class, 'update'])->name('perfil.update');
-
-    Route::get('/relatorios', [RelatorioController::class, 'index'])->name('relatorios.index');
-    Route::get('/relatorios/csv', [RelatorioController::class, 'csv'])->name('relatorios.csv');
-  });
+});
