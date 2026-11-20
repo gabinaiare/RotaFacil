@@ -19,7 +19,7 @@
 @endphp
 
 <section class="janela" id="{{ $idPainel }}" aria-label="Painel: {{ $titulo }}">
-    <a class="fundo-janela" href="{{ route('encomendas.index') }}" aria-label="Fechar painel"></a>
+    <a class="fundo-janela" href="{{ $fechar ?? route('encomendas.index') }}" aria-label="Fechar painel"></a>
 
     <section class="painel" role="dialog" aria-modal="true" aria-labelledby="{{ $idPainel }}-titulo" tabindex="-1">
 
@@ -28,11 +28,12 @@
                 <span class="marca-painel">ROTA FÁCIL</span>
                 <h2 id="{{ $idPainel }}-titulo">{{ $titulo }}</h2>
             </div>
-            <a class="fechar-painel" href="{{ route('encomendas.index') }}" aria-label="Fechar">×</a>
+            <a class="fechar-painel" href="{{ $fechar ?? route('encomendas.index') }}" aria-label="Fechar">×</a>
         </header>
 
         <form class="formulario" method="POST" action="{{ $acao }}">
             @csrf
+            <input type="hidden" name="retorno" value="{{ $retorno ?? '' }}">
             @if ($metodo === 'PUT')
                 @method('PUT')
             @endif
@@ -117,7 +118,7 @@
             </div>
 
             <div class="acoes">
-                <a class="botao secundario" href="{{ route('encomendas.index') }}">Cancelar</a>
+                <a class="botao secundario" href="{{ $fechar ?? route('encomendas.index') }}">Cancelar</a>
                 <button type="submit" class="botao">{{ $botao }}</button>
             </div>
         </form>

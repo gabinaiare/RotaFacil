@@ -111,7 +111,11 @@ class PassagemController extends Controller
             }
         });
 
-        $voltar = route('passagens.index', ['viagem' => $request->input('viagem_id')]) . '#vender-passagem';
+        // Volta para a tela de onde veio (Início ou Passagens)
+        $voltar = $this->retorno(
+            $request,
+            route('passagens.index', ['viagem' => $request->input('viagem_id')])
+        ) . '#vender-passagem';
 
         if ($validador->fails()) {
             return redirect($voltar)->withErrors($validador)->withInput();
@@ -180,7 +184,12 @@ class PassagemController extends Controller
             throw $e;
         }
 
-        return redirect()->route('passagens.index', ['viagem' => $passagem->viagem_id])
+        $destino = $this->retorno(
+            $request,
+            route('passagens.index', ['viagem' => $passagem->viagem_id])
+        );
+
+        return redirect($destino)
             ->with('status', 'Passagem registrada: assento ' . sprintf('%02d', $passagem->assento) . '.')
             ->with('comprovante', $passagem->id);
     }
@@ -190,9 +199,13 @@ class PassagemController extends Controller
     {
         $passagem = $this->doMotorista($request, $id);
 
+        $voltar = $this->retorno(
+            $request,
+            route('passagens.index', ['viagem' => $passagem->viagem_id])
+        );
+
         if ($passagem->situacao !== 'ativa' || $passagem->viagem->situacao !== 'agendada') {
-            return redirect()->route('passagens.index', ['viagem' => $passagem->viagem_id])
-                ->with('erro', 'Esta passagem não pode ser cancelada.');
+            return redirect($voltar)->with('erro', 'Esta passagem não pode ser cancelada.');
         }
 
         $dados = $request->validate([
@@ -205,7 +218,7 @@ class PassagemController extends Controller
             'motivo_cancelamento' => $dados['motivo'] ?? null,
         ]);
 
-        return redirect()->route('passagens.index', ['viagem' => $passagem->viagem_id])
+        return redirect($voltar)
             ->with('status', 'Passagem cancelada. O assento ' . sprintf('%02d', $passagem->assento) . ' está livre.');
     }
 
@@ -215,7 +228,11 @@ class PassagemController extends Controller
         $passagem = $this->doMotorista($request, $id);
         $passagem->load('pagamentos');
 
-        $voltar = route('passagens.index', ['viagem' => $passagem->viagem_id]);
+        // Volta para a tela de onde veio (Passagens ou Passageiros)
+        $voltar = $this->retorno(
+            $request,
+            route('passagens.index', ['viagem' => $passagem->viagem_id])
+        );
 
         if ($passagem->situacao !== 'ativa' || $passagem->saldo <= 0) {
             return redirect($voltar)->with('erro', 'Esta passagem não tem valor a receber.');

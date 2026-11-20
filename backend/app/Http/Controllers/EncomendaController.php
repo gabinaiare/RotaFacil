@@ -49,10 +49,11 @@ class EncomendaController extends Controller
     /** UC-10: cadastrar encomenda */
     public function store(Request $request)
     {
+        $voltar = $this->retorno($request, route('encomendas.index'));
         $validador = $this->validar($request);
 
         if ($validador->fails()) {
-            return redirect(route('encomendas.index') . '#nova-encomenda')
+            return redirect($voltar . '#nova-encomenda')
                 ->withErrors($validador)
                 ->withInput();
         }
@@ -76,7 +77,7 @@ class EncomendaController extends Controller
             return $encomenda;
         });
 
-        return redirect()->route('encomendas.index')
+        return redirect($voltar)
             ->with('status', "Encomenda cadastrada. Código: {$encomenda->codigo}");
     }
 

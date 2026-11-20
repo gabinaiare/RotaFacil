@@ -20,8 +20,17 @@ class DashboardController extends Controller
             ->limit(5)
             ->get();
 
-        $veiculos = $motorista->veiculos()->orderBy('identificacao')->get();
+        $veiculos = $motorista->veiculos()->orderBy('modelo')->get();
 
-        return view('dashboard', compact('viagens', 'veiculos'));
+        // Para os painéis de venda e de nova encomenda, que abrem no próprio Início
+        $vendaveis = $motorista->viagens()
+            ->where('situacao', 'agendada')
+            ->with(['veiculo', 'passagens' => fn ($q) => $q->where('situacao', 'ativa')])
+            ->orderBy('saida')
+            ->get();
+
+        $passageiros = $motorista->passageiros()->orderBy('nome')->get();
+
+        return view('dashboard', compact('viagens', 'veiculos', 'vendaveis', 'passageiros'));
     }
 }

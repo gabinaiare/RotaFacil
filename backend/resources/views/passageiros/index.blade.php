@@ -20,6 +20,9 @@
     @if (session('status'))
         <p class="sucesso-formulario">{{ session('status') }}</p>
     @endif
+    @if (session('erro'))
+        <p class="erro-formulario">{{ session('erro') }}</p>
+    @endif
 
     <section class="resumo-verde">
         <div>
@@ -90,7 +93,10 @@
                 </p>
 
                 <div class="acoes-passageiro">
-                    <a href="#editar-cliente-{{ $p->id }}">Editar</a>
+                    @if ($p->fiado > 0)
+                        <a class="botao" href="#fiado-{{ $p->id }}">Pagar fiado</a>
+                    @endif
+                    <a class="botao secundario" href="#editar-cliente-{{ $p->id }}">Editar</a>
                 </div>
             </article>
         @empty
@@ -128,5 +134,9 @@
             'usarOld' => session('editando') == $p->id,
             'botao' => 'Salvar passageiro',
         ])
+    @endforeach
+
+    @foreach ($todos->filter(fn ($x) => $x->fiado > 0) as $p)
+        @include('passageiros._fiado', ['p' => $p])
     @endforeach
 @endsection
