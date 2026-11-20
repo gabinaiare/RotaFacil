@@ -1,0 +1,72 @@
+button.botao {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+}
+
+.pagina-acesso button.botao {
+    width: 100%;
+}
+
+.erro-formulario {
+    color: #c0392b;
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0.75rem;
+}
+
+.erro-formulario p {
+    margin: 0 0 0.25rem;
+}
+
+.sucesso-formulario {
+    color: #1a7f4b;
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+}
+
+.filtros-clientes a.ativa {
+    background: #102A40;
+    color: #fff;
+}
+
+.link-botao {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+}
+/* Botões padronizados */
+.acoes-card form { display: inline; margin: 0; }
+.acoes-card a.botao:not(.secundario),
+.acoes-card button.botao,
+.botao:not(.secundario) { color: #fff; text-decoration: none; }
+.acoes-card .botao,
+.botao.secundario { text-decoration: none; cursor: pointer; }
+[hidden] { display: none !important; }
+
+/* Relatórios: gráfico de barras e rosca de formas de pagamento */
+.rolagem-grafico { overflow-x: auto; }
+.grafico-dinamico { display: block; }
+.grafico-dinamico text { font-size: 10px; fill: #6b7f90; }
+
+.rosca-dinamica {
+    position: relative;
+    width: 170px;
+    aspect-ratio: 1;
+    margin: 1rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.rosca-dinamica::before {
+    content: "";
+    position: absolute;
+    inset: 22%;
+    border-radius: 50%;
+    background: #fff;
+}
+.rosca-dinamica > div { position: relative; display: grid; text-align: center; gap: .15rem; }
+.rosca-dinamica small { color: #6b7f90; }
