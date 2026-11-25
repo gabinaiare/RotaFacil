@@ -8,6 +8,8 @@
     <title>@yield('titulo') • Rota Fácil</title>
     <link rel="icon" href="{{ asset('assets/favicon-rota-facil.png') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/icon-192.png') }}">
     <link rel="stylesheet" href="{{ asset('css/desktop.css') }}">
     <link rel="stylesheet" href="{{ asset('css/passagens.css') }}">
     <link rel="stylesheet" href="{{ asset('css/laravel.css') }}">
@@ -88,5 +90,10 @@
     <form id="form-sair" method="POST" action="{{ route('logout') }}" hidden>
         @csrf
     </form>
+     <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+    }
+</script>
 </body>
 </html>

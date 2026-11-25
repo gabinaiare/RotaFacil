@@ -6,6 +6,8 @@
     <meta name="theme-color" content="#102A40">
     <title>Entrar • Rota Fácil</title>
     <link rel="icon" href="{{ asset('assets/favicon-rota-facil.png') }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/icon-192.png') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/desktop.css') }}">
     <link rel="stylesheet" href="{{ asset('css/laravel.css') }}">
@@ -56,6 +58,12 @@
             </form>
             <p class="observacao-acesso">Primeira vez aqui?<a href="{{ route('cadastro') }}">Criar conta de motorista</a></p>
         </main>
-    </div>
+       </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+        }
+    </script>
 </body>
 </html>
