@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -33,5 +34,28 @@ class Passagem extends Model
     public function pagamentos(): HasMany
     {
         return $this->hasMany(Pagamento::class);
+    }
+
+    /** Total já recebido (pagamentos com situação "pago") */
+    protected function recebido(): Attribute
+    {
+        return Attribute::get(fn () => round((float) $this->pagamentos->where('situacao', 'pago')->sum('valor'), 2));
+    }
+
+    /** Quanto ainda falta receber (fiado) */
+    protected function saldo(): Attribute
+    {
+        return Attribute::get(fn () => round((float) $this->pagamentos->where('situacao', 'pendente')->sum('valor'), 2));
+    }
+
+    protected function situacaoPagamento(): Attribute
+    {
+        return Attribute::get(function () {
+            if ($this->saldo <= 0) {
+                return 'Pago';
+            }
+
+            return $this->recebido > 0 ? 'Pago parcialmente' : 'A receber';
+        });
     }
 }

@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'email', 'password', 'cpf', 'telefone', 'login', 'cidade_estado'])]
+#[Fillable(['name', 'email', 'password', 'cpf', 'telefone', 'login', 'cidade_estado', 'numero_cnh', 'categoria_cnh', 'foto'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -41,6 +41,35 @@ class User extends Authenticatable
     protected function primeiroNome(): Attribute
     {
         return Attribute::get(fn () => explode(' ', trim($this->name))[0]);
+    }
+
+    protected function fotoUrl(): Attribute
+    {
+        return Attribute::get(fn () => $this->foto ? asset('storage/' . $this->foto) : null);
+    }
+
+    protected function cpfFormatado(): Attribute
+    {
+        return Attribute::get(function () {
+            $d = preg_replace('/\D/', '', (string) $this->cpf);
+
+            return strlen($d) === 11
+                ? sprintf('%s.%s.%s-%s', substr($d, 0, 3), substr($d, 3, 3), substr($d, 6, 3), substr($d, 9))
+                : null;
+        });
+    }
+
+    protected function telefoneFormatado(): Attribute
+    {
+        return Attribute::get(function () {
+            $d = preg_replace('/\D/', '', (string) $this->telefone);
+
+            return match (strlen($d)) {
+                11 => sprintf('(%s) %s-%s', substr($d, 0, 2), substr($d, 2, 5), substr($d, 7)),
+                10 => sprintf('(%s) %s-%s', substr($d, 0, 2), substr($d, 2, 4), substr($d, 6)),
+                default => $this->telefone,
+            };
+        });
     }
 
     public function veiculos(): HasMany

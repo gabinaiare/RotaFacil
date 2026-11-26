@@ -8,6 +8,8 @@
     <title>@yield('titulo') • Rota Fácil</title>
     <link rel="icon" href="{{ asset('assets/favicon-rota-facil.png') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/icon-192.png') }}">
     <link rel="stylesheet" href="{{ asset('css/desktop.css') }}">
     <link rel="stylesheet" href="{{ asset('css/passagens.css') }}">
     <link rel="stylesheet" href="{{ asset('css/laravel.css') }}">
@@ -37,7 +39,7 @@
 
             <footer>
                 <div class="usuario">
-                    <span class="avatar">{{ $usuario->iniciais }}</span>
+                    <span class="avatar" @if ($usuario->foto_url) style="background:url('{{ $usuario->foto_url }}') center/cover;color:transparent" @endif>{{ $usuario->iniciais }}</span>
                     <div>
                         <strong>{{ $usuario->name }}</strong>
                         <small>Motorista independente</small>
@@ -50,13 +52,15 @@
 
         <header class="barra-superior">
             <a class="botao-menu" href="#menu" aria-label="Abrir menu"><span></span><span></span><span></span></a>
-            <div>
-                <small>Meu espaço</small>
-                <strong>@yield('titulo')</strong>
-            </div>
+            
+            <div class="trilha-pagina">
+            <a class="link-meu-espaco" href="{{ route('dashboard') }}">Meu espaço</a>
+            <span class="separador-trilha" aria-hidden="true">/</span>
+         <strong class="pagina-atual" aria-current="page">@yield('titulo')</strong>
+        </div>
 
             <details class="conta-cabecalho">
-                <summary class="avatar" aria-label="Abrir opções da conta de {{ $usuario->name }}">{{ $usuario->iniciais }}</summary>
+                <summary class="avatar" aria-label="Abrir opções da conta de {{ $usuario->name }}" @if ($usuario->foto_url) style="background:url('{{ $usuario->foto_url }}') center/cover;color:transparent" @endif>{{ $usuario->iniciais }}</summary>
 
                 <nav class="menu-conta" aria-label="Opções da conta">
                     <div class="identificacao-conta">
@@ -88,5 +92,10 @@
     <form id="form-sair" method="POST" action="{{ route('logout') }}" hidden>
         @csrf
     </form>
+     <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+    }
+</script>
 </body>
 </html>

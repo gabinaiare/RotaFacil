@@ -9,7 +9,7 @@ class MovimentacaoEncomenda extends Model
 {
     protected $table = 'movimentacoes_encomenda';
 
-    protected $fillable = ['encomenda_id', 'situacao_anterior', 'nova_situacao'];
+    protected $fillable = ['encomenda_id', 'situacao_anterior', 'nova_situacao', 'observacao'];
 
     public function encomenda(): BelongsTo
     {

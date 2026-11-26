@@ -5,12 +5,22 @@
 @section('conteudo')
     <h1>Olá, {{ auth()->user()->primeiro_nome }}</h1>
     <p class="introducao">Seu transporte, seus clientes e suas contas em um só lugar.</p>
-    <a class="botao" href="{{ route('viagens.index') }}">+ Nova rota</a>
+
+    @if (session('status'))
+        <p class="sucesso-formulario">
+            {{ session('status') }}
+            @if (session('comprovante'))
+                <a href="{{ route('passagens.comprovante', session('comprovante')) }}" target="_blank">Ver comprovante</a>
+            @endif
+        </p>
+    @endif
+
+    <a class="botao" href="{{ route('viagens.index') }}#nova-viagem">+ Nova rota</a>
 
     <div class="atalhos">
-        <a href="{{ route('passagens.index') }}"><span class="icone icone-bilhete" aria-hidden="true"></span><strong>Vender passagem</strong></a>
-        <a href="{{ route('encomendas.index') }}"><span class="icone icone-encomendas" aria-hidden="true"></span><strong>Nova encomenda</strong></a>
-        <a href="{{ route('passageiros.index') }}"><span class="icone icone-cliente" aria-hidden="true"></span><strong>Novo cliente</strong></a>
+        <a href="#vender-passagem"><span class="icone icone-bilhete" aria-hidden="true"></span><strong>Vender passagem</strong></a>
+        <a href="#nova-encomenda"><span class="icone icone-encomendas" aria-hidden="true"></span><strong>Nova encomenda</strong></a>
+        <a href="{{ route('passageiros.index') }}#novo-cliente"><span class="icone icone-cliente" aria-hidden="true"></span><strong>Novo cliente</strong></a>
     </div>
 
     <section class="cartao lista-viagens">
@@ -66,7 +76,7 @@
 
                 <div class="linha">
                     <span></span>
-                    <a href="{{ route('viagens.index') }}">Ver viagem</a>
+                    <a href="{{ route('viagens.index') }}#detalhe-viagem-{{ $viagem->id }}">Ver viagem</a>
                 </div>
             </article>
         @empty
@@ -79,7 +89,7 @@
         <small>NO SEU RITMO</small>
         <h2>Você escolhe a rota.<br>A gente organiza.</h2>
         <p>Defina destinos, horários e valores. Cada viagem com o transporte e os assentos que você precisa.</p>
-        <a class="botao" href="{{ route('viagens.index') }}">+ Cadastrar uma rota</a>
+        <a class="botao" href="{{ route('viagens.index') }}#nova-viagem">+ Cadastrar uma rota</a>
     </section>
 
     <section class="cartao acesso-rapido">
@@ -87,7 +97,7 @@
             <h2>Acesso rápido</h2>
         </div>
 
-        <a class="item-acesso-rapido" href="{{ route('veiculos.index') }}">
+        <a class="item-acesso-rapido" href="{{ route('veiculos.index') }}#novo-veiculo">
             <span class="icone icone-bus" aria-hidden="true"></span>
             <div>
                 <strong>Cadastrar veículo</strong>
@@ -135,9 +145,27 @@
             <div class="etiquetas">
                 <span class="etiqueta"><span class="icone icone-cadeira-de-carro" aria-hidden="true"></span>{{ $veiculo->capacidade }} assentos</span>
             </div>
-            <a class="editar" href="{{ route('veiculos.index') }}">Editar veículo</a>
+            <a class="editar" href="{{ route('veiculos.index') }}#editar-veiculo-{{ $veiculo->id }}">Editar veículo</a>
         </article>
     @empty
         <p class="texto-secundario">Nenhum veículo cadastrado ainda.</p>
     @endforelse
+@endsection
+
+@section('janelas')
+    @include('passagens._venda-inicio')
+
+    @include('encomendas._formulario', [
+        'idPainel' => 'nova-encomenda',
+        'titulo' => 'Nova encomenda',
+        'acao' => route('encomendas.store'),
+        'metodo' => 'POST',
+        'encomenda' => null,
+        'bag' => 'default',
+        'usarOld' => true,
+        'botao' => 'Salvar encomenda',
+        'fechar' => route('dashboard'),
+        'retorno' => 'inicio',
+        'viagens' => $vendaveis,
+    ])
 @endsection

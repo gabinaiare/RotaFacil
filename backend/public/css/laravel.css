@@ -2,6 +2,9 @@ button.botao {
     border: 0;
     cursor: pointer;
     font: inherit;
+}
+
+.pagina-acesso button.botao {
     width: 100%;
 }
 
@@ -9,4 +12,106 @@ button.botao {
     color: #c0392b;
     font-size: 0.9rem;
     margin: 0.25rem 0 0.75rem;
+}
+
+.erro-formulario p {
+    margin: 0 0 0.25rem;
+}
+
+.sucesso-formulario {
+    color: #1a7f4b;
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+}
+
+.filtros-clientes a.ativa {
+    background: #102A40;
+    color: #fff;
+}
+
+.link-botao {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+}
+/* Botões padronizados */
+.acoes-card form { display: inline; margin: 0; }
+.acoes-card a.botao:not(.secundario),
+.acoes-card button.botao,
+.botao:not(.secundario) { color: #fff; text-decoration: none; }
+.acoes-card .botao,
+.botao.secundario { text-decoration: none; cursor: pointer; }
+[hidden] { display: none !important; }
+
+/* Relatórios: gráfico de barras e rosca de formas de pagamento */
+.rolagem-grafico { overflow-x: auto; }
+.grafico-dinamico { display: block; }
+.grafico-dinamico text { font-size: 10px; fill: #6b7f90; }
+
+.rosca-dinamica {
+    position: relative;
+    width: 170px;
+    aspect-ratio: 1;
+    margin: 1rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.rosca-dinamica::before {
+    content: "";
+    position: absolute;
+    inset: 22%;
+    border-radius: 50%;
+    background: #fff;
+}
+.rosca-dinamica > div { position: relative; display: grid; text-align: center; gap: .15rem; }
+.rosca-dinamica small { color: #6b7f90; }
+
+/* Botões: padrão único */
+.botao { display: inline-block; padding: .65rem 1.1rem; border-radius: 10px; font-weight: 600; text-decoration: none; cursor: pointer; border: 1px solid transparent; background: #18aa80; color: #fff; }
+.botao.secundario { background: #fff; color: #102A40; border-color: #c9d6e0; }
+.botao.secundario:hover { background: #eef3f7; }
+.botao.verde, .botao.confirmar { background: #18aa80; color: #fff; }
+
+.link-meu-espaco { color: inherit; text-decoration: none; cursor: pointer; display: inline-block; }
+.link-meu-espaco:hover small { text-decoration: underline; }
+/* Trilha: Meu espaço / Página */
+.barra-superior > .trilha-pagina {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 0;
+    width: auto;
+    min-width: 0;
+}
+
+.barra-superior > .trilha-pagina .link-meu-espaco {
+    font-size: .8rem;
+    font-weight: 500;
+    color: inherit;
+    opacity: .85;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+.barra-superior > .trilha-pagina .link-meu-espaco:hover { opacity: 1; text-decoration: underline; }
+
+.barra-superior > .trilha-pagina .separador-trilha {
+    font-size: .8rem;
+    margin: 0 .3rem;
+    opacity: .6;
+}
+
+.barra-superior > .trilha-pagina .pagina-atual {
+    font-size: .88rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0 0 1px;
+    border-bottom: 2px solid #18aa80;
 }
