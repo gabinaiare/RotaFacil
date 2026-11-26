@@ -76,3 +76,6 @@ button.botao {
 .botao.secundario { background: #fff; color: #102A40; border-color: #c9d6e0; }
 .botao.secundario:hover { background: #eef3f7; }
 .botao.verde, .botao.confirmar { background: #18aa80; color: #fff; }
+
+.link-meu-espaco { color: inherit; text-decoration: none; cursor: pointer; display: inline-block; }
+.link-meu-espaco:hover small { text-decoration: underline; }

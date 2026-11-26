@@ -53,8 +53,8 @@
         <header class="barra-superior">
             <a class="botao-menu" href="#menu" aria-label="Abrir menu"><span></span><span></span><span></span></a>
             <div>
-                <small>Meu espaço</small>
-                <strong>@yield('titulo')</strong>
+            <a class="link-meu-espaco" href="{{ route('dashboard') }}"><small>Meu espaço</small></a>
+            <strong>@yield('titulo')</strong>
             </div>
 
             <details class="conta-cabecalho">

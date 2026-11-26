@@ -56,8 +56,7 @@
                 <a class="link-acesso recuperar-senha" href="{{ route('senha.pedir') }}">Esqueci minha senha</a>
                 <button type="submit" class="botao">Entrar no meu painel</button>
             </form>
-            <p class="observacao-acesso">Primeira vez aqui?<a href="{{ route('cadastro') }}">Criar conta de motorista</a></p>
-        </main>
+         <p class="observacao-acesso">Primeira vez aqui? <a href="{{ route('cadastro') }}">Criar conta de motorista</a></p>        </main>
        </div>
 
     <script>
