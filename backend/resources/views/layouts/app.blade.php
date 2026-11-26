@@ -52,10 +52,12 @@
 
         <header class="barra-superior">
             <a class="botao-menu" href="#menu" aria-label="Abrir menu"><span></span><span></span><span></span></a>
-            <div>
-            <a class="link-meu-espaco" href="{{ route('dashboard') }}"><small>Meu espaço</small></a>
-            <strong>@yield('titulo')</strong>
-            </div>
+            
+            <div class="trilha-pagina">
+            <a class="link-meu-espaco" href="{{ route('dashboard') }}">Meu espaço</a>
+            <span class="separador-trilha" aria-hidden="true">/</span>
+         <strong class="pagina-atual" aria-current="page">@yield('titulo')</strong>
+        </div>
 
             <details class="conta-cabecalho">
                 <summary class="avatar" aria-label="Abrir opções da conta de {{ $usuario->name }}" @if ($usuario->foto_url) style="background:url('{{ $usuario->foto_url }}') center/cover;color:transparent" @endif>{{ $usuario->iniciais }}</summary>
